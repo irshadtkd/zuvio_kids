@@ -1,0 +1,53 @@
+{
+  "@@locale": "en",
+
+  "appName": "ZuvioKids",
+  "@appName": {
+    "description": "The name of the application"
+  },
+
+  "btnRetry": "Retry",
+  "@btnRetry": {
+    "description": "Label for the Retry button shown on error screens"
+  },
+
+  "btnNext": "Next",
+  "@btnNext": {
+    "description": "Label for the Next navigation button"
+  },
+
+  "btnBack": "Back",
+  "@btnBack": {
+    "description": "Label for the Back navigation button"
+  },
+
+  "btnClose": "Close",
+  "@btnClose": {
+    "description": "Label for the Close button"
+  },
+
+  "btnStart": "Start",
+  "@btnStart": {
+    "description": "Label for the Start button"
+  },
+
+  "errorNetworkUnavailable": "No internet connection. Please try again.",
+  "@errorNetworkUnavailable": {
+    "description": "Error message shown when the device has no network connection"
+  },
+
+  "errorCacheFailure": "Could not load saved data. Please try again.",
+  "@errorCacheFailure": {
+    "description": "Error message shown when local cache cannot be read"
+  },
+
+  "errorPermissionDenied": "Permission denied. Please check your settings.",
+  "@errorPermissionDenied": {
+    "description": "Error message shown when the app lacks a required permission"
+  },
+
+  "errorUnexpected": "Something went wrong. Please try again later.",
+  "@errorUnexpected": {
+    "description": "Generic fallback error message"
+  }
+}

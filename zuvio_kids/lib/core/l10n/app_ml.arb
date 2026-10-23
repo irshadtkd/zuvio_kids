@@ -1,0 +1,53 @@
+{
+  "@@locale": "ml",
+
+  "appName": "ZuvioKids",
+  "@appName": {
+    "description": "The name of the application"
+  },
+
+  "btnRetry": "വീണ്ടും ശ്രമിക്കുക",
+  "@btnRetry": {
+    "description": "Label for the Retry button shown on error screens"
+  },
+
+  "btnNext": "അടുത്തത്",
+  "@btnNext": {
+    "description": "Label for the Next navigation button"
+  },
+
+  "btnBack": "പിന്നോട്ട്",
+  "@btnBack": {
+    "description": "Label for the Back navigation button"
+  },
+
+  "btnClose": "അടയ്ക്കുക",
+  "@btnClose": {
+    "description": "Label for the Close button"
+  },
+
+  "btnStart": "ആരംഭിക്കുക",
+  "@btnStart": {
+    "description": "Label for the Start button"
+  },
+
+  "errorNetworkUnavailable": "ഇന്റർനെറ്റ് കണക്ഷൻ ഇല്ല. വീണ്ടും ശ്രമിക്കുക.",
+  "@errorNetworkUnavailable": {
+    "description": "Error message shown when the device has no network connection"
+  },
+
+  "errorCacheFailure": "സംരക്ഷിച്ച ഡേറ്റ ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക.",
+  "@errorCacheFailure": {
+    "description": "Error message shown when local cache cannot be read"
+  },
+
+  "errorPermissionDenied": "അനുമതി നിരസിച്ചു. ക്രമീകരണങ്ങൾ പരിശോധിക്കുക.",
+  "@errorPermissionDenied": {
+    "description": "Error message shown when the app lacks a required permission"
+  },
+
+  "errorUnexpected": "എന്തോ തകരാറ് സംഭവിച്ചു. കുറച്ചു കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കുക.",
+  "@errorUnexpected": {
+    "description": "Generic fallback error message"
+  }
+}
