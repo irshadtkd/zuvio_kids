@@ -34,4 +34,14 @@ abstract final class AppSizes {
   static const double elevationLow = 2.0;
   static const double elevationMedium = 4.0;
   static const double elevationHigh = 8.0;
+
+  // ── Responsive Breakpoints ─────────────────────────────────────────────
+  /// Maximum width for mobile layouts (< 600)
+  static const double maxMobileWidth = 600.0;
+
+  /// Maximum width for standard tablet / iPad layouts (< 1024)
+  static const double maxTabletWidth = 1024.0;
+
+  /// Maximum width constraint for readability on wide tablet / iPad displays
+  static const double maxContentWidth = 840.0;
 }
