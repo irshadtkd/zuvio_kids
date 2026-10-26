@@ -37,6 +37,9 @@ dependencies:
   google_fonts: ^8.2.1
   flutter_tts: ^4.2.5
 
+  # ── Audio Playback ──────────────────────────────────────────────────────
+  just_audio: ^0.10.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -48,10 +51,8 @@ flutter:
   generate: true
   uses-material-design: true
 
-  # assets:
-  #   - assets/images/
-  #   - assets/lottie/
-  #   - assets/audio/
+  assets:
+    - assets/audio/animals/
 
   # fonts:
   #   - family: YourFont

@@ -3,7 +3,7 @@ import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
-import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+//import 'package:zuvio_kids/core/theme/app_text_styles.dart';
 import '../widgets/animal_avatar.dart';
 import '../widgets/kid_button.dart';
 import '../widgets/kid_speech_bubble.dart';
@@ -12,38 +12,38 @@ import '../widgets/kid_speech_bubble.dart';
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
-  void _onForParents(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    showDialog<void>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        title: Text(
-          l10n.titleParentsSection,
-          style: AppTextStyles.headerTitle.copyWith(fontSize: 22),
-        ),
-        content: Text(
-          l10n.msgParentsSection,
-          style: AppTextStyles.speechBubbleBody.copyWith(fontSize: 16),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: Text(
-              l10n.btnClose,
-              style: AppTextStyles.buttonLabel.copyWith(
-                fontSize: 18,
-                color: AppColors.kidGreen,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // void _onForParents(BuildContext context) {
+  //   final l10n = AppLocalizations.of(context)!;
+  //   showDialog<void>(
+  //     context: context,
+  //     builder: (ctx) => AlertDialog(
+  //       backgroundColor: Colors.white,
+  //       shape: RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.circular(24),
+  //       ),
+  //       title: Text(
+  //         l10n.titleParentsSection,
+  //         style: AppTextStyles.headerTitle.copyWith(fontSize: 22),
+  //       ),
+  //       content: Text(
+  //         l10n.msgParentsSection,
+  //         style: AppTextStyles.speechBubbleBody.copyWith(fontSize: 16),
+  //       ),
+  //       actions: [
+  //         TextButton(
+  //           onPressed: () => Navigator.pop(ctx),
+  //           child: Text(
+  //             l10n.btnClose,
+  //             style: AppTextStyles.buttonLabel.copyWith(
+  //               fontSize: 18,
+  //               color: AppColors.kidGreen,
+  //             ),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -78,13 +78,13 @@ class WelcomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               // For Parents Link
-              GestureDetector(
-                onTap: () => _onForParents(context),
-                child: Text(
-                  l10n.btnForParents,
-                  style: AppTextStyles.footerLink,
-                ),
-              ),
+              // GestureDetector(
+              //   onTap: () => _onForParents(context),
+              //   child: Text(
+              //     l10n.btnForParents,
+              //     style: AppTextStyles.footerLink,
+              //   ),
+              // ),
               const SizedBox(height: 24),
             ],
           ),

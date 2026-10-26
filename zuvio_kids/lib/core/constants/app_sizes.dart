@@ -47,5 +47,5 @@ abstract final class AppSizes {
 
   // ── Name Validation ───────────────────────────────────────────────────
   static const int nameMinLength = 2;
-  static const int nameMaxLength = 10;
+  static const int nameMaxLength = 15;
 }

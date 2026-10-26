@@ -379,8 +379,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
           isSelected: isSelected,
           onTap: () {
             notifier.setFriend(friend.id);
-            // Speak the character name aloud when selected
-            KidSoundService.instance.speak(friend.name);
+            // Play the real animal sound when selected
+            KidSoundService.instance.playAnimalSound(friend.id);
           },
         );
       },
