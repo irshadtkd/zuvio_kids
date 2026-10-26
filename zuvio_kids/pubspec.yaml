@@ -34,6 +34,8 @@ dependencies:
 
   # ── Internationalisation ────────────────────────────────────────────────
   intl: ^0.20.2
+  google_fonts: ^8.2.1
+  flutter_tts: ^4.2.5
 
 dev_dependencies:
   flutter_test:

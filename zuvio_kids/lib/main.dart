@@ -8,6 +8,7 @@ import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     // ProviderScope is the root Riverpod scope — must wrap the entire app.
     const ProviderScope(child: ZuvioKidsApp()),

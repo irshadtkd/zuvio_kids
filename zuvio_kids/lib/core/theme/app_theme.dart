@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constants/app_colors.dart';
 
 /// Centralised theme factory for ZuvioKids.
@@ -6,6 +7,7 @@ import '../constants/app_colors.dart';
 abstract final class AppTheme {
   static ThemeData get light => ThemeData(
         useMaterial3: true,
+        textTheme: GoogleFonts.nunitoTextTheme(),
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primary,
           primary: AppColors.primary,
@@ -13,7 +15,7 @@ abstract final class AppTheme {
           error: AppColors.error,
           surface: AppColors.surface,
         ),
-        scaffoldBackgroundColor: AppColors.background,
+        scaffoldBackgroundColor: AppColors.appSkyBlue,
         appBarTheme: const AppBarTheme(
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,

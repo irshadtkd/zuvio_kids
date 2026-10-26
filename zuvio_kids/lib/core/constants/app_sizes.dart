@@ -44,4 +44,8 @@ abstract final class AppSizes {
 
   /// Maximum width constraint for readability on wide tablet / iPad displays
   static const double maxContentWidth = 840.0;
+
+  // ── Name Validation ───────────────────────────────────────────────────
+  static const int nameMinLength = 2;
+  static const int nameMaxLength = 10;
 }

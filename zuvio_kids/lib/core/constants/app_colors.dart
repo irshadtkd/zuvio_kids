@@ -31,4 +31,25 @@ abstract final class AppColors {
   // ── Divider / Border ─────────────────────────────────────────────────────
   static const Color divider = Color(0xFFE5E9F0);
   static const Color border = Color(0xFFD1D9E6);
+
+  // ── Kid Theme Specific (Screenshots) ─────────────────────────────────────
+  static const Color appSkyBlue = Color(0xFFBCE4FD);
+  static const Color navy = Color(0xFF19253C);
+  static const Color kidGreen = Color(0xFF33B763);
+  static const Color kidGreenShadow = Color(0xFF24944F);
+  static const Color progressYellow = Color(0xFFFFB800);
+
+  // ── Class & Friend Cards ──────────────────────────────────────────────────
+  static const Color cardYellow = Color(0xFFFFC83A);
+  static const Color cardPink = Color(0xFFFF9595);
+  static const Color cardGreen = Color(0xFFA1E4B8);
+  static const Color cardPeach = Color(0xFFFED089);
+  static const Color cardCat = Color(0xFFFFC5B2);
+  static const Color cardPurple = Color(0xFFE5D4F6);
+  static const Color cardLavender = Color(0xFFD0C3FA);
+  static const Color cardBlue = Color(0xFF8CD4F7);
+  static const Color gardenTrackGreen = Color(0xFFE2F6EA);
+  static const Color starYellow = Color(0xFFFFB800);
+  static const Color speechBubbleBg = Color(0xFFFFFFFF);
 }
+

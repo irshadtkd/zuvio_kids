@@ -18,4 +18,25 @@ abstract final class AppStrings {
   static const String prefLocale = 'pref_locale';
   static const String prefStudentLevel = 'pref_student_level';
   static const String prefOnboardingDone = 'pref_onboarding_done';
+  static const String prefUserName = 'pref_user_name';
+  static const String prefUserClass = 'pref_user_class';
+  static const String prefUserFriend = 'pref_user_friend';
+
+  // ── Cartoon Friend Identifiers ────────────────────────────────────────
+  static const String idFriendPanda = 'panda';
+  static const String idFriendBunny = 'bunny';
+  static const String idFriendLion = 'lion';
+  static const String idFriendFrog = 'frog';
+  static const String idFriendCat = 'cat';
+  static const String idFriendDog = 'dog';
+
+  // ── Class Identifiers ─────────────────────────────────────────────────
+  static const String idClassPreKg = 'Pre-KG';
+  static const String idClassLkg = 'LKG';
+  static const String idClassUkg = 'UKG';
+
+  // ── Default Fallbacks ─────────────────────────────────────────────────
+  static const String defaultChildName = 'Star⭐';
+  static const String defaultClass = 'LKG';
+  static const String defaultFriend = 'panda';
 }

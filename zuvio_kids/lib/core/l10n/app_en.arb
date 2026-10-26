@@ -49,5 +49,308 @@
   "errorUnexpected": "Something went wrong. Please try again later.",
   "@errorUnexpected": {
     "description": "Generic fallback error message"
+  },
+
+  "errorPageNotFound": "404 — Page not found",
+  "@errorPageNotFound": {
+    "description": "Error message when route is not found"
+  },
+
+  "titleSplashAdventure": "Kids Learning Adventure",
+  "@titleSplashAdventure": {
+    "description": "Title on the splash screen"
+  },
+
+  "subtitleSplash": "See, listen, touch, play!",
+  "@subtitleSplash": {
+    "description": "Subtitle on the splash screen"
+  },
+
+  "captionSplash": "No ads. Works offline.",
+  "@captionSplash": {
+    "description": "Footer caption on the splash screen"
+  },
+
+  "headingWelcomeFriend": "Hello, friend!",
+  "@headingWelcomeFriend": {
+    "description": "Heading on the welcome card"
+  },
+
+  "msgWelcomePanda": "I am Panda. Let us learn and play together!",
+  "@msgWelcomePanda": {
+    "description": "Welcome message spoken by Panda"
+  },
+
+  "btnForParents": "For parents",
+  "@btnForParents": {
+    "description": "Button to open the parents section"
+  },
+
+  "titleYourName": "Your name",
+  "@titleYourName": {
+    "description": "Title for name input step"
+  },
+
+  "speechBubbleName": "A grown-up can type my friend's name.",
+  "@speechBubbleName": {
+    "description": "Instruction in speech bubble on name step"
+  },
+
+  "labelName": "Name",
+  "@labelName": {
+    "description": "Label for child name input"
+  },
+
+  "hintChildName": "Mia",
+  "@hintChildName": {
+    "description": "Placeholder hint for name input"
+  },
+
+  "titleMyClass": "My class",
+  "@titleMyClass": {
+    "description": "Title for class selection step"
+  },
+
+  "speechBubbleClass": "Which class are you in?",
+  "@speechBubbleClass": {
+    "description": "Speech bubble prompt for class selection"
+  },
+
+  "classPreKg": "Pre-KG",
+  "@classPreKg": {
+    "description": "Pre-KG class label"
+  },
+
+  "agesPreKg": "Ages 3-4",
+  "@agesPreKg": {
+    "description": "Age range for Pre-KG"
+  },
+
+  "classLkg": "LKG",
+  "@classLkg": {
+    "description": "LKG class label"
+  },
+
+  "agesLkg": "Ages 4-5",
+  "@agesLkg": {
+    "description": "Age range for LKG"
+  },
+
+  "classUkg": "UKG",
+  "@classUkg": {
+    "description": "UKG class label"
+  },
+
+  "agesUkg": "Ages 5-6",
+  "@agesUkg": {
+    "description": "Age range for UKG"
+  },
+
+  "statusSelected": "Selected",
+  "@statusSelected": {
+    "description": "Text indicating item is selected"
+  },
+
+  "titleMyFriend": "My friend",
+  "@titleMyFriend": {
+    "description": "Title for friend selection step"
+  },
+
+  "speechBubbleFriend": "Pick a cartoon friend to learn with!",
+  "@speechBubbleFriend": {
+    "description": "Speech bubble prompt for friend selection"
+  },
+
+  "friendPanda": "Panda",
+  "@friendPanda": {
+    "description": "Name of Panda character"
+  },
+
+  "friendBunny": "Bunny",
+  "@friendBunny": {
+    "description": "Name of Bunny character"
+  },
+
+  "friendLion": "Lion",
+  "@friendLion": {
+    "description": "Name of Lion character"
+  },
+
+  "friendFrog": "Frog",
+  "@friendFrog": {
+    "description": "Name of Frog character"
+  },
+
+  "friendCat": "Cat",
+  "@friendCat": {
+    "description": "Name of Cat character"
+  },
+
+  "friendDog": "Dog",
+  "@friendDog": {
+    "description": "Name of Dog character"
+  },
+
+  "btnDone": "Done!",
+  "@btnDone": {
+    "description": "Label for Done action button"
+  },
+
+  "homeWelcomeBack": "Welcome back, {name}!",
+  "@homeWelcomeBack": {
+    "description": "Home greeting for the child",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Mia"
+      }
+    }
+  },
+
+  "homeSubtitle": "Let us learn and play together!",
+  "@homeSubtitle": {
+    "description": "Subtitle on home screen"
+  },
+
+  "homeCardActivities": "Fun Activities",
+  "@homeCardActivities": {
+    "description": "Label for activities card"
+  },
+
+  "homeCardStories": "Bedtime Stories",
+  "@homeCardStories": {
+    "description": "Label for stories card"
+  },
+
+  "homeCardGames": "Play Games",
+  "@homeCardGames": {
+    "description": "Label for games card"
+  },
+
+  "btnResetProfile": "Reset Profile",
+  "@btnResetProfile": {
+    "description": "Button to clear saved profile and restart onboarding"
+  },
+
+  "titleParentsSection": "For Parents",
+  "@titleParentsSection": {
+    "description": "Title for parents dialog"
+  },
+
+  "msgParentsSection": "Parent settings and controls will be available here.",
+  "@msgParentsSection": {
+    "description": "Message in parents dialog"
+  },
+
+  "homeGreeting": "Hi, {name}!",
+  "@homeGreeting": {
+    "description": "Home screen greeting with child name",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Mia"
+      }
+    }
+  },
+
+  "homePlayAndLearn": "Let us play and learn",
+  "@homePlayAndLearn": {
+    "description": "Subtitle below child greeting on home screen"
+  },
+
+  "categoryAlphabet": "Alphabet",
+  "@categoryAlphabet": {
+    "description": "Title for Alphabet learning category"
+  },
+
+  "categoryNumbers": "Numbers",
+  "@categoryNumbers": {
+    "description": "Title for Numbers learning category"
+  },
+
+  "categoryShapes": "Shapes",
+  "@categoryShapes": {
+    "description": "Title for Shapes learning category"
+  },
+
+  "categoryColors": "Colors",
+  "@categoryColors": {
+    "description": "Title for Colors learning category"
+  },
+
+  "categoryAnimals": "Animals",
+  "@categoryAnimals": {
+    "description": "Title for Animals learning category"
+  },
+
+  "categoryPuzzles": "Puzzles",
+  "@categoryPuzzles": {
+    "description": "Title for Puzzles learning category"
+  },
+
+  "labelMyGarden": "My Garden",
+  "@labelMyGarden": {
+    "description": "Label for My Garden reward section"
+  },
+
+  "tooltipGardenLocked": "My Garden is locked. Keep learning to unlock!",
+  "@tooltipGardenLocked": {
+    "description": "Tooltip when tapping locked garden button"
+  },
+
+  "visualAlphabetAbc": "A B C",
+  "@visualAlphabetAbc": {
+    "description": "Visual letters on the alphabet card"
+  },
+
+  "visualNumbers123": "1 2 3",
+  "@visualNumbers123": {
+    "description": "Visual numbers on the numbers card"
+  },
+
+  "visualAnimalsMoo": "Moo",
+  "@visualAnimalsMoo": {
+    "description": "Visual animal sound on the animals card"
+  },
+
+  "notifyActivityStarting": "{activity} activity is starting!",
+  "@notifyActivityStarting": {
+    "description": "Snackbar notification when tapping an activity",
+    "placeholders": {
+      "activity": {
+        "type": "String",
+        "example": "Alphabet"
+      }
+    }
+  },
+
+  "classWithSelected": "{ages} ✓ {status}",
+  "@classWithSelected": {
+    "description": "Formatted age with selected status",
+    "placeholders": {
+      "ages": {
+        "type": "String",
+        "example": "Ages 4-5"
+      },
+      "status": {
+        "type": "String",
+        "example": "Selected"
+      }
+    }
+  },
+
+  "menuChangeName": "Change Name",
+  "@menuChangeName": {
+    "description": "Profile bottom sheet option to change name"
+  },
+
+  "menuLogout": "Logout",
+  "@menuLogout": {
+    "description": "Profile bottom sheet option to log out / clear profile"
+  },
+
+  "errorNameLength": "Name must be 2–10 characters.",
+  "@errorNameLength": {
+    "description": "Validation error shown when name is too short or too long"
   }
 }
