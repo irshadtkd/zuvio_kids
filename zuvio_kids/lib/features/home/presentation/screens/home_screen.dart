@@ -5,6 +5,7 @@ import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+import 'package:zuvio_kids/features/alphabet/presentation/providers/alphabet_provider.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/category_card.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/star_badge.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/providers/onboarding_provider.dart';
@@ -53,8 +54,9 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  /// Clears all local profile data and navigates to the splash screen.
+  /// Clears all local profile and alphabet data and navigates to the splash screen.
   Future<void> _clearAndRestart(BuildContext context, WidgetRef ref) async {
+    await ref.read(alphabetNotifierProvider.notifier).clearAllProgress();
     await ref.read(onboardingNotifierProvider.notifier).resetProfile();
     if (!context.mounted) return;
     Navigator.pushNamedAndRemoveUntil(
@@ -68,6 +70,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final state = ref.watch(onboardingNotifierProvider).valueOrNull;
+    final stars = ref.watch(alphabetStarsProvider);
     final name =
         state?.name.isNotEmpty == true ? state!.name : AppStrings.defaultChildName;
     final avatar = state?.friendAvatar.isNotEmpty == true
@@ -108,7 +111,7 @@ class HomeScreen extends ConsumerWidget {
                     ),
                   ),
                   StarBadge(
-                    stars: 24,
+                    stars: stars,
                     onTap: () => _showProfileMenu(context, ref),
                   ),
                 ],
@@ -130,7 +133,7 @@ class HomeScreen extends ConsumerWidget {
                         l10n.visualAlphabetAbc,
                         style: AppTextStyles.categoryIconText,
                       ),
-                      onTap: () => _onCategoryTapped(context, l10n.categoryAlphabet, l10n),
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.alphabetHub),
                     ),
                     CategoryCard(
                       title: l10n.categoryNumbers,

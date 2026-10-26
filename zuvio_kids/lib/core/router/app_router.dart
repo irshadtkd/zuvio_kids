@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
+import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_congratulations_screen.dart';
+import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_hub_screen.dart';
+import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_learning_screen.dart';
 import 'package:zuvio_kids/features/home/presentation/screens/home_screen.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/screens/splash_screen.dart';
@@ -29,6 +32,21 @@ abstract final class AppRouter {
       case AppRoutes.home:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+          settings: settings,
+        );
+      case AppRoutes.alphabetHub:
+        return MaterialPageRoute(
+          builder: (_) => const AlphabetHubScreen(),
+          settings: settings,
+        );
+      case AppRoutes.alphabetLearning:
+        return MaterialPageRoute(
+          builder: (_) => const AlphabetLearningScreen(),
+          settings: settings,
+        );
+      case AppRoutes.alphabetCongrats:
+        return MaterialPageRoute(
+          builder: (_) => const AlphabetCongratulationsScreen(),
           settings: settings,
         );
 

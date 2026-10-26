@@ -487,6 +487,222 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Name must be 2–10 characters.'**
   String get errorNameLength;
+
+  /// Title on the alphabet screens
+  ///
+  /// In en, this message translates to:
+  /// **'Alphabet'**
+  String get titleAlphabet;
+
+  /// Label for Discover learning step tab
+  ///
+  /// In en, this message translates to:
+  /// **'1 Discover'**
+  String get stepDiscover;
+
+  /// Label for Practice learning step tab
+  ///
+  /// In en, this message translates to:
+  /// **'2 Practice'**
+  String get stepPractice;
+
+  /// Label for Play learning step tab
+  ///
+  /// In en, this message translates to:
+  /// **'3 Play'**
+  String get stepPlay;
+
+  /// Button to advance to next level/session
+  ///
+  /// In en, this message translates to:
+  /// **'Next level'**
+  String get btnNextLevel;
+
+  /// Button to replay completed session
+  ///
+  /// In en, this message translates to:
+  /// **'Play again'**
+  String get btnPlayAgain;
+
+  /// Button to save student learning progress
+  ///
+  /// In en, this message translates to:
+  /// **'Save Progress'**
+  String get btnSaveProgress;
+
+  /// Button to save progress and proceed
+  ///
+  /// In en, this message translates to:
+  /// **'Save & Continue'**
+  String get btnSaveAndContinue;
+
+  /// Congratulations screen title with child name
+  ///
+  /// In en, this message translates to:
+  /// **'Great job, {name}!'**
+  String congratsTitle(String name);
+
+  /// Star reward badge on congratulations screen
+  ///
+  /// In en, this message translates to:
+  /// **'+10 Stars Earned!'**
+  String get starsEarnedBadge;
+
+  /// Subtitle announcing unlocked session
+  ///
+  /// In en, this message translates to:
+  /// **'Session {completed} done. Session {next} is unlocked!'**
+  String sessionCompleteUnlocked(String completed, String next);
+
+  /// Message when all 4 sessions are finished
+  ///
+  /// In en, this message translates to:
+  /// **'Level 4 done. All alphabet sessions complete!'**
+  String get allSessionsComplete;
+
+  /// Instruction prompt below tracing pattern
+  ///
+  /// In en, this message translates to:
+  /// **'Trace {letter}. {letter} for {word}!'**
+  String traceLetterPrompt(String letter, String word);
+
+  /// Speech bubble helper prompt on practice screen
+  ///
+  /// In en, this message translates to:
+  /// **'Trace the dotted line with your finger!'**
+  String get practiceHelperPrompt;
+
+  /// Feedback message when letter tracing reaches 99% or above
+  ///
+  /// In en, this message translates to:
+  /// **'Great Job!'**
+  String get tracingSuccess;
+
+  /// Feedback message when letter tracing is below 99%
+  ///
+  /// In en, this message translates to:
+  /// **'Try Again!'**
+  String get tracingTryAgain;
+
+  /// Quiz question on play screen
+  ///
+  /// In en, this message translates to:
+  /// **'Which starts with {letter}?'**
+  String whichStartsWith(String letter);
+
+  /// Letter phrase in discover screen
+  ///
+  /// In en, this message translates to:
+  /// **'{letter} for {word}'**
+  String letterForWord(String letter, String word);
+
+  /// Title for session 1
+  ///
+  /// In en, this message translates to:
+  /// **'Capital Letters (A–L)'**
+  String get session1Title;
+
+  /// Subtitle for session 1
+  ///
+  /// In en, this message translates to:
+  /// **'First 12 capital letters'**
+  String get session1Subtitle;
+
+  /// Title for session 2
+  ///
+  /// In en, this message translates to:
+  /// **'Capital Letters (M–Z)'**
+  String get session2Title;
+
+  /// Subtitle for session 2
+  ///
+  /// In en, this message translates to:
+  /// **'Remaining 14 capital letters'**
+  String get session2Subtitle;
+
+  /// Title for session 3
+  ///
+  /// In en, this message translates to:
+  /// **'Small Letters (a–l)'**
+  String get session3Title;
+
+  /// Subtitle for session 3
+  ///
+  /// In en, this message translates to:
+  /// **'First 12 small letters'**
+  String get session3Subtitle;
+
+  /// Title for session 4
+  ///
+  /// In en, this message translates to:
+  /// **'Small Letters (m–z)'**
+  String get session4Title;
+
+  /// Subtitle for session 4
+  ///
+  /// In en, this message translates to:
+  /// **'Remaining 14 small letters'**
+  String get session4Subtitle;
+
+  /// Badge indicating session is completed
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get sessionStatusCompleted;
+
+  /// Badge indicating session is in progress
+  ///
+  /// In en, this message translates to:
+  /// **'In Progress'**
+  String get sessionStatusInProgress;
+
+  /// Badge indicating session is locked
+  ///
+  /// In en, this message translates to:
+  /// **'Locked'**
+  String get sessionStatusLocked;
+
+  /// Action button to start session
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get sessionStatusStart;
+
+  /// Notification when alphabet progress is saved
+  ///
+  /// In en, this message translates to:
+  /// **'Progress saved! Keep up the good work!'**
+  String get notifySessionSaved;
+
+  /// Display count of stars
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Stars'**
+  String totalStarsCount(int count);
+
+  /// Accessibility tooltip for audio replay button
+  ///
+  /// In en, this message translates to:
+  /// **'Replay Audio'**
+  String get btnReplayAudio;
+
+  /// Heading on the alphabet sessions hub screen
+  ///
+  /// In en, this message translates to:
+  /// **'Alphabet Sessions'**
+  String get alphabetSessionsHeading;
+
+  /// Accessibility label for mute button
+  ///
+  /// In en, this message translates to:
+  /// **'Mute sound'**
+  String get btnMute;
+
+  /// Accessibility label for unmute button
+  ///
+  /// In en, this message translates to:
+  /// **'Unmute sound'**
+  String get btnUnmute;
 }
 
 class _AppLocalizationsDelegate

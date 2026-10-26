@@ -218,4 +218,125 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get errorNameLength => 'പേര് 2–10 അക്ഷരങ്ങള്‍ ഉണ്ടായിരിക്കണം.';
+
+  @override
+  String get titleAlphabet => 'അക്ഷരമാല';
+
+  @override
+  String get stepDiscover => '1 കണ്ടെത്തുക';
+
+  @override
+  String get stepPractice => '2 പരിശീലിക്കുക';
+
+  @override
+  String get stepPlay => '3 കളിക്കുക';
+
+  @override
+  String get btnNextLevel => 'അടുത്ത ലെവൽ';
+
+  @override
+  String get btnPlayAgain => 'വീണ്ടും കളിക്കുക';
+
+  @override
+  String get btnSaveProgress => 'സൂക്ഷിക്കുക';
+
+  @override
+  String get btnSaveAndContinue => 'സൂക്ഷിച്ചു തുടരുക';
+
+  @override
+  String congratsTitle(String name) {
+    return 'മിടുക്കൻ, $name!';
+  }
+
+  @override
+  String get starsEarnedBadge => '+10 നക്ഷത്രങ്ങൾ നേടി!';
+
+  @override
+  String sessionCompleteUnlocked(String completed, String next) {
+    return 'സെഷൻ $completed പൂർത്തിയായി. സെഷൻ $next അൺലോക്ക് ആയി!';
+  }
+
+  @override
+  String get allSessionsComplete =>
+      'ലെവൽ 4 പൂർത്തിയായി. എല്ലാ അക്ഷരമാല സെഷനുകളും കഴിഞ്ഞു!';
+
+  @override
+  String traceLetterPrompt(String letter, String word) {
+    return '$letter എഴുതുക. $letter എന്നാൽ $word!';
+  }
+
+  @override
+  String get practiceHelperPrompt => 'വിരൽ കൊണ്ട് ഡോട്ടുകളിലൂടെ വരയ്ക്കുക!';
+
+  @override
+  String get tracingSuccess => 'മികച്ചത്!';
+
+  @override
+  String get tracingTryAgain => 'വീണ്ടും ശ്രമിക്കൂ!';
+
+  @override
+  String whichStartsWith(String letter) {
+    return '$letter കൊണ്ട് ആരംഭിക്കുന്നത് ഏതാണ്?';
+  }
+
+  @override
+  String letterForWord(String letter, String word) {
+    return '$letter എന്നാൽ $word';
+  }
+
+  @override
+  String get session1Title => 'വലിയക്ഷരങ്ങൾ (A–L)';
+
+  @override
+  String get session1Subtitle => 'ആദ്യ 12 വലിയക്ഷരങ്ങൾ';
+
+  @override
+  String get session2Title => 'വലിയക്ഷരങ്ങൾ (M–Z)';
+
+  @override
+  String get session2Subtitle => 'ബാക്കി 14 വലിയക്ഷരങ്ങൾ';
+
+  @override
+  String get session3Title => 'ചെറിയക്ഷരങ്ങൾ (a–l)';
+
+  @override
+  String get session3Subtitle => 'ആദ്യ 12 ചെറിയക്ഷരങ്ങൾ';
+
+  @override
+  String get session4Title => 'ചെറിയക്ഷരങ്ങൾ (m–z)';
+
+  @override
+  String get session4Subtitle => 'ബാക്കി 14 ചെറിയക്ഷരങ്ങൾ';
+
+  @override
+  String get sessionStatusCompleted => 'പൂർത്തിയായി';
+
+  @override
+  String get sessionStatusInProgress => 'നടന്നുകൊണ്ടിരിക്കുന്നു';
+
+  @override
+  String get sessionStatusLocked => 'പൂട്ടിയിരിക്കുന്നു';
+
+  @override
+  String get sessionStatusStart => 'ആരംഭിക്കുക';
+
+  @override
+  String get notifySessionSaved => 'പുരോഗതി സൂക്ഷിച്ചു! തുടർന്നു പഠിക്കൂ!';
+
+  @override
+  String totalStarsCount(int count) {
+    return '$count നക്ഷത്രങ്ങൾ';
+  }
+
+  @override
+  String get btnReplayAudio => 'ശബ്ദം വീണ്ടും കേൾക്കുക';
+
+  @override
+  String get alphabetSessionsHeading => 'അക്ഷരമാല സെഷനുകൾ';
+
+  @override
+  String get btnMute => 'ശബ്ദം നിശബ്ദമാക്കുക';
+
+  @override
+  String get btnUnmute => 'ശബ്ദം ഓണാക്കുക';
 }

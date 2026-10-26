@@ -352,5 +352,233 @@
   "errorNameLength": "പേര് 2–10 അക്ഷരങ്ങള്‍ ഉണ്ടായിരിക്കണം.",
   "@errorNameLength": {
     "description": "Validation error shown when name is too short or too long"
+  },
+
+  "titleAlphabet": "അക്ഷരമാല",
+  "@titleAlphabet": {
+    "description": "Title on the alphabet screens"
+  },
+
+  "stepDiscover": "1 കണ്ടെത്തുക",
+  "@stepDiscover": {
+    "description": "Label for Discover learning step tab"
+  },
+
+  "stepPractice": "2 പരിശീലിക്കുക",
+  "@stepPractice": {
+    "description": "Label for Practice learning step tab"
+  },
+
+  "stepPlay": "3 കളിക്കുക",
+  "@stepPlay": {
+    "description": "Label for Play learning step tab"
+  },
+
+  "btnNextLevel": "അടുത്ത ലെവൽ",
+  "@btnNextLevel": {
+    "description": "Button to advance to next level/session"
+  },
+
+  "btnPlayAgain": "വീണ്ടും കളിക്കുക",
+  "@btnPlayAgain": {
+    "description": "Button to replay completed session"
+  },
+
+  "btnSaveProgress": "സൂക്ഷിക്കുക",
+  "@btnSaveProgress": {
+    "description": "Button to save student learning progress"
+  },
+
+  "btnSaveAndContinue": "സൂക്ഷിച്ചു തുടരുക",
+  "@btnSaveAndContinue": {
+    "description": "Button to save progress and proceed"
+  },
+
+  "congratsTitle": "മിടുക്കൻ, {name}!",
+  "@congratsTitle": {
+    "description": "Congratulations screen title with child name",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Mia"
+      }
+    }
+  },
+
+  "starsEarnedBadge": "+10 നക്ഷത്രങ്ങൾ നേടി!",
+  "@starsEarnedBadge": {
+    "description": "Star reward badge on congratulations screen"
+  },
+
+  "sessionCompleteUnlocked": "സെഷൻ {completed} പൂർത്തിയായി. സെഷൻ {next} അൺലോക്ക് ആയി!",
+  "@sessionCompleteUnlocked": {
+    "description": "Subtitle announcing unlocked session",
+    "placeholders": {
+      "completed": {
+        "type": "String",
+        "example": "1"
+      },
+      "next": {
+        "type": "String",
+        "example": "2"
+      }
+    }
+  },
+
+  "allSessionsComplete": "ലെവൽ 4 പൂർത്തിയായി. എല്ലാ അക്ഷരമാല സെഷനുകളും കഴിഞ്ഞു!",
+  "@allSessionsComplete": {
+    "description": "Message when all 4 sessions are finished"
+  },
+
+  "traceLetterPrompt": "{letter} എഴുതുക. {letter} എന്നാൽ {word}!",
+  "@traceLetterPrompt": {
+    "description": "Instruction prompt below tracing pattern",
+    "placeholders": {
+      "letter": {
+        "type": "String",
+        "example": "B"
+      },
+      "word": {
+        "type": "String",
+        "example": "Ball"
+      }
+    }
+  },
+
+  "practiceHelperPrompt": "വിരൽ കൊണ്ട് ഡോട്ടുകളിലൂടെ വരയ്ക്കുക!",
+  "@practiceHelperPrompt": {
+    "description": "Speech bubble helper prompt on practice screen"
+  },
+
+  "tracingSuccess": "മികച്ചത്!",
+  "@tracingSuccess": {
+    "description": "Feedback message when letter tracing reaches 99% or above"
+  },
+
+  "tracingTryAgain": "വീണ്ടും ശ്രമിക്കൂ!",
+  "@tracingTryAgain": {
+    "description": "Feedback message when letter tracing is below 99%"
+  },
+
+  "whichStartsWith": "{letter} കൊണ്ട് ആരംഭിക്കുന്നത് ഏതാണ്?",
+  "@whichStartsWith": {
+    "description": "Quiz question on play screen",
+    "placeholders": {
+      "letter": {
+        "type": "String",
+        "example": "C"
+      }
+    }
+  },
+
+  "letterForWord": "{letter} എന്നാൽ {word}",
+  "@letterForWord": {
+    "description": "Letter phrase in discover screen",
+    "placeholders": {
+      "letter": {
+        "type": "String",
+        "example": "A"
+      },
+      "word": {
+        "type": "String",
+        "example": "Apple"
+      }
+    }
+  },
+
+  "session1Title": "വലിയക്ഷരങ്ങൾ (A–L)",
+  "@session1Title": {
+    "description": "Title for session 1"
+  },
+
+  "session1Subtitle": "ആദ്യ 12 വലിയക്ഷരങ്ങൾ",
+  "@session1Subtitle": {
+    "description": "Subtitle for session 1"
+  },
+
+  "session2Title": "വലിയക്ഷരങ്ങൾ (M–Z)",
+  "@session2Title": {
+    "description": "Title for session 2"
+  },
+
+  "session2Subtitle": "ബാക്കി 14 വലിയക്ഷരങ്ങൾ",
+  "@session2Subtitle": {
+    "description": "Subtitle for session 2"
+  },
+
+  "session3Title": "ചെറിയക്ഷരങ്ങൾ (a–l)",
+  "@session3Title": {
+    "description": "Title for session 3"
+  },
+
+  "session3Subtitle": "ആദ്യ 12 ചെറിയക്ഷരങ്ങൾ",
+  "@session3Subtitle": {
+    "description": "Subtitle for session 3"
+  },
+
+  "session4Title": "ചെറിയക്ഷരങ്ങൾ (m–z)",
+  "@session4Title": {
+    "description": "Title for session 4"
+  },
+
+  "session4Subtitle": "ബാക്കി 14 ചെറിയക്ഷരങ്ങൾ",
+  "@session4Subtitle": {
+    "description": "Subtitle for session 4"
+  },
+
+  "sessionStatusCompleted": "പൂർത്തിയായി",
+  "@sessionStatusCompleted": {
+    "description": "Badge indicating session is completed"
+  },
+
+  "sessionStatusInProgress": "നടന്നുകൊണ്ടിരിക്കുന്നു",
+  "@sessionStatusInProgress": {
+    "description": "Badge indicating session is in progress"
+  },
+
+  "sessionStatusLocked": "പൂട്ടിയിരിക്കുന്നു",
+  "@sessionStatusLocked": {
+    "description": "Badge indicating session is locked"
+  },
+
+  "sessionStatusStart": "ആരംഭിക്കുക",
+  "@sessionStatusStart": {
+    "description": "Action button to start session"
+  },
+
+  "notifySessionSaved": "പുരോഗതി സൂക്ഷിച്ചു! തുടർന്നു പഠിക്കൂ!",
+  "@notifySessionSaved": {
+    "description": "Notification when alphabet progress is saved"
+  },
+
+  "totalStarsCount": "{count} നക്ഷത്രങ്ങൾ",
+  "@totalStarsCount": {
+    "description": "Display count of stars",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+
+  "btnReplayAudio": "ശബ്ദം വീണ്ടും കേൾക്കുക",
+  "@btnReplayAudio": {
+    "description": "Accessibility tooltip for audio replay button"
+  },
+
+  "alphabetSessionsHeading": "അക്ഷരമാല സെഷനുകൾ",
+  "@alphabetSessionsHeading": {
+    "description": "Heading on the alphabet sessions hub screen"
+  },
+
+  "btnMute": "ശബ്ദം നിശബ്ദമാക്കുക",
+  "@btnMute": {
+    "description": "Accessibility label for mute button"
+  },
+
+  "btnUnmute": "ശബ്ദം ഓണാക്കുക",
+  "@btnUnmute": {
+    "description": "Accessibility label for unmute button"
   }
 }

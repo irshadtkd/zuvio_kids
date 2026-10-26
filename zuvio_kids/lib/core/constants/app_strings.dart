@@ -21,6 +21,15 @@ abstract final class AppStrings {
   static const String prefUserName = 'pref_user_name';
   static const String prefUserClass = 'pref_user_class';
   static const String prefUserFriend = 'pref_user_friend';
+  static const String prefAlphabetCompletedSessions = 'pref_alphabet_completed_sessions_';
+  static const String prefAlphabetStars = 'pref_alphabet_stars_';
+  static const String prefAlphabetCurrentLetter = 'pref_alphabet_current_letter_';
+
+  // ── Alphabet Session Identifiers ──────────────────────────────────────
+  static const String sessionCapital1 = 'capital_1';
+  static const String sessionCapital2 = 'capital_2';
+  static const String sessionSmall3 = 'small_3';
+  static const String sessionSmall4 = 'small_4';
 
   // ── Cartoon Friend Identifiers ────────────────────────────────────────
   static const String idFriendPanda = 'panda';

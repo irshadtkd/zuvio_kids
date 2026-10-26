@@ -215,4 +215,125 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorNameLength => 'Name must be 2–10 characters.';
+
+  @override
+  String get titleAlphabet => 'Alphabet';
+
+  @override
+  String get stepDiscover => '1 Discover';
+
+  @override
+  String get stepPractice => '2 Practice';
+
+  @override
+  String get stepPlay => '3 Play';
+
+  @override
+  String get btnNextLevel => 'Next level';
+
+  @override
+  String get btnPlayAgain => 'Play again';
+
+  @override
+  String get btnSaveProgress => 'Save Progress';
+
+  @override
+  String get btnSaveAndContinue => 'Save & Continue';
+
+  @override
+  String congratsTitle(String name) {
+    return 'Great job, $name!';
+  }
+
+  @override
+  String get starsEarnedBadge => '+10 Stars Earned!';
+
+  @override
+  String sessionCompleteUnlocked(String completed, String next) {
+    return 'Session $completed done. Session $next is unlocked!';
+  }
+
+  @override
+  String get allSessionsComplete =>
+      'Level 4 done. All alphabet sessions complete!';
+
+  @override
+  String traceLetterPrompt(String letter, String word) {
+    return 'Trace $letter. $letter for $word!';
+  }
+
+  @override
+  String get practiceHelperPrompt => 'Trace the dotted line with your finger!';
+
+  @override
+  String get tracingSuccess => 'Great Job!';
+
+  @override
+  String get tracingTryAgain => 'Try Again!';
+
+  @override
+  String whichStartsWith(String letter) {
+    return 'Which starts with $letter?';
+  }
+
+  @override
+  String letterForWord(String letter, String word) {
+    return '$letter for $word';
+  }
+
+  @override
+  String get session1Title => 'Capital Letters (A–L)';
+
+  @override
+  String get session1Subtitle => 'First 12 capital letters';
+
+  @override
+  String get session2Title => 'Capital Letters (M–Z)';
+
+  @override
+  String get session2Subtitle => 'Remaining 14 capital letters';
+
+  @override
+  String get session3Title => 'Small Letters (a–l)';
+
+  @override
+  String get session3Subtitle => 'First 12 small letters';
+
+  @override
+  String get session4Title => 'Small Letters (m–z)';
+
+  @override
+  String get session4Subtitle => 'Remaining 14 small letters';
+
+  @override
+  String get sessionStatusCompleted => 'Completed';
+
+  @override
+  String get sessionStatusInProgress => 'In Progress';
+
+  @override
+  String get sessionStatusLocked => 'Locked';
+
+  @override
+  String get sessionStatusStart => 'Start';
+
+  @override
+  String get notifySessionSaved => 'Progress saved! Keep up the good work!';
+
+  @override
+  String totalStarsCount(int count) {
+    return '$count Stars';
+  }
+
+  @override
+  String get btnReplayAudio => 'Replay Audio';
+
+  @override
+  String get alphabetSessionsHeading => 'Alphabet Sessions';
+
+  @override
+  String get btnMute => 'Mute sound';
+
+  @override
+  String get btnUnmute => 'Unmute sound';
 }

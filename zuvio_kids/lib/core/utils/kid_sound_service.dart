@@ -44,16 +44,39 @@ class KidSoundService {
       await _tts.setSpeechRate(0.40); // Slow & clear for kids
       await _tts.setVolume(1.0);
       await _tts.setPitch(1.20); // Slightly higher — sounds friendlier
+      await _tts.awaitSpeakCompletion(true);
       _ttsInitialised = true;
     } catch (e) {
       AppLogger.error('KidSoundService: TTS init failed', e);
     }
   }
 
+  // ── Mute State ────────────────────────────────────────────────────────────
+  bool _isMuted = false;
+  bool get isMuted => _isMuted;
+
+  /// Toggles mute on/off and silences any current audio if muting.
+  void toggleMute() {
+    _isMuted = !_isMuted;
+    if (_isMuted) {
+      stop();
+    }
+  }
+
+  /// Sets mute state explicitly.
+  void setMuted(bool muted) {
+    _isMuted = muted;
+    if (_isMuted) {
+      stop();
+    }
+  }
+
   // ── Public API ────────────────────────────────────────────────────────────
 
   /// Speaks [text] aloud via TTS, stopping any current speech first.
+  /// Respects the mute/unmute setting.
   Future<void> speak(String text) async {
+    if (_isMuted) return;
     await _ensureTtsInit();
     try {
       await _tts.stop();
@@ -63,11 +86,66 @@ class KidSoundService {
     }
   }
 
+  // ── Phonetic Letter Pronunciations ───────────────────────────────────────
+  // Native TTS engines on Android/iOS announce "Capital [Letter]" or "Small [Letter]"
+  // when an isolated single character is passed. Using dictionary phonetic names
+  // ensures the engine pronounces ONLY the clean character name ("A", "B", "C")
+  // without any "Capital" or "Small" prefix on any device.
+  static const Map<String, String> _phoneticLetterNames = {
+    'A': 'a',
+    'B': 'b',
+    'C': 'c',
+    'D': 'd',
+    'E': 'e',
+    'F': 'f',
+    'G': 'g',
+    'H': 'h',
+    'I': 'i',
+    'J': 'j',
+    'K': 'k',
+    'L': 'l',
+    'M': 'm',
+    'N': 'n',
+    'O': 'o',
+    'P': 'p',
+    'Q': 'q',
+    'R': 'r',
+    'S': 's',
+    'T': 't',
+    'U': 'u',
+    'V': 'v',
+    'W': 'w',
+    'X': 'x',
+    'Y': 'y',
+    'Z': 'z',
+  };
+
+  /// Returns the dictionary phonetic name for a letter (e.g. 'ay' for 'A'/'a').
+  String getPhoneticLetterName(String letter) {
+    final key = letter.trim().toUpperCase();
+    return _phoneticLetterNames[key] ?? key;
+  }
+
+  /// Speaks a letter name aloud (e.g. 'A', 'B', 'C') without any prefix
+  /// like 'Capital' or 'Small'.
+  Future<void> speakLetter(String letter) async {
+    final phonetic = getPhoneticLetterName(letter);
+    await speak(phonetic);
+  }
+
+  /// Speaks the supporting phrase (e.g. "A for Apple") using pure letter
+  /// pronunciation without any "Capital" or "Small" prefix.
+  Future<void> speakLetterPhrase(String letter, String word) async {
+    final phonetic = getPhoneticLetterName(letter);
+    await speak('$phonetic for $word');
+  }
+
   /// Plays the real animal sound for [animalId] (e.g. `'lion'`, `'dog'`).
   ///
   /// The audio file is expected at `assets/audio/animals/<animalId>.wav`.
   /// Falls back to TTS onomatopoeia if playback fails.
   Future<void> playAnimalSound(String animalId) async {
+    if (_isMuted) return;
     final id = animalId.toLowerCase();
     final assetPath = '${AppStrings.assetsAudio}animals/$id.wav';
 
