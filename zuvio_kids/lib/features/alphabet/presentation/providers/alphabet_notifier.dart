@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
+import 'package:zuvio_kids/core/providers/star_points_provider.dart';
 import 'package:zuvio_kids/core/utils/app_logger.dart';
 import 'package:zuvio_kids/features/alphabet/domain/entities/alphabet_session_entity.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/providers/alphabet_state.dart';
@@ -92,6 +93,14 @@ class AlphabetNotifier extends AsyncNotifier<AlphabetState> {
     state = AsyncData(current.copyWith(isTracingComplete: true));
   }
 
+  /// Resets the tracing completion state so the child can trace again.
+  void resetTracing() {
+    final current = state.valueOrNull;
+    if (current == null) return;
+
+    state = AsyncData(current.copyWith(isTracingComplete: false));
+  }
+
   /// Handles tapping a word in Play step.
   void onWordTapped(String word) {
     final current = state.valueOrNull;
@@ -173,6 +182,9 @@ class AlphabetNotifier extends AsyncNotifier<AlphabetState> {
         final getSessionsUseCase = ref.read(getAlphabetSessionsUseCaseProvider);
         final sessionsResult = await getSessionsUseCase(studentName);
         final updatedSessions = sessionsResult.getOrElse((_) => current.sessions);
+
+        // Award star points for completing session
+        await ref.read(starPointsNotifierProvider.notifier).awardPoints();
 
         state = AsyncData(current.copyWith(
           sessions: updatedSessions,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
+import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/providers/alphabet_provider.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/widgets/alphabet_step_pills.dart';
@@ -36,6 +36,7 @@ class _AlphabetLearningScreenState
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final themePalette = context.themePalette;
     final alphabetState = ref.watch(alphabetNotifierProvider).valueOrNull;
     final onboardingState = ref.watch(onboardingNotifierProvider).valueOrNull;
 
@@ -53,9 +54,9 @@ class _AlphabetLearningScreenState
 
     final currentLetter = alphabetState?.currentLetter;
     if (currentLetter == null) {
-      return const Scaffold(
-        backgroundColor: AppColors.appSkyBlue,
-        body: Center(child: CircularProgressIndicator()),
+      return Scaffold(
+        backgroundColor: themePalette.scaffoldBackground,
+        body: const Center(child: CircularProgressIndicator()),
       );
     }
 
@@ -67,7 +68,7 @@ class _AlphabetLearningScreenState
     final notifier = ref.read(alphabetNotifierProvider.notifier);
 
     return Scaffold(
-      backgroundColor: AppColors.appSkyBlue,
+      backgroundColor: themePalette.scaffoldBackground,
       body: SafeArea(
         child: Column(
           children: [
@@ -107,6 +108,7 @@ class _AlphabetLearningScreenState
                     letter: currentLetter,
                     isTracingDone: alphabetState?.isTracingComplete ?? false,
                     onTracingDone: notifier.markTracingComplete,
+                    onResetTracing: notifier.resetTracing,
                     onNext: notifier.nextStep,
                     friendAvatar: friendAvatar,
                   ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 
 /// Top bar with circular back button, title, and yellow speaker replay button.
 /// Layer: Presentation Widget
@@ -22,6 +23,7 @@ class AlphabetTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final palette = context.themePalette;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
@@ -77,13 +79,13 @@ class AlphabetTopBar extends StatelessWidget {
                 width: 52,
                 height: 52,
                 decoration: BoxDecoration(
-                  color: isMuted ? AppColors.divider : AppColors.cardYellow,
+                  color: isMuted ? AppColors.divider : palette.highlight,
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
                       color: isMuted
                           ? Colors.black.withValues(alpha: 0.04)
-                          : const Color(0xFFD69E1F).withValues(alpha: 0.8),
+                          : palette.highlightShadow.withValues(alpha: 0.8),
                       offset: const Offset(0, 3),
                     ),
                   ],

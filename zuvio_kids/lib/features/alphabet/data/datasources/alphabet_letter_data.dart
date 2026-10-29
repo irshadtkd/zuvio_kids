@@ -334,16 +334,353 @@ abstract final class AlphabetLetterData {
               Offset(0.66, 0.82),
             ]),
           ];
+        case 'd':
+          return const [
+            // Circle (left side)
+            TracingStroke(points: [
+              Offset(0.62, 0.50),
+              Offset(0.46, 0.44),
+              Offset(0.32, 0.58),
+              Offset(0.32, 0.76),
+              Offset(0.46, 0.88),
+              Offset(0.62, 0.76),
+            ]),
+            // Right vertical (full height)
+            TracingStroke(points: [
+              Offset(0.62, 0.12),
+              Offset(0.62, 0.88),
+            ]),
+          ];
+        case 'e':
+          return const [
+            TracingStroke(points: [
+              Offset(0.32, 0.66),
+              Offset(0.62, 0.66),
+              Offset(0.68, 0.58),
+              Offset(0.54, 0.44),
+              Offset(0.36, 0.50),
+              Offset(0.30, 0.66),
+              Offset(0.36, 0.84),
+              Offset(0.56, 0.88),
+              Offset(0.68, 0.80),
+            ]),
+          ];
+        case 'f':
+          return const [
+            // Vertical stem
+            TracingStroke(points: [
+              Offset(0.46, 0.20),
+              Offset(0.46, 0.88),
+            ]),
+            // Curve at top
+            TracingStroke(points: [
+              Offset(0.46, 0.20),
+              Offset(0.54, 0.14),
+              Offset(0.62, 0.18),
+            ]),
+            // Crossbar
+            TracingStroke(points: [
+              Offset(0.30, 0.46),
+              Offset(0.62, 0.46),
+            ]),
+          ];
+        case 'g':
+          return const [
+            // Bowl (mid height)
+            TracingStroke(points: [
+              Offset(0.66, 0.50),
+              Offset(0.48, 0.44),
+              Offset(0.34, 0.58),
+              Offset(0.36, 0.76),
+              Offset(0.52, 0.86),
+              Offset(0.66, 0.74),
+            ]),
+            // Right stem + descender hook
+            TracingStroke(points: [
+              Offset(0.66, 0.44),
+              Offset(0.66, 0.94),
+              Offset(0.54, 1.00),
+              Offset(0.38, 0.96),
+            ]),
+          ];
+        case 'h':
+          return const [
+            // Left vertical (full height)
+            TracingStroke(points: [
+              Offset(0.30, 0.12),
+              Offset(0.30, 0.88),
+            ]),
+            // Arch + right leg
+            TracingStroke(points: [
+              Offset(0.30, 0.48),
+              Offset(0.44, 0.42),
+              Offset(0.58, 0.44),
+              Offset(0.64, 0.54),
+              Offset(0.64, 0.88),
+            ]),
+          ];
+        case 'i':
+          return const [
+            // Dot
+            TracingStroke(points: [
+              Offset(0.50, 0.22),
+              Offset(0.50, 0.24),
+            ]),
+            // Stem
+            TracingStroke(points: [
+              Offset(0.50, 0.42),
+              Offset(0.50, 0.88),
+            ]),
+          ];
+        case 'j':
+          return const [
+            // Dot
+            TracingStroke(points: [
+              Offset(0.56, 0.22),
+              Offset(0.56, 0.24),
+            ]),
+            // Stem + hook
+            TracingStroke(points: [
+              Offset(0.56, 0.42),
+              Offset(0.56, 0.88),
+              Offset(0.46, 0.96),
+              Offset(0.34, 0.90),
+            ]),
+          ];
+        case 'k':
+          return const [
+            // Left vertical
+            TracingStroke(points: [
+              Offset(0.32, 0.12),
+              Offset(0.32, 0.88),
+            ]),
+            // Upper arm (top-right to mid)
+            TracingStroke(points: [
+              Offset(0.66, 0.44),
+              Offset(0.32, 0.66),
+            ]),
+            // Lower leg (mid to bottom-right)
+            TracingStroke(points: [
+              Offset(0.32, 0.66),
+              Offset(0.66, 0.88),
+            ]),
+          ];
+        case 'l':
+          return const [
+            TracingStroke(points: [
+              Offset(0.50, 0.12),
+              Offset(0.50, 0.88),
+            ]),
+          ];
+        case 'm':
+          return const [
+            // Left stem
+            TracingStroke(points: [
+              Offset(0.18, 0.44),
+              Offset(0.18, 0.88),
+            ]),
+            // Left arch
+            TracingStroke(points: [
+              Offset(0.18, 0.46),
+              Offset(0.30, 0.40),
+              Offset(0.42, 0.42),
+              Offset(0.46, 0.54),
+              Offset(0.46, 0.88),
+            ]),
+            // Right arch
+            TracingStroke(points: [
+              Offset(0.46, 0.46),
+              Offset(0.58, 0.40),
+              Offset(0.70, 0.42),
+              Offset(0.74, 0.54),
+              Offset(0.74, 0.88),
+            ]),
+          ];
+        case 'n':
+          return const [
+            // Left stem
+            TracingStroke(points: [
+              Offset(0.30, 0.44),
+              Offset(0.30, 0.88),
+            ]),
+            // Arch + right stem
+            TracingStroke(points: [
+              Offset(0.30, 0.46),
+              Offset(0.44, 0.40),
+              Offset(0.58, 0.42),
+              Offset(0.64, 0.54),
+              Offset(0.64, 0.88),
+            ]),
+          ];
+        case 'o':
+          return const [
+            TracingStroke(points: [
+              Offset(0.50, 0.44),
+              Offset(0.34, 0.54),
+              Offset(0.32, 0.68),
+              Offset(0.38, 0.82),
+              Offset(0.50, 0.88),
+              Offset(0.62, 0.82),
+              Offset(0.68, 0.68),
+              Offset(0.66, 0.54),
+              Offset(0.50, 0.44),
+            ]),
+          ];
+        case 'p':
+          return const [
+            // Stem (goes below baseline as descender)
+            TracingStroke(points: [
+              Offset(0.32, 0.44),
+              Offset(0.32, 1.00),
+            ]),
+            // Bowl
+            TracingStroke(points: [
+              Offset(0.32, 0.46),
+              Offset(0.52, 0.42),
+              Offset(0.66, 0.56),
+              Offset(0.66, 0.72),
+              Offset(0.52, 0.86),
+              Offset(0.32, 0.82),
+            ]),
+          ];
+        case 'q':
+          return const [
+            // Bowl
+            TracingStroke(points: [
+              Offset(0.62, 0.46),
+              Offset(0.44, 0.42),
+              Offset(0.30, 0.56),
+              Offset(0.30, 0.72),
+              Offset(0.44, 0.86),
+              Offset(0.62, 0.82),
+            ]),
+            // Stem (descender)
+            TracingStroke(points: [
+              Offset(0.62, 0.44),
+              Offset(0.62, 1.00),
+            ]),
+          ];
+        case 'r':
+          return const [
+            // Stem
+            TracingStroke(points: [
+              Offset(0.32, 0.44),
+              Offset(0.32, 0.88),
+            ]),
+            // Arch (short curve)
+            TracingStroke(points: [
+              Offset(0.32, 0.48),
+              Offset(0.46, 0.42),
+              Offset(0.60, 0.44),
+            ]),
+          ];
+        case 's':
+          return const [
+            TracingStroke(points: [
+              Offset(0.64, 0.50),
+              Offset(0.50, 0.44),
+              Offset(0.36, 0.52),
+              Offset(0.50, 0.64),
+              Offset(0.64, 0.74),
+              Offset(0.52, 0.88),
+              Offset(0.36, 0.82),
+            ]),
+          ];
+        case 't':
+          return const [
+            // Stem
+            TracingStroke(points: [
+              Offset(0.50, 0.18),
+              Offset(0.50, 0.88),
+            ]),
+            // Crossbar
+            TracingStroke(points: [
+              Offset(0.30, 0.46),
+              Offset(0.66, 0.46),
+            ]),
+          ];
+        case 'u':
+          return const [
+            TracingStroke(points: [
+              Offset(0.32, 0.44),
+              Offset(0.32, 0.76),
+              Offset(0.38, 0.86),
+              Offset(0.50, 0.88),
+              Offset(0.62, 0.84),
+              Offset(0.66, 0.74),
+              Offset(0.66, 0.44),
+              Offset(0.66, 0.88),
+            ]),
+          ];
+        case 'v':
+          return const [
+            TracingStroke(points: [
+              Offset(0.28, 0.44),
+              Offset(0.50, 0.88),
+              Offset(0.72, 0.44),
+            ]),
+          ];
+        case 'w':
+          return const [
+            TracingStroke(points: [
+              Offset(0.18, 0.44),
+              Offset(0.30, 0.88),
+              Offset(0.50, 0.68),
+              Offset(0.70, 0.88),
+              Offset(0.82, 0.44),
+            ]),
+          ];
+        case 'x':
+          return const [
+            // Top-left to bottom-right
+            TracingStroke(points: [
+              Offset(0.32, 0.44),
+              Offset(0.66, 0.88),
+            ]),
+            // Top-right to bottom-left
+            TracingStroke(points: [
+              Offset(0.66, 0.44),
+              Offset(0.32, 0.88),
+            ]),
+          ];
+        case 'y':
+          return const [
+            // Left arm to center
+            TracingStroke(points: [
+              Offset(0.28, 0.44),
+              Offset(0.50, 0.70),
+            ]),
+            // Right arm to descender
+            TracingStroke(points: [
+              Offset(0.72, 0.44),
+              Offset(0.50, 0.70),
+              Offset(0.44, 0.88),
+              Offset(0.34, 0.96),
+            ]),
+          ];
+        case 'z':
+          return const [
+            // Top bar
+            TracingStroke(points: [
+              Offset(0.30, 0.44),
+              Offset(0.66, 0.44),
+            ]),
+            // Diagonal
+            TracingStroke(points: [
+              Offset(0.66, 0.44),
+              Offset(0.30, 0.88),
+            ]),
+            // Bottom bar
+            TracingStroke(points: [
+              Offset(0.30, 0.88),
+              Offset(0.66, 0.88),
+            ]),
+          ];
         default:
           return const [
             TracingStroke(points: [
               Offset(0.34, 0.44),
               Offset(0.34, 0.88),
-            ]),
-            TracingStroke(points: [
-              Offset(0.34, 0.54),
-              Offset(0.66, 0.66),
-              Offset(0.34, 0.82),
             ]),
           ];
       }
@@ -464,6 +801,351 @@ abstract final class AlphabetLetterData {
             Offset(0.30, 0.78),
           ]),
         ];
+      // ── F ─────────────────────────────────────────────────────────────
+      case 'F':
+        return const [
+          // Vertical stroke
+          TracingStroke(points: [
+            Offset(0.30, 0.12),
+            Offset(0.30, 0.88),
+          ]),
+          // Top horizontal bar
+          TracingStroke(points: [
+            Offset(0.30, 0.12),
+            Offset(0.72, 0.12),
+          ]),
+          // Mid horizontal bar
+          TracingStroke(points: [
+            Offset(0.30, 0.50),
+            Offset(0.62, 0.50),
+          ]),
+        ];
+
+      // ── G ─────────────────────────────────────────────────────────────
+      case 'G':
+        return const [
+          TracingStroke(points: [
+            Offset(0.74, 0.24),
+            Offset(0.52, 0.12),
+            Offset(0.28, 0.30),
+            Offset(0.24, 0.52),
+            Offset(0.30, 0.72),
+            Offset(0.52, 0.88),
+            Offset(0.74, 0.74),
+            Offset(0.74, 0.52),
+            Offset(0.54, 0.52),
+          ]),
+        ];
+
+      // ── H ─────────────────────────────────────────────────────────────
+      case 'H':
+        return const [
+          // Left vertical
+          TracingStroke(points: [
+            Offset(0.28, 0.12),
+            Offset(0.28, 0.88),
+          ]),
+          // Right vertical
+          TracingStroke(points: [
+            Offset(0.72, 0.12),
+            Offset(0.72, 0.88),
+          ]),
+          // Crossbar
+          TracingStroke(points: [
+            Offset(0.28, 0.50),
+            Offset(0.72, 0.50),
+          ]),
+        ];
+
+      // ── I ─────────────────────────────────────────────────────────────
+      case 'I':
+        return const [
+          // Top serif
+          TracingStroke(points: [
+            Offset(0.32, 0.12),
+            Offset(0.68, 0.12),
+          ]),
+          // Vertical stroke
+          TracingStroke(points: [
+            Offset(0.50, 0.12),
+            Offset(0.50, 0.88),
+          ]),
+          // Bottom serif
+          TracingStroke(points: [
+            Offset(0.32, 0.88),
+            Offset(0.68, 0.88),
+          ]),
+        ];
+
+      // ── J ─────────────────────────────────────────────────────────────
+      case 'J':
+        return const [
+          // Top serif
+          TracingStroke(points: [
+            Offset(0.32, 0.12),
+            Offset(0.68, 0.12),
+          ]),
+          // Vertical + hook
+          TracingStroke(points: [
+            Offset(0.58, 0.12),
+            Offset(0.58, 0.72),
+            Offset(0.50, 0.86),
+            Offset(0.36, 0.84),
+            Offset(0.30, 0.72),
+          ]),
+        ];
+
+      // ── K ─────────────────────────────────────────────────────────────
+      case 'K':
+        return const [
+          // Left vertical
+          TracingStroke(points: [
+            Offset(0.28, 0.12),
+            Offset(0.28, 0.88),
+          ]),
+          // Upper diagonal (top-right to mid)
+          TracingStroke(points: [
+            Offset(0.72, 0.12),
+            Offset(0.28, 0.50),
+          ]),
+          // Lower diagonal (mid to bottom-right)
+          TracingStroke(points: [
+            Offset(0.28, 0.50),
+            Offset(0.72, 0.88),
+          ]),
+        ];
+
+      // ── L ─────────────────────────────────────────────────────────────
+      case 'L':
+        return const [
+          // Vertical stroke
+          TracingStroke(points: [
+            Offset(0.30, 0.12),
+            Offset(0.30, 0.88),
+          ]),
+          // Horizontal base
+          TracingStroke(points: [
+            Offset(0.30, 0.88),
+            Offset(0.72, 0.88),
+          ]),
+        ];
+
+
+      // ── M ─────────────────────────────────────────────────────────────
+      case 'M':
+        return const [
+          // Left leg
+          TracingStroke(points: [
+            Offset(0.18, 0.88),
+            Offset(0.18, 0.12),
+          ]),
+          // Left diagonal down to valley
+          TracingStroke(points: [
+            Offset(0.18, 0.12),
+            Offset(0.50, 0.55),
+          ]),
+          // Right diagonal up from valley
+          TracingStroke(points: [
+            Offset(0.50, 0.55),
+            Offset(0.82, 0.12),
+          ]),
+          // Right leg
+          TracingStroke(points: [
+            Offset(0.82, 0.12),
+            Offset(0.82, 0.88),
+          ]),
+        ];
+
+      // ── N ─────────────────────────────────────────────────────────────
+      case 'N':
+        return const [
+          // Left vertical
+          TracingStroke(points: [
+            Offset(0.26, 0.12),
+            Offset(0.26, 0.88),
+          ]),
+          // Diagonal
+          TracingStroke(points: [
+            Offset(0.26, 0.12),
+            Offset(0.74, 0.88),
+          ]),
+          // Right vertical
+          TracingStroke(points: [
+            Offset(0.74, 0.12),
+            Offset(0.74, 0.88),
+          ]),
+        ];
+
+      // ── P ─────────────────────────────────────────────────────────────
+      case 'P':
+        return const [
+          // Vertical
+          TracingStroke(points: [
+            Offset(0.30, 0.12),
+            Offset(0.30, 0.88),
+          ]),
+          // Bump (top half only)
+          TracingStroke(points: [
+            Offset(0.30, 0.12),
+            Offset(0.58, 0.12),
+            Offset(0.72, 0.28),
+            Offset(0.58, 0.50),
+            Offset(0.30, 0.50),
+          ]),
+        ];
+
+      // ── Q ─────────────────────────────────────────────────────────────
+      case 'Q':
+        return const [
+          // Circle (O shape)
+          TracingStroke(points: [
+            Offset(0.50, 0.12),
+            Offset(0.26, 0.32),
+            Offset(0.24, 0.54),
+            Offset(0.28, 0.74),
+            Offset(0.50, 0.88),
+            Offset(0.72, 0.74),
+            Offset(0.76, 0.54),
+            Offset(0.74, 0.32),
+            Offset(0.50, 0.12),
+          ]),
+          // Tail (bottom-right)
+          TracingStroke(points: [
+            Offset(0.58, 0.68),
+            Offset(0.76, 0.88),
+          ]),
+        ];
+
+      // ── R ─────────────────────────────────────────────────────────────
+      case 'R':
+        return const [
+          // Vertical
+          TracingStroke(points: [
+            Offset(0.30, 0.12),
+            Offset(0.30, 0.88),
+          ]),
+          // Bump (top half)
+          TracingStroke(points: [
+            Offset(0.30, 0.12),
+            Offset(0.58, 0.12),
+            Offset(0.72, 0.28),
+            Offset(0.58, 0.50),
+            Offset(0.30, 0.50),
+          ]),
+          // Leg (diagonal from mid to bottom-right)
+          TracingStroke(points: [
+            Offset(0.48, 0.50),
+            Offset(0.72, 0.88),
+          ]),
+        ];
+
+      // ── T ─────────────────────────────────────────────────────────────
+      case 'T':
+        return const [
+          // Top bar
+          TracingStroke(points: [
+            Offset(0.20, 0.12),
+            Offset(0.50, 0.12),
+            Offset(0.80, 0.12),
+          ]),
+          // Vertical stem
+          TracingStroke(points: [
+            Offset(0.50, 0.12),
+            Offset(0.50, 0.88),
+          ]),
+        ];
+
+      // ── U ─────────────────────────────────────────────────────────────
+      case 'U':
+        return const [
+          TracingStroke(points: [
+            Offset(0.28, 0.12),
+            Offset(0.28, 0.68),
+            Offset(0.34, 0.82),
+            Offset(0.50, 0.88),
+            Offset(0.66, 0.82),
+            Offset(0.72, 0.68),
+            Offset(0.72, 0.12),
+          ]),
+        ];
+
+      // ── V ─────────────────────────────────────────────────────────────
+      case 'V':
+        return const [
+          TracingStroke(points: [
+            Offset(0.22, 0.12),
+            Offset(0.50, 0.88),
+            Offset(0.78, 0.12),
+          ]),
+        ];
+
+      // ── W ─────────────────────────────────────────────────────────────
+      case 'W':
+        return const [
+          TracingStroke(points: [
+            Offset(0.14, 0.12),
+            Offset(0.30, 0.88),
+            Offset(0.50, 0.42),
+            Offset(0.70, 0.88),
+            Offset(0.86, 0.12),
+          ]),
+        ];
+
+      // ── X ─────────────────────────────────────────────────────────────
+      case 'X':
+        return const [
+          // Top-left to bottom-right
+          TracingStroke(points: [
+            Offset(0.26, 0.12),
+            Offset(0.74, 0.88),
+          ]),
+          // Top-right to bottom-left
+          TracingStroke(points: [
+            Offset(0.74, 0.12),
+            Offset(0.26, 0.88),
+          ]),
+        ];
+
+      // ── Y ─────────────────────────────────────────────────────────────
+      case 'Y':
+        return const [
+          // Left arm to center
+          TracingStroke(points: [
+            Offset(0.24, 0.12),
+            Offset(0.50, 0.50),
+          ]),
+          // Right arm to center
+          TracingStroke(points: [
+            Offset(0.76, 0.12),
+            Offset(0.50, 0.50),
+          ]),
+          // Stem down
+          TracingStroke(points: [
+            Offset(0.50, 0.50),
+            Offset(0.50, 0.88),
+          ]),
+        ];
+
+      // ── Z ─────────────────────────────────────────────────────────────
+      case 'Z':
+        return const [
+          // Top bar
+          TracingStroke(points: [
+            Offset(0.26, 0.12),
+            Offset(0.74, 0.12),
+          ]),
+          // Diagonal
+          TracingStroke(points: [
+            Offset(0.74, 0.12),
+            Offset(0.26, 0.88),
+          ]),
+          // Bottom bar
+          TracingStroke(points: [
+            Offset(0.26, 0.88),
+            Offset(0.74, 0.88),
+          ]),
+        ];
+
       default:
         return const [
           TracingStroke(points: [

@@ -349,6 +349,56 @@
     "description": "Profile bottom sheet option to log out / clear profile"
   },
 
+  "menuChangeTheme": "തീം മാറ്റുക",
+  "@menuChangeTheme": {
+    "description": "Profile bottom sheet option to change the app color theme"
+  },
+
+  "themeDialogTitle": "തീം തിരഞ്ഞെടുക്കുക",
+  "@themeDialogTitle": {
+    "description": "Header title of the theme selection modal"
+  },
+
+  "themeDialogSubtitle": "നിങ്ങൾക്ക് ഇഷ്ടപ്പെട്ട നിറങ്ങൾ തിരഞ്ഞെടുക്കുക!",
+  "@themeDialogSubtitle": {
+    "description": "Subtitle encouraging kids to pick a color theme"
+  },
+
+  "themeSunnySky": "സണ്ണി സ്കൈ",
+  "@themeSunnySky": {
+    "description": "Name of the default blue theme"
+  },
+
+  "themeSunnySkyDesc": "നീല ആകാശ സാഹസികത",
+  "@themeSunnySkyDesc": {
+    "description": "Description of the default blue theme"
+  },
+
+  "themeCandyCarnival": "കാൻഡി കാർണിവൽ",
+  "@themeCandyCarnival": {
+    "description": "Name of the pink candy theme"
+  },
+
+  "themeCandyCarnivalDesc": "മധുരമുള്ള പിങ്ക് കാൻഡി",
+  "@themeCandyCarnivalDesc": {
+    "description": "Description of the pink candy theme"
+  },
+
+  "themeMagicMeadow": "മാജിക് മെഡോ",
+  "@themeMagicMeadow": {
+    "description": "Name of the green meadow theme"
+  },
+
+  "themeMagicMeadowDesc": "പച്ചപ്പ് നിറഞ്ഞ പുൽമേട്",
+  "@themeMagicMeadowDesc": {
+    "description": "Description of the green meadow theme"
+  },
+
+  "themeSelected": "സജീവം",
+  "@themeSelected": {
+    "description": "Label indicating which theme is currently selected"
+  },
+
   "errorNameLength": "പേര് 2–10 അക്ഷരങ്ങള്‍ ഉണ്ടായിരിക്കണം.",
   "@errorNameLength": {
     "description": "Validation error shown when name is too short or too long"
@@ -580,5 +630,476 @@
   "btnUnmute": "ശബ്ദം ഓണാക്കുക",
   "@btnUnmute": {
     "description": "Accessibility label for unmute button"
+  },
+
+  "numbersHubTitle": "സംഖ്യകൾ 1-100",
+  "@numbersHubTitle": {
+    "description": "Title on the numbers hub screen"
+  },
+
+  "numbersHubSubtitle": "ഒരു ലെവൽ തിരഞ്ഞെടുക്കൂ. അടുത്തത് തുറക്കാൻ നക്ഷത്രങ്ങൾ നേടൂ!",
+  "@numbersHubSubtitle": {
+    "description": "Subtitle on the numbers hub screen"
+  },
+
+  "meetTheNumber": "സംഖ്യയെ അറിയാം",
+  "@meetTheNumber": {
+    "description": "Header for discover number step"
+  },
+
+  "tapNumberToHearAgain": "വീണ്ടും കേൾക്കാൻ സംഖ്യയിൽ തൊടുക",
+  "@tapNumberToHearAgain": {
+    "description": "Helper text on discover number step"
+  },
+
+  "traceTheNumber": "സംഖ്യ വരയ്ക്കാം",
+  "@traceTheNumber": {
+    "description": "Header for practice tracing step"
+  },
+
+  "followDotsWithFinger": "വിരൽ കൊണ്ട് ഡോട്ടുകൾ പിന്തുടരുക!",
+  "@followDotsWithFinger": {
+    "description": "Helper speech bubble on tracing step"
+  },
+
+  "btnShowMe": "കാണിച്ചുതരിക",
+  "@btnShowMe": {
+    "description": "Button to demonstrate tracing pattern"
+  },
+
+  "findTheNumber": "സംഖ്യ കണ്ടെത്താം",
+  "@findTheNumber": {
+    "description": "Header for play quiz step"
+  },
+
+  "whichNumberIsThis": "ഇത് ഏത് സംഖ്യയാണ്?",
+  "@whichNumberIsThis": {
+    "description": "Question on play quiz step"
+  },
+
+  "countAgainYouCanDoIt": "വീണ്ടും എണ്ണൂ. നിങ്ങൾക്ക് സാധിക്കും!",
+  "@countAgainYouCanDoIt": {
+    "description": "Encouraging speech bubble on play quiz step"
+  },
+
+  "numbersCongratsTitle": "അഭിനന്ദനങ്ങൾ!",
+  "@numbersCongratsTitle": {
+    "description": "Title on congratulations screen"
+  },
+
+  "numbersCongratsSubtitle": "നിങ്ങൾ സെഷൻ {session} പൂർത്തിയാക്കി!",
+  "@numbersCongratsSubtitle": {
+    "description": "Subtitle on congratulations screen",
+    "placeholders": {
+      "session": {
+        "type": "String",
+        "example": "1-10"
+      }
+    }
+  },
+
+  "numbersStarsEarned": "+10 നക്ഷത്രങ്ങൾ ലഭിച്ചു!",
+  "@numbersStarsEarned": {
+    "description": "Stars badge text on congratulations screen"
+  },
+
+  "btnClear": "മായ്ക്കുക",
+  "@btnClear": {
+    "description": "Label and tooltip for the reset or clear tracing button"
+  },
+
+  "colorMagic": "നിറങ്ങളുടെ മാജിക്",
+  "@colorMagic": {
+    "description": "Title on the paint step screen"
+  },
+
+  "discoverTheColor": "നിറം അറിയാം",
+  "@discoverTheColor": {
+    "description": "Title on discover color step screen"
+  },
+
+  "paintTheObject": "{object}ന് {color} നിറം നൽകൂ!",
+  "@paintTheObject": {
+    "description": "Prompt instructing child to paint the object with a specific color",
+    "placeholders": {
+      "object": {
+        "type": "String",
+        "example": "apple"
+      },
+      "color": {
+        "type": "String",
+        "example": "red"
+      }
+    }
+  },
+
+  "tapColorThenObject": "ഒരു നിറത്തിൽ തൊടൂ, ശേഷം {object}ൽ തൊടൂ.",
+  "@tapColorThenObject": {
+    "description": "Helper instruction for painting the object",
+    "placeholders": {
+      "object": {
+        "type": "String",
+        "example": "apple"
+      }
+    }
+  },
+
+  "tapColorToHearAgain": "വീണ്ടും കേൾക്കാൻ നിറത്തിൽ തൊടുക",
+  "@tapColorToHearAgain": {
+    "description": "Helper text on discover color step"
+  },
+
+  "colorsCongratsSubtitle": "നിങ്ങൾ എല്ലാ 7 നിറങ്ങളും പഠിച്ചു കഴിഞ്ഞു!",
+  "@colorsCongratsSubtitle": {
+    "description": "Subtitle on colors congratulations screen"
+  },
+
+  "colorRed": "ചുവപ്പ്",
+  "@colorRed": { "description": "Color name" },
+  "colorYellow": "മഞ്ഞ",
+  "@colorYellow": { "description": "Color name" },
+  "colorGreen": "പച്ച",
+  "@colorGreen": { "description": "Color name" },
+  "colorBlue": "നീല",
+  "@colorBlue": { "description": "Color name" },
+  "colorOrange": "ഓറഞ്ച്",
+  "@colorOrange": { "description": "Color name" },
+  "colorPurple": "വയലറ്റ്",
+  "@colorPurple": { "description": "Color name" },
+  "colorPink": "പിങ്ക്",
+  "@colorPink": { "description": "Color name" },
+
+  "objectApple": "ആപ്പിൾ",
+  "@objectApple": { "description": "Object name" },
+  "objectBanana": "പഴം",
+  "@objectBanana": { "description": "Object name" },
+  "objectLeaf": "ഇല",
+  "@objectLeaf": { "description": "Object name" },
+  "objectBalloon": "ബലൂൺ",
+  "@objectBalloon": { "description": "Object name" },
+  "objectCarrot": "കാരറ്റ്",
+  "@objectCarrot": { "description": "Object name" },
+  "objectGrapes": "മുന്തിരി",
+  "@objectGrapes": { "description": "Object name" },
+  "objectFlower": "പൂവ്",
+  "@objectFlower": { "description": "Object name" },
+
+  "shapesHubTitle": "രൂപങ്ങൾ",
+  "@shapesHubTitle": {
+    "description": "Title on Shapes Hub screen"
+  },
+  "shapesHubSubtitle": "രൂപങ്ങൾ പഠിക്കാം! ഓരോന്നിനും 3 ഘട്ടങ്ങൾ.",
+  "@shapesHubSubtitle": {
+    "description": "Subtitle on Shapes Hub screen"
+  },
+  "shapesDiscoverTitle": "രൂപം കണ്ടെത്തുക",
+  "@shapesDiscoverTitle": {
+    "description": "Title for Discover Shape step"
+  },
+  "thisIsA": "ഇതാണ് {shapeName}!",
+  "@thisIsA": {
+    "description": "Announcement of the shape",
+    "placeholders": {
+      "shapeName": {
+        "type": "String",
+        "example": "വൃത്തം"
+      }
+    }
+  },
+  "shapeExampleDesc": "ഒരു {exampleName} പോലെ!",
+  "@shapeExampleDesc": {
+    "description": "Real world example phrase",
+    "placeholders": {
+      "exampleName": {
+        "type": "String",
+        "example": "പന്ത്"
+      }
+    }
+  },
+  "tapShapeToHear": "പേര് കേൾക്കാൻ രൂപത്തിൽ തൊടുക!",
+  "@tapShapeToHear": {
+    "description": "Helper instruction on discover step"
+  },
+  "shapesPracticeTitle": "പരിശീലിക്കാം",
+  "@shapesPracticeTitle": {
+    "description": "Title for Practice Shape step"
+  },
+  "shapesTraceInstruction": "ഡോട്ടുകളിലൂടെ വരയ്ക്കൂ!",
+  "@shapesTraceInstruction": {
+    "description": "Instruction for tracing shape"
+  },
+  "shapesMatchingTitle": "രൂപങ്ങൾ യോജിപ്പിക്കാം",
+  "@shapesMatchingTitle": {
+    "description": "Title for Matching step"
+  },
+  "shapesMatchInstruction": "{shapeName} കണ്ടെത്തൂ!",
+  "@shapesMatchInstruction": {
+    "description": "Instruction for matching shape",
+    "placeholders": {
+      "shapeName": {
+        "type": "String",
+        "example": "വൃത്തം"
+      }
+    }
+  },
+  "shapesMatchCorrect": "കൊള്ളാം! അതാണ് {shapeName}!",
+  "@shapesMatchCorrect": {
+    "description": "Feedback message when matching shape is correct",
+    "placeholders": {
+      "shapeName": {
+        "type": "String",
+        "example": "വൃത്തം"
+      }
+    }
+  },
+  "shapesCongratsTitle": "രൂപങ്ങളുടെ വിജയി!",
+  "@shapesCongratsTitle": {
+    "description": "Title on Shapes congratulations screen"
+  },
+  "shapesCongratsSubtitle": "നിങ്ങൾ ഈ സെഷൻ പൂർത്തിയാക്കി 10 നക്ഷത്രങ്ങൾ നേടി!",
+  "@shapesCongratsSubtitle": {
+    "description": "Subtitle on Shapes congratulations screen"
+  },
+  "btnNextSession": "അടുത്ത സെഷൻ",
+  "@btnNextSession": {
+    "description": "Button to advance to next session"
+  },
+
+  "shapeCircle": "വൃത്തം",
+  "@shapeCircle": { "description": "Shape name" },
+  "shapeSquare": "സമചതുരം",
+  "@shapeSquare": { "description": "Shape name" },
+  "shapeTriangle": "ത്രികോണം",
+  "@shapeTriangle": { "description": "Shape name" },
+  "shapeRectangle": "ദീർഘചതുരം",
+  "@shapeRectangle": { "description": "Shape name" },
+  "shapeOval": "അണ്ഡാകൃതി",
+  "@shapeOval": { "description": "Shape name" },
+  "shapeStar": "നക്ഷത്രം",
+  "@shapeStar": { "description": "Shape name" },
+  "shapeHeart": "ഹൃദയം",
+  "@shapeHeart": { "description": "Shape name" },
+  "shapeDiamond": "ഡയമണ്ട്",
+  "@shapeDiamond": { "description": "Shape name" },
+  "shapePentagon": "പഞ്ചഭുജം",
+  "@shapePentagon": { "description": "Shape name" },
+  "shapeHexagon": "ഷഡ്ഭുജം",
+  "@shapeHexagon": { "description": "Shape name" },
+  "shapeCrescent": "ചന്ദ്രക്കല",
+  "@shapeCrescent": { "description": "Shape name" },
+  "shapeSemicircle": "അർദ്ധവൃത്തം",
+  "@shapeSemicircle": { "description": "Shape name" },
+
+  "exampleClock": "ക്ലോക്ക്",
+  "@exampleClock": { "description": "Real world item name" },
+  "exampleBall": "പന്ത്",
+  "@exampleBall": { "description": "Real world item name" },
+  "exampleGiftBox": "സമ്മാനപ്പെട്ടി",
+  "@exampleGiftBox": { "description": "Real world item name" },
+  "examplePizza": "പിസ്സ കഷ്ണം",
+  "@examplePizza": { "description": "Real world item name" },
+  "exampleDoor": "വാതിൽ",
+  "@exampleDoor": { "description": "Real world item name" },
+  "exampleEgg": "മുട്ട",
+  "@exampleEgg": { "description": "Real world item name" },
+  "exampleStarfish": "നക്ഷത്രമത്സ്യം",
+  "@exampleStarfish": { "description": "Real world item name" },
+  "exampleBalloon": "ബലൂൺ",
+  "@exampleBalloon": { "description": "Real world item name" },
+  "exampleKite": "പട്ടം",
+  "@exampleKite": { "description": "Real world item name" },
+  "exampleBirdhouse": "പക്ഷിക്കൂട്",
+  "@exampleBirdhouse": { "description": "Real world item name" },
+  "exampleHoneycomb": "തേൻകൂട്",
+  "@exampleHoneycomb": { "description": "Real world item name" },
+  "exampleMoon": "ചന്ദ്രൻ",
+  "@exampleMoon": { "description": "Real world item name" },
+  "exampleWatermelon": "തണ്ണീർമത്തൻ",
+  "@exampleWatermelon": { "description": "Real world item name" },
+
+  "shapeFilledLabel": "നിറമുള്ളത്",
+  "@shapeFilledLabel": {
+    "description": "Label for filled solid shape representation"
+  },
+  "shapeOutlineLabel": "ഔട്ട്ലൈൻ",
+  "@shapeOutlineLabel": {
+    "description": "Label for outline unfilled shape representation"
+  },
+
+  "titlePuzzlePlayground": "പസിൽ\nകളിക്കളം",
+  "@titlePuzzlePlayground": {
+    "description": "Screen title for the puzzle sessions screen"
+  },
+  "instructionMatchShadows": "ഓരോ ചിത്രവും അതിന്റെ നിഴലുമായി പൊരുത്തപ്പെടുത്തുക!",
+  "@instructionMatchShadows": {
+    "description": "Instruction message for matching shadows puzzle"
+  },
+  "headingShadows": "നിഴലുകൾ",
+  "@headingShadows": {
+    "description": "Heading for shadow target slots"
+  },
+  "headingPictures": "ചിത്രങ്ങൾ",
+  "@headingPictures": {
+    "description": "Heading for draggable/selectable pictures"
+  },
+  "labelPuzzleSession": "പസിൽ {number}",
+  "@labelPuzzleSession": {
+    "description": "Label for puzzle session pill",
+    "placeholders": {
+      "number": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  },
+  "feedbackPuzzleMatched": "ഗംഭീരം! നിങ്ങൾ നിഴൽ പൊരുത്തപ്പെടുത്തി!",
+  "@feedbackPuzzleMatched": {
+    "description": "Positive feedback when a shadow match is correct"
+  },
+  "feedbackPuzzleTryAgain": "അത് ശരിയായ നിഴലല്ല. വീണ്ടും ശ്രമിക്കുക!",
+  "@feedbackPuzzleTryAgain": {
+    "description": "Gentle guidance when dropped on wrong shadow"
+  },
+  "feedbackPuzzleComplete": "മിടുക്കൻ! എല്ലാ നിഴലുകളും പൊരുത്തപ്പെടുത്തി!",
+  "@feedbackPuzzleComplete": {
+    "description": "Feedback when current puzzle session is completed"
+  },
+  "puzzleCongratsTitle": "പസിൽ മാസ്റ്റർ!",
+  "@puzzleCongratsTitle": {
+    "description": "Title on puzzle congratulations screen"
+  },
+  "puzzleCongratsSubtitle": "നിങ്ങൾ 4 പസിലുകളും പൂർത്തിയാക്കി 10 നക്ഷത്രങ്ങൾ നേടി!",
+  "@puzzleCongratsSubtitle": {
+    "description": "Subtitle on puzzle congratulations screen"
+  },
+  "titleAnimals": "മൃഗങ്ങൾ",
+  "@titleAnimals": {
+    "description": "Title on the animals hub screen"
+  },
+  "animalsHubSubtitle": "നിങ്ങളുടെ പ്രിയപ്പെട്ട മൃഗങ്ങളെ കണ്ടുമുട്ടൂ!",
+  "@animalsHubSubtitle": {
+    "description": "Subtitle on the animals hub screen"
+  },
+  "animalsSession1Title": "സെഷൻ 1",
+  "@animalsSession1Title": {
+    "description": "Title for session 1 of animals"
+  },
+  "animalsSession1Subtitle": "ആന, പൂച്ച, കടുവ കൂട്ടുകാർ",
+  "@animalsSession1Subtitle": {
+    "description": "Subtitle for session 1 of animals"
+  },
+  "animalsSession2Title": "സെഷൻ 2",
+  "@animalsSession2Title": {
+    "description": "Title for session 2 of animals"
+  },
+  "animalsSession2Subtitle": "മുയൽ, തത്ത, മത്സ്യം കൂട്ടുകാർ",
+  "@animalsSession2Subtitle": {
+    "description": "Subtitle for session 2 of animals"
+  },
+  "animalsItemProgress": "{total}-ൽ {current}",
+  "@animalsItemProgress": {
+    "description": "Current item position in learning session",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "btnPlaySound": "ശബ്ദം കേൾക്കൂ",
+  "@btnPlaySound": {
+    "description": "Button to play the animal sound effect"
+  },
+  "animalCongratsTitle": "അനിമൽ എക്സ്പ്ലോറർ!",
+  "@animalCongratsTitle": {
+    "description": "Title on animals congratulations screen"
+  },
+  "animalCongratsSubtitle": "നിങ്ങൾ ഈ സെഷനിലെ 10 മൃഗങ്ങളെയും പഠിച്ച് 5 നക്ഷത്രങ്ങൾ നേടി!",
+  "@animalCongratsSubtitle": {
+    "description": "Subtitle on animals congratulations screen"
+  },
+  "animalElephant": "ആന",
+  "@animalElephant": {
+    "description": "Name for Elephant"
+  },
+  "animalCat": "പൂച്ച",
+  "@animalCat": {
+    "description": "Name for Cat"
+  },
+  "animalTiger": "കടുവ",
+  "@animalTiger": {
+    "description": "Name for Tiger"
+  },
+  "animalLion": "സിംഹം",
+  "@animalLion": {
+    "description": "Name for Lion"
+  },
+  "animalCow": "പശു",
+  "@animalCow": {
+    "description": "Name for Cow"
+  },
+  "animalGoat": "ആട്",
+  "@animalGoat": {
+    "description": "Name for Goat"
+  },
+  "animalMonkey": "കുരങ്ങൻ",
+  "@animalMonkey": {
+    "description": "Name for Monkey"
+  },
+  "animalDog": "പട്ടി",
+  "@animalDog": {
+    "description": "Name for Dog"
+  },
+  "animalHen": "കോഴി",
+  "@animalHen": {
+    "description": "Name for Hen"
+  },
+  "animalHorse": "കുതിര",
+  "@animalHorse": {
+    "description": "Name for Horse"
+  },
+  "animalRabbit": "മുയൽ",
+  "@animalRabbit": {
+    "description": "Name for Rabbit"
+  },
+  "animalParrot": "തത്ത",
+  "@animalParrot": {
+    "description": "Name for Parrot"
+  },
+  "animalFish": "മത്സ്യം",
+  "@animalFish": {
+    "description": "Name for Fish"
+  },
+  "animalGiraffe": "ജിറാഫ്",
+  "@animalGiraffe": {
+    "description": "Name for Giraffe"
+  },
+  "animalZebra": "സീബ്ര",
+  "@animalZebra": {
+    "description": "Name for Zebra"
+  },
+  "animalDeer": "മാൻ",
+  "@animalDeer": {
+    "description": "Name for Deer"
+  },
+  "animalPeacock": "മയിൽ",
+  "@animalPeacock": {
+    "description": "Name for Peacock"
+  },
+  "animalFrog": "തവള",
+  "@animalFrog": {
+    "description": "Name for Frog"
+  },
+  "animalCamel": "ഒട്ടകം",
+  "@animalCamel": {
+    "description": "Name for Camel"
+  },
+  "animalBear": "കരടി",
+  "@animalBear": {
+    "description": "Name for Bear"
   }
 }

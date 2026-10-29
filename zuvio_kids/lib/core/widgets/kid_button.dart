@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 
 /// Chunky 3D-styled pill action button for kids ("Start ➔", "Next ➔", "Done! ➔").
 /// Layer: Core Widgets
@@ -10,7 +11,9 @@ class KidButton extends StatefulWidget {
     required this.label,
     required this.onPressed,
     this.showArrow = true,
-    this.backgroundColor = AppColors.kidGreen,
+    this.backgroundColor,
+    this.textColor,
+    this.shadowColor,
     this.height = 68,
     this.enabled = true,
   });
@@ -18,7 +21,9 @@ class KidButton extends StatefulWidget {
   final String label;
   final VoidCallback? onPressed;
   final bool showArrow;
-  final Color backgroundColor;
+  final Color? backgroundColor;
+  final Color? textColor;
+  final Color? shadowColor;
   final double height;
   final bool enabled;
 
@@ -32,6 +37,19 @@ class _KidButtonState extends State<KidButton> {
   @override
   Widget build(BuildContext context) {
     final effectiveEnabled = widget.enabled && widget.onPressed != null;
+    final palette = context.themePalette;
+    final effectiveBg = widget.backgroundColor ?? palette.actionButton;
+    final effectiveShadow = widget.shadowColor ??
+        (widget.backgroundColor != null
+            ? Color.alphaBlend(
+                Colors.black.withValues(alpha: 0.28),
+                widget.backgroundColor!,
+              )
+            : palette.actionButtonShadow);
+    final effectiveTextColor = widget.textColor ??
+        (ThemeData.estimateBrightnessForColor(effectiveBg) == Brightness.dark
+            ? Colors.white
+            : AppColors.navy);
 
     return GestureDetector(
       onTapDown: effectiveEnabled ? (_) => setState(() => _isPressed = true) : null,
@@ -51,7 +69,7 @@ class _KidButtonState extends State<KidButton> {
           // 3D layered shadow
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF86BCD8).withValues(alpha: 0.8),
+              color: effectiveShadow.withValues(alpha: 0.8),
               offset: Offset(0, _isPressed ? 2 : 6),
             ),
           ],
@@ -59,8 +77,8 @@ class _KidButtonState extends State<KidButton> {
         child: Container(
           decoration: BoxDecoration(
             color: effectiveEnabled
-                ? widget.backgroundColor
-                : widget.backgroundColor.withValues(alpha: 0.5),
+                ? effectiveBg
+                : effectiveBg.withValues(alpha: 0.5),
             borderRadius: BorderRadius.circular(widget.height / 2),
           ),
           alignment: Alignment.center,
@@ -70,14 +88,14 @@ class _KidButtonState extends State<KidButton> {
               Text(
                 widget.label,
                 style: AppTextStyles.buttonLabel.copyWith(
-                  color: AppColors.navy,
+                  color: effectiveTextColor,
                 ),
               ),
               if (widget.showArrow) ...[
                 const SizedBox(width: 10),
-                const Icon(
+                Icon(
                   Icons.arrow_forward_rounded,
-                  color: AppColors.navy,
+                  color: effectiveTextColor,
                   size: 28,
                 ),
               ],

@@ -5,6 +5,7 @@ import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
 import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
 import 'package:zuvio_kids/core/widgets/kid_button.dart';
+import 'package:zuvio_kids/core/widgets/reset_button.dart';
 import 'package:zuvio_kids/features/alphabet/domain/entities/alphabet_letter_entity.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/widgets/animal_avatar.dart';
 import 'tracing_canvas.dart';
@@ -19,12 +20,14 @@ class PracticeStepView extends StatefulWidget {
     required this.onNext,
     required this.onTracingDone,
     required this.isTracingDone,
+    this.onResetTracing,
     this.friendAvatar = AppStrings.defaultFriend,
   });
 
   final AlphabetLetterEntity letter;
   final VoidCallback onNext;
   final VoidCallback onTracingDone;
+  final VoidCallback? onResetTracing;
   final bool isTracingDone;
   final String friendAvatar;
 
@@ -33,6 +36,8 @@ class PracticeStepView extends StatefulWidget {
 }
 
 class PracticeStepViewState extends State<PracticeStepView> {
+  final GlobalKey<TracingCanvasState> _canvasKey =
+      GlobalKey<TracingCanvasState>();
   @override
   void initState() {
     super.initState();
@@ -48,6 +53,11 @@ class PracticeStepViewState extends State<PracticeStepView> {
         KidSoundService.instance.getPhoneticLetterName(widget.letter.letter);
     final prompt = 'Trace $phonetic. $phonetic for ${widget.letter.primaryWord}!';
     KidSoundService.instance.speak(prompt);
+  }
+
+  void _handleReset() {
+    _canvasKey.currentState?.resetCanvas();
+    widget.onResetTracing?.call();
   }
 
   @override
@@ -81,6 +91,7 @@ class PracticeStepViewState extends State<PracticeStepView> {
                     child: Padding(
                       padding: const EdgeInsets.all(12),
                       child: TracingCanvas(
+                        key: _canvasKey,
                         letter: widget.letter.letter,
                         isCapital: widget.letter.isCapital,
                         isCompleted: widget.isTracingDone,
@@ -148,11 +159,22 @@ class PracticeStepViewState extends State<PracticeStepView> {
           ),
           const SizedBox(height: 16),
 
-          // ── Bottom Next Button (Enabled only when green tick appears) ──
-          KidButton(
-            label: l10n.btnNext,
-            enabled: widget.isTracingDone,
-            onPressed: widget.isTracingDone ? widget.onNext : null,
+          // ── Bottom Action Row: Reset Button (Bottom-Left) + Next Button ─
+          Row(
+            children: [
+              ResetButton(
+                tooltip: l10n.btnClear,
+                onPressed: _handleReset,
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: KidButton(
+                  label: l10n.btnNext,
+                  enabled: widget.isTracingDone,
+                  onPressed: widget.isTracingDone ? widget.onNext : null,
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 16),
         ],

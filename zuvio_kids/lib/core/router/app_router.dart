@@ -4,10 +4,23 @@ import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_congratulations_screen.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_hub_screen.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_learning_screen.dart';
+import 'package:zuvio_kids/features/animals/presentation/screens/animals_congratulations_screen.dart';
+import 'package:zuvio_kids/features/animals/presentation/screens/animals_hub_screen.dart';
+import 'package:zuvio_kids/features/animals/presentation/screens/animals_learning_screen.dart';
+import 'package:zuvio_kids/features/colors/presentation/screens/colors_congratulations_screen.dart';
+import 'package:zuvio_kids/features/colors/presentation/screens/colors_learning_screen.dart';
 import 'package:zuvio_kids/features/home/presentation/screens/home_screen.dart';
+import 'package:zuvio_kids/features/numbers/presentation/screens/numbers_congratulations_screen.dart';
+import 'package:zuvio_kids/features/numbers/presentation/screens/numbers_hub_screen.dart';
+import 'package:zuvio_kids/features/numbers/presentation/screens/numbers_learning_screen.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/screens/splash_screen.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/screens/welcome_screen.dart';
+import 'package:zuvio_kids/features/puzzle/presentation/screens/puzzle_congratulations_screen.dart';
+import 'package:zuvio_kids/features/puzzle/presentation/screens/puzzle_sessions_screen.dart';
+import 'package:zuvio_kids/features/shapes/presentation/screens/shapes_congratulations_screen.dart';
+import 'package:zuvio_kids/features/shapes/presentation/screens/shapes_hub_screen.dart';
+import 'package:zuvio_kids/features/shapes/presentation/screens/shapes_learning_screen.dart';
 
 /// Centralised route generator for ZuvioKids.
 /// Register every new named route here.
@@ -47,6 +60,71 @@ abstract final class AppRouter {
       case AppRoutes.alphabetCongrats:
         return MaterialPageRoute(
           builder: (_) => const AlphabetCongratulationsScreen(),
+          settings: settings,
+        );
+      case AppRoutes.numbersHub:
+        return MaterialPageRoute(
+          builder: (_) => const NumbersHubScreen(),
+          settings: settings,
+        );
+      case AppRoutes.numbersLearning:
+        return MaterialPageRoute(
+          builder: (_) => const NumbersLearningScreen(),
+          settings: settings,
+        );
+      case AppRoutes.numbersCongrats:
+        return MaterialPageRoute(
+          builder: (_) => const NumbersCongratulationsScreen(),
+          settings: settings,
+        );
+      case AppRoutes.colorsLearning:
+        return MaterialPageRoute(
+          builder: (_) => const ColorsLearningScreen(),
+          settings: settings,
+        );
+      case AppRoutes.colorsCongrats:
+        return MaterialPageRoute(
+          builder: (_) => const ColorsCongratulationsScreen(),
+          settings: settings,
+        );
+      case AppRoutes.shapesHub:
+        return MaterialPageRoute(
+          builder: (_) => const ShapesHubScreen(),
+          settings: settings,
+        );
+      case AppRoutes.shapesLearning:
+        return MaterialPageRoute(
+          builder: (_) => const ShapesLearningScreen(),
+          settings: settings,
+        );
+      case AppRoutes.shapesCongrats:
+        return MaterialPageRoute(
+          builder: (_) => const ShapesCongratulationsScreen(),
+          settings: settings,
+        );
+      case AppRoutes.puzzleSessions:
+        return MaterialPageRoute(
+          builder: (_) => const PuzzleSessionsScreen(),
+          settings: settings,
+        );
+      case AppRoutes.puzzleCongrats:
+        return MaterialPageRoute(
+          builder: (_) => const PuzzleCongratulationsScreen(),
+          settings: settings,
+        );
+      case AppRoutes.animalsHub:
+        return MaterialPageRoute(
+          builder: (_) => const AnimalsHubScreen(),
+          settings: settings,
+        );
+      case AppRoutes.animalsLearning:
+        return MaterialPageRoute(
+          builder: (_) => const AnimalsLearningScreen(),
+          settings: settings,
+        );
+      case AppRoutes.animalsCongrats:
+        return MaterialPageRoute(
+          builder: (_) => const AnimalsCongratulationsScreen(),
           settings: settings,
         );
 

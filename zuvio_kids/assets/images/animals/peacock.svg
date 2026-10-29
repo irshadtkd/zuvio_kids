@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="peacockBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0288D1"/>
+      <stop offset="100%" stop-color="#01579B"/>
+    </linearGradient>
+    <radialGradient id="peacockEyeSpot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0D47A1"/>
+      <stop offset="45%" stop-color="#00E676"/>
+      <stop offset="75%" stop-color="#FFD600"/>
+      <stop offset="100%" stop-color="#00897B"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fan of Spectacular Tail Feathers in Background -->
+  <g stroke="#004D40" stroke-width="2">
+    <!-- Outer Arch of Eyespots -->
+    <path d="M 120 170 L 40 125" stroke="#26A69A" stroke-width="3"/>
+    <circle cx="40" cy="125" r="14" fill="url(#peacockEyeSpot)"/>
+
+    <path d="M 120 170 L 55 90" stroke="#26A69A" stroke-width="3"/>
+    <circle cx="55" cy="90" r="15" fill="url(#peacockEyeSpot)"/>
+
+    <path d="M 120 170 L 85 62" stroke="#26A69A" stroke-width="3"/>
+    <circle cx="85" cy="62" r="16" fill="url(#peacockEyeSpot)"/>
+
+    <path d="M 120 170 L 120 50" stroke="#26A69A" stroke-width="3"/>
+    <circle cx="120" cy="50" r="16" fill="url(#peacockEyeSpot)"/>
+
+    <path d="M 120 170 L 155 62" stroke="#26A69A" stroke-width="3"/>
+    <circle cx="155" cy="62" r="16" fill="url(#peacockEyeSpot)"/>
+
+    <path d="M 120 170 L 185 90" stroke="#26A69A" stroke-width="3"/>
+    <circle cx="185" cy="90" r="15" fill="url(#peacockEyeSpot)"/>
+
+    <path d="M 120 170 L 200 125" stroke="#26A69A" stroke-width="3"/>
+    <circle cx="200" cy="125" r="14" fill="url(#peacockEyeSpot)"/>
+  </g>
+
+  <!-- Crest Plumes on head -->
+  <line x1="120" y1="85" x2="110" y2="65" stroke="#0288D1" stroke-width="2.5"/>
+  <circle cx="108" cy="63" r="4.5" fill="#FFD600"/>
+
+  <line x1="120" y1="85" x2="120" y2="62" stroke="#0288D1" stroke-width="2.5"/>
+  <circle cx="120" cy="60" r="4.5" fill="#FFD600"/>
+
+  <line x1="120" y1="85" x2="130" y2="65" stroke="#0288D1" stroke-width="2.5"/>
+  <circle cx="132" cy="63" r="4.5" fill="#FFD600"/>
+
+  <!-- Body -->
+  <ellipse cx="120" cy="170" rx="36" ry="40" fill="url(#peacockBody)" stroke="#01579B" stroke-width="3.5"/>
+
+  <!-- Graceful Neck -->
+  <path d="M 112 145 C 110 115 114 98 120 95 C 126 98 130 115 128 145 Z" fill="url(#peacockBody)"/>
+
+  <!-- Head -->
+  <circle cx="120" cy="92" r="18" fill="url(#peacockBody)" stroke="#01579B" stroke-width="3"/>
+
+  <!-- Beak -->
+  <polygon points="120,98 114,92 126,92" fill="#FFCA28" stroke="#FFA000" stroke-width="1.5"/>
+
+  <!-- Eyes -->
+  <ellipse cx="112" cy="88" rx="3.5" ry="5" fill="#FFFFFF"/>
+  <circle cx="112" cy="88" r="2.5" fill="#212121"/>
+  <circle cx="111" cy="86" r="1" fill="#FFFFFF"/>
+
+  <ellipse cx="128" cy="88" rx="3.5" ry="5" fill="#FFFFFF"/>
+  <circle cx="128" cy="88" r="2.5" fill="#212121"/>
+  <circle cx="127" cy="86" r="1" fill="#FFFFFF"/>
+
+  <!-- Feet -->
+  <line x1="112" y1="208" x2="112" y2="222" stroke="#FFA000" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="128" y1="208" x2="128" y2="222" stroke="#FFA000" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Blush -->
+  <circle cx="106" cy="96" r="4" fill="#FF8A80" opacity="0.6"/>
+  <circle cx="134" cy="96" r="4" fill="#FF8A80" opacity="0.6"/>
+</svg>

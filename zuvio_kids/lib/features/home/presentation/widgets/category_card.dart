@@ -183,3 +183,46 @@ class _PuzzlesPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
+
+/// Cute Paw Print visual for the "Animals" card.
+class AnimalsVisual extends StatelessWidget {
+  const AnimalsVisual({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      size: const Size(40, 36),
+      painter: _PawPainter(),
+    );
+  }
+}
+
+class _PawPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final fillPaint = Paint()
+      ..color = AppColors.navy
+      ..style = PaintingStyle.fill;
+
+    // Main pad
+    final padRect = Rect.fromCenter(
+      center: Offset(size.width * 0.5, size.height * 0.65),
+      width: size.width * 0.5,
+      height: size.height * 0.42,
+    );
+    canvas.drawRRect(
+      RRect.fromRectAndRadius(padRect, const Radius.circular(8)),
+      fillPaint,
+    );
+
+    // 4 Toe pads
+    canvas.drawCircle(Offset(size.width * 0.22, size.height * 0.32), 4, fillPaint);
+    canvas.drawCircle(Offset(size.width * 0.40, size.height * 0.18), 4.5, fillPaint);
+    canvas.drawCircle(Offset(size.width * 0.60, size.height * 0.18), 4.5, fillPaint);
+    canvas.drawCircle(Offset(size.width * 0.78, size.height * 0.32), 4, fillPaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+

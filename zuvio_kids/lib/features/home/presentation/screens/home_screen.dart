@@ -2,36 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/constants/app_routes.dart';
+import 'package:zuvio_kids/core/constants/app_sizes.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
+import 'package:zuvio_kids/core/providers/app_theme_provider.dart';
+import 'package:zuvio_kids/core/providers/star_points_provider.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+import 'package:zuvio_kids/core/theme/app_theme_mode.dart';
+import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/providers/alphabet_provider.dart';
+import 'package:zuvio_kids/features/animals/presentation/providers/animals_provider.dart';
+import 'package:zuvio_kids/features/colors/presentation/providers/colors_provider.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/category_card.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/star_badge.dart';
+import 'package:zuvio_kids/features/home/presentation/widgets/theme_selection_dialog.dart';
+import 'package:zuvio_kids/features/numbers/presentation/providers/numbers_provider.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/providers/onboarding_provider.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/widgets/animal_avatar.dart';
+import 'package:zuvio_kids/features/puzzle/presentation/providers/puzzle_provider.dart';
+import 'package:zuvio_kids/features/shapes/presentation/providers/shapes_provider.dart';
 
 /// Home dashboard screen.
 /// Tapping the avatar, name, or star badge opens a small bottom-sheet menu
-/// with "Change Name" and "Logout" — both clear local data and restart the app.
+/// with "Change Name", "Change Theme", and "Logout".
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
-
-  void _onCategoryTapped(
-    BuildContext context,
-    String categoryTitle,
-    AppLocalizations l10n,
-  ) {
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.notifyActivityStarting(categoryTitle)),
-        duration: const Duration(seconds: 1),
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-    );
-  }
 
   /// Shows a compact bottom-sheet menu.
   Future<void> _showProfileMenu(BuildContext context, WidgetRef ref) async {
@@ -41,23 +36,115 @@ class HomeScreen extends ConsumerWidget {
       context: context,
       backgroundColor: Colors.transparent,
       builder: (ctx) => _ProfileMenuSheet(
-        onChangeName: () async {
+        onChangeName: () {
           Navigator.pop(ctx);
-          await _clearAndRestart(context, ref);
+          _showChangeNameDialog(context, ref);
+        },
+        onChangeTheme: () {
+          Navigator.pop(ctx);
+          _showThemeSelectionDialog(context);
         },
         onLogout: () async {
           Navigator.pop(ctx);
-          await _clearAndRestart(context, ref);
+          await _logout(context, ref);
         },
         l10n: l10n,
       ),
     );
   }
 
-  /// Clears all local profile and alphabet data and navigates to the splash screen.
-  Future<void> _clearAndRestart(BuildContext context, WidgetRef ref) async {
+  /// Displays the 3 child-friendly themes for selection.
+  void _showThemeSelectionDialog(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      builder: (dialogCtx) => Consumer(
+        builder: (ctx, refConsumer, _) {
+          final currentMode =
+              refConsumer.watch(appThemeNotifierProvider).valueOrNull ??
+                  AppThemeMode.sunnySky;
+          return ThemeSelectionDialog(
+            currentMode: currentMode,
+            onThemeSelected: (selectedMode) {
+              refConsumer
+                  .read(appThemeNotifierProvider.notifier)
+                  .setTheme(selectedMode);
+            },
+          );
+        },
+      ),
+    );
+  }
+
+  /// Opens a dialog to change the child's name without wiping progress or stars.
+  void _showChangeNameDialog(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    final currentName =
+        ref.read(onboardingNotifierProvider).valueOrNull?.name ?? '';
+    final controller = TextEditingController(text: currentName);
+
+    showDialog<void>(
+      context: context,
+      builder: (dialogCtx) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+        title: Text(
+          l10n.menuChangeName,
+          style: AppTextStyles.cardTitle.copyWith(
+            fontSize: 22,
+            color: AppColors.navy,
+          ),
+        ),
+        content: TextField(
+          controller: controller,
+          autofocus: true,
+          maxLength: AppSizes.nameMaxLength,
+          decoration: InputDecoration(
+            hintText: l10n.hintChildName,
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogCtx),
+            child: Text(l10n.btnBack),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.primary,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+            onPressed: () async {
+              final newName = controller.text.trim();
+              if (newName.isNotEmpty) {
+                ref.read(onboardingNotifierProvider.notifier).setName(newName);
+                await ref
+                    .read(onboardingNotifierProvider.notifier)
+                    .completeOnboarding();
+              }
+              if (dialogCtx.mounted) {
+                Navigator.pop(dialogCtx);
+              }
+            },
+            child: Text(l10n.btnSaveProgress),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Clears stored star points and all local profile and module data on logout.
+  Future<void> _logout(BuildContext context, WidgetRef ref) async {
+    await ref.read(starPointsNotifierProvider.notifier).clearPoints();
     await ref.read(alphabetNotifierProvider.notifier).clearAllProgress();
+    await ref.read(numbersNotifierProvider.notifier).clearAllProgress();
+    await ref.read(colorsNotifierProvider.notifier).clearAllProgress();
+    await ref.read(shapesNotifierProvider.notifier).clearAllProgress();
+    await ref.read(puzzleNotifierProvider.notifier).clearAllProgress();
+    await ref.read(animalsNotifierProvider.notifier).clearAllProgress();
     await ref.read(onboardingNotifierProvider.notifier).resetProfile();
+    await ref.read(appThemeNotifierProvider.notifier).resetToDefault();
     if (!context.mounted) return;
     Navigator.pushNamedAndRemoveUntil(
       context,
@@ -69,8 +156,9 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final themePalette = context.themePalette;
     final state = ref.watch(onboardingNotifierProvider).valueOrNull;
-    final stars = ref.watch(alphabetStarsProvider);
+    final stars = ref.watch(starPointsNotifierProvider).valueOrNull ?? 0;
     final name =
         state?.name.isNotEmpty == true ? state!.name : AppStrings.defaultChildName;
     final avatar = state?.friendAvatar.isNotEmpty == true
@@ -78,7 +166,7 @@ class HomeScreen extends ConsumerWidget {
         : AppStrings.defaultFriend;
 
     return Scaffold(
-      backgroundColor: AppColors.appSkyBlue,
+      backgroundColor: themePalette.scaffoldBackground,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
@@ -128,7 +216,7 @@ class HomeScreen extends ConsumerWidget {
                   children: [
                     CategoryCard(
                       title: l10n.categoryAlphabet,
-                      backgroundColor: AppColors.cardYellow,
+                      backgroundColor: themePalette.cardAlphabet,
                       visual: Text(
                         l10n.visualAlphabetAbc,
                         style: AppTextStyles.categoryIconText,
@@ -137,39 +225,42 @@ class HomeScreen extends ConsumerWidget {
                     ),
                     CategoryCard(
                       title: l10n.categoryNumbers,
-                      backgroundColor: AppColors.cardPink,
+                      backgroundColor: themePalette.cardNumbers,
                       visual: Text(
                         l10n.visualNumbers123,
                         style: AppTextStyles.categoryIconText,
                       ),
-                      onTap: () => _onCategoryTapped(context, l10n.categoryNumbers, l10n),
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.numbersHub),
                     ),
                     CategoryCard(
                       title: l10n.categoryShapes,
-                      backgroundColor: AppColors.cardGreen,
+                      backgroundColor: themePalette.cardShapes,
                       visual: const ShapesVisual(),
-                      onTap: () => _onCategoryTapped(context, l10n.categoryShapes, l10n),
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.shapesHub),
                     ),
                     CategoryCard(
                       title: l10n.categoryColors,
-                      backgroundColor: AppColors.cardLavender,
+                      backgroundColor: themePalette.cardColors,
                       visual: const ColorsVisual(),
-                      onTap: () => _onCategoryTapped(context, l10n.categoryColors, l10n),
+                      onTap: () {
+                        ref.read(colorsNotifierProvider.notifier).playAgain();
+                        Navigator.pushNamed(context, AppRoutes.colorsLearning);
+                      },
                     ),
                     CategoryCard(
                       title: l10n.categoryAnimals,
-                      backgroundColor: AppColors.cardPeach,
-                      visual: Text(
-                        l10n.visualAnimalsMoo,
-                        style: AppTextStyles.categoryIconText,
-                      ),
-                      onTap: () => _onCategoryTapped(context, l10n.categoryAnimals, l10n),
+                      backgroundColor: themePalette.cardAnimals,
+                      visual: const AnimalsVisual(),
+                      onTap: () => Navigator.pushNamed(context, AppRoutes.animalsHub),
                     ),
                     CategoryCard(
                       title: l10n.categoryPuzzles,
-                      backgroundColor: AppColors.cardBlue,
+                      backgroundColor: themePalette.cardPuzzles,
                       visual: const PuzzlesVisual(),
-                      onTap: () => _onCategoryTapped(context, l10n.categoryPuzzles, l10n),
+                      onTap: () {
+                        ref.read(puzzleNotifierProvider.notifier).generateNewSet();
+                        Navigator.pushNamed(context, AppRoutes.puzzleSessions);
+                      },
                     ),
                   ],
                 ),
@@ -186,20 +277,24 @@ class HomeScreen extends ConsumerWidget {
 // Profile bottom-sheet menu
 // ─────────────────────────────────────────────────────────────────────────────
 
-/// Rounded bottom sheet with "Change Name" and "Logout" menu items.
+/// Rounded bottom sheet with "Change Name", "Change Theme", and "Logout" menu items.
 class _ProfileMenuSheet extends StatelessWidget {
   const _ProfileMenuSheet({
     required this.onChangeName,
+    required this.onChangeTheme,
     required this.onLogout,
     required this.l10n,
   });
 
   final VoidCallback onChangeName;
+  final VoidCallback onChangeTheme;
   final VoidCallback onLogout;
   final AppLocalizations l10n;
 
   @override
   Widget build(BuildContext context) {
+    final themePalette = context.themePalette;
+
     return Container(
       margin: const EdgeInsets.fromLTRB(16, 0, 16, 28),
       decoration: BoxDecoration(
@@ -232,6 +327,21 @@ class _ProfileMenuSheet extends StatelessWidget {
             iconColor: AppColors.kidGreen,
             label: l10n.menuChangeName,
             onTap: onChangeName,
+          ),
+
+          const Divider(
+            height: 1,
+            color: AppColors.divider,
+            indent: 20,
+            endIndent: 20,
+          ),
+
+          // Change Theme option alongside Logout
+          _MenuTile(
+            icon: Icons.palette_rounded,
+            iconColor: themePalette.primary,
+            label: l10n.menuChangeTheme,
+            onTap: onChangeTheme,
           ),
 
           const Divider(

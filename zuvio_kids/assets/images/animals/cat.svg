@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="catOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA726"/>
+      <stop offset="100%" stop-color="#FB8C00"/>
+    </linearGradient>
+    <linearGradient id="catInnerEar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF80AB"/>
+      <stop offset="100%" stop-color="#FF4081"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tail -->
+  <path d="M 175 180 C 220 175 225 110 205 105 C 190 100 190 120 195 135 C 200 150 185 170 170 175 Z" fill="url(#catOrange)" stroke="#E65100" stroke-width="4"/>
+
+  <!-- Left Ear -->
+  <polygon points="68,95 48,35 102,65" fill="url(#catOrange)" stroke="#E65100" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="70,88 56,48 95,68" fill="url(#catInnerEar)"/>
+
+  <!-- Right Ear -->
+  <polygon points="172,95 192,35 138,65" fill="url(#catOrange)" stroke="#E65100" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="170,88 184,48 145,68" fill="url(#catInnerEar)"/>
+
+  <!-- Body -->
+  <ellipse cx="120" cy="172" rx="55" ry="46" fill="url(#catOrange)" stroke="#E65100" stroke-width="4"/>
+  <!-- White Chest -->
+  <path d="M 95 145 Q 120 160 145 145 Q 135 195 120 198 Q 105 195 95 145 Z" fill="#FFFFFF"/>
+
+  <!-- Paws -->
+  <circle cx="95" cy="206" r="14" fill="#FFFFFF" stroke="#FFA726" stroke-width="3"/>
+  <circle cx="145" cy="206" r="14" fill="#FFFFFF" stroke="#FFA726" stroke-width="3"/>
+
+  <!-- Head -->
+  <ellipse cx="120" cy="108" rx="58" ry="46" fill="url(#catOrange)" stroke="#E65100" stroke-width="4"/>
+
+  <!-- Cheeks Blush -->
+  <circle cx="80" cy="120" r="10" fill="#FF8A80" opacity="0.5"/>
+  <circle cx="160" cy="120" r="10" fill="#FF8A80" opacity="0.5"/>
+
+  <!-- Whiskers Left -->
+  <line x1="88" y1="116" x2="48" y2="110" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
+  <line x1="88" y1="122" x2="44" y2="124" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
+  <line x1="88" y1="128" x2="52" y2="138" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Whiskers Right -->
+  <line x1="152" y1="116" x2="192" y2="110" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
+  <line x1="152" y1="122" x2="196" y2="124" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
+  <line x1="152" y1="128" x2="188" y2="138" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <ellipse cx="96" cy="98" rx="9" ry="12" fill="#2E7D32"/>
+  <ellipse cx="96" cy="98" rx="5" ry="10" fill="#000000"/>
+  <circle cx="93" cy="93" r="3.5" fill="#FFFFFF"/>
+  <circle cx="98" cy="102" r="1.5" fill="#FFFFFF"/>
+
+  <ellipse cx="144" cy="98" rx="9" ry="12" fill="#2E7D32"/>
+  <ellipse cx="144" cy="98" rx="5" ry="10" fill="#000000"/>
+  <circle cx="141" cy="93" r="3.5" fill="#FFFFFF"/>
+  <circle cx="146" cy="102" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Nose & Mouth -->
+  <polygon points="120,115 113,107 127,107" fill="#FF4081"/>
+  <path d="M 120 115 L 120 123 M 120 123 Q 112 131 104 124 M 120 123 Q 128 131 136 124" stroke="#5D4037" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>

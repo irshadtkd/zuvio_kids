@@ -5,6 +5,7 @@ import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
 import 'package:zuvio_kids/core/widgets/kid_button.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/providers/alphabet_provider.dart';
@@ -27,6 +28,7 @@ class _AlphabetCongratulationsScreenState
     extends ConsumerState<AlphabetCongratulationsScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _sparkleController;
+  bool _hasPlayedCelebrationAudio = false;
 
   @override
   void initState() {
@@ -36,18 +38,21 @@ class _AlphabetCongratulationsScreenState
       duration: const Duration(milliseconds: 900),
     )..forward();
 
-    // Congratulatory TTS speech
+    // Play character and clapping sounds simultaneously
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final state = ref.read(alphabetNotifierProvider).valueOrNull;
-      final name = state?.studentName.isNotEmpty == true
-          ? state!.studentName
-          : AppStrings.defaultChildName;
-      KidSoundService.instance.speak('Great job, $name! You earned 10 stars!');
+      if (!mounted || _hasPlayedCelebrationAudio) return;
+      _hasPlayedCelebrationAudio = true;
+      final onboardingState = ref.read(onboardingNotifierProvider).valueOrNull;
+      final friend = onboardingState?.friendAvatar.isNotEmpty == true
+          ? onboardingState!.friendAvatar
+          : AppStrings.defaultFriend;
+      KidSoundService.instance.playCelebrationSounds(friend);
     });
   }
 
   @override
   void dispose() {
+    KidSoundService.instance.stop();
     _sparkleController.dispose();
     super.dispose();
   }
@@ -101,7 +106,7 @@ class _AlphabetCongratulationsScreenState
     final isAllDone = sessionNum >= 4;
 
     return Scaffold(
-      backgroundColor: AppColors.appSkyBlue,
+      backgroundColor: context.themePalette.scaffoldBackground,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -217,7 +222,7 @@ class _AlphabetCongratulationsScreenState
                   KidButton(
                     label: l10n.btnPlayAgain,
                     showArrow: false,
-                    backgroundColor: AppColors.cardYellow,
+                    backgroundColor: context.themePalette.highlight,
                     onPressed: () => _onPlayAgain(context, ref),
                   ),
                 ],

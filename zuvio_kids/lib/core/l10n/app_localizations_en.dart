@@ -214,6 +214,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get menuLogout => 'Logout';
 
   @override
+  String get menuChangeTheme => 'Change Theme';
+
+  @override
+  String get themeDialogTitle => 'Choose Theme';
+
+  @override
+  String get themeDialogSubtitle => 'Pick your favourite colors!';
+
+  @override
+  String get themeSunnySky => 'Sunny Sky';
+
+  @override
+  String get themeSunnySkyDesc => 'Bright sky blue adventure';
+
+  @override
+  String get themeCandyCarnival => 'Candy Carnival';
+
+  @override
+  String get themeCandyCarnivalDesc => 'Sweet pink & playful candy';
+
+  @override
+  String get themeMagicMeadow => 'Magic Meadow';
+
+  @override
+  String get themeMagicMeadowDesc => 'Fresh green playful meadow';
+
+  @override
+  String get themeSelected => 'Active';
+
+  @override
   String get errorNameLength => 'Name must be 2–10 characters.';
 
   @override
@@ -336,4 +366,370 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get btnUnmute => 'Unmute sound';
+
+  @override
+  String get numbersHubTitle => 'Numbers 1-100';
+
+  @override
+  String get numbersHubSubtitle => 'Pick a level. Stars unlock the next one!';
+
+  @override
+  String get meetTheNumber => 'Meet the number';
+
+  @override
+  String get tapNumberToHearAgain => 'Tap the number to hear it again';
+
+  @override
+  String get traceTheNumber => 'Trace the number';
+
+  @override
+  String get followDotsWithFinger => 'Follow the dots with your finger!';
+
+  @override
+  String get btnShowMe => 'Show me';
+
+  @override
+  String get findTheNumber => 'Find the number';
+
+  @override
+  String get whichNumberIsThis => 'Which number is this?';
+
+  @override
+  String get countAgainYouCanDoIt => 'Count them again. You can do it!';
+
+  @override
+  String get numbersCongratsTitle => 'Congratulations!';
+
+  @override
+  String numbersCongratsSubtitle(String session) {
+    return 'You completed session $session!';
+  }
+
+  @override
+  String get numbersStarsEarned => '+10 Stars Earned!';
+
+  @override
+  String get btnClear => 'Clear';
+
+  @override
+  String get colorMagic => 'Color Magic';
+
+  @override
+  String get discoverTheColor => 'Discover the color';
+
+  @override
+  String paintTheObject(String object, String color) {
+    return 'Paint the $object $color!';
+  }
+
+  @override
+  String tapColorThenObject(String object) {
+    return 'Tap a color, then tap the $object.';
+  }
+
+  @override
+  String get tapColorToHearAgain => 'Tap the color to hear it again';
+
+  @override
+  String get colorsCongratsSubtitle => 'You learned all 7 colors!';
+
+  @override
+  String get colorRed => 'Red';
+
+  @override
+  String get colorYellow => 'Yellow';
+
+  @override
+  String get colorGreen => 'Green';
+
+  @override
+  String get colorBlue => 'Blue';
+
+  @override
+  String get colorOrange => 'Orange';
+
+  @override
+  String get colorPurple => 'Purple';
+
+  @override
+  String get colorPink => 'Pink';
+
+  @override
+  String get objectApple => 'apple';
+
+  @override
+  String get objectBanana => 'banana';
+
+  @override
+  String get objectLeaf => 'leaf';
+
+  @override
+  String get objectBalloon => 'balloon';
+
+  @override
+  String get objectCarrot => 'carrot';
+
+  @override
+  String get objectGrapes => 'grapes';
+
+  @override
+  String get objectFlower => 'flower';
+
+  @override
+  String get shapesHubTitle => 'Shapes Fun';
+
+  @override
+  String get shapesHubSubtitle => 'Explore shapes! 3 steps to master each one.';
+
+  @override
+  String get shapesDiscoverTitle => 'Discover Shape';
+
+  @override
+  String thisIsA(String shapeName) {
+    return 'This is a $shapeName!';
+  }
+
+  @override
+  String shapeExampleDesc(String exampleName) {
+    return 'Like a $exampleName!';
+  }
+
+  @override
+  String get tapShapeToHear => 'Tap the shape to hear its name!';
+
+  @override
+  String get shapesPracticeTitle => 'Practice Shape';
+
+  @override
+  String get shapesTraceInstruction => 'Trace the dotted shape!';
+
+  @override
+  String get shapesMatchingTitle => 'Shape Matching';
+
+  @override
+  String shapesMatchInstruction(String shapeName) {
+    return 'Find the $shapeName!';
+  }
+
+  @override
+  String shapesMatchCorrect(String shapeName) {
+    return 'Super! That\'s the $shapeName!';
+  }
+
+  @override
+  String get shapesCongratsTitle => 'Shapes Champion!';
+
+  @override
+  String get shapesCongratsSubtitle =>
+      'You completed this session and earned 10 stars!';
+
+  @override
+  String get btnNextSession => 'Next Session';
+
+  @override
+  String get shapeCircle => 'Circle';
+
+  @override
+  String get shapeSquare => 'Square';
+
+  @override
+  String get shapeTriangle => 'Triangle';
+
+  @override
+  String get shapeRectangle => 'Rectangle';
+
+  @override
+  String get shapeOval => 'Oval';
+
+  @override
+  String get shapeStar => 'Star';
+
+  @override
+  String get shapeHeart => 'Heart';
+
+  @override
+  String get shapeDiamond => 'Diamond';
+
+  @override
+  String get shapePentagon => 'Pentagon';
+
+  @override
+  String get shapeHexagon => 'Hexagon';
+
+  @override
+  String get shapeCrescent => 'Crescent';
+
+  @override
+  String get shapeSemicircle => 'Semicircle';
+
+  @override
+  String get exampleClock => 'Clock';
+
+  @override
+  String get exampleBall => 'Ball';
+
+  @override
+  String get exampleGiftBox => 'Gift Box';
+
+  @override
+  String get examplePizza => 'Pizza Slice';
+
+  @override
+  String get exampleDoor => 'Door';
+
+  @override
+  String get exampleEgg => 'Egg';
+
+  @override
+  String get exampleStarfish => 'Starfish';
+
+  @override
+  String get exampleBalloon => 'Balloon';
+
+  @override
+  String get exampleKite => 'Kite';
+
+  @override
+  String get exampleBirdhouse => 'Birdhouse';
+
+  @override
+  String get exampleHoneycomb => 'Honeycomb';
+
+  @override
+  String get exampleMoon => 'Moon';
+
+  @override
+  String get exampleWatermelon => 'Watermelon Slice';
+
+  @override
+  String get shapeFilledLabel => 'Solid';
+
+  @override
+  String get shapeOutlineLabel => 'Outline';
+
+  @override
+  String get titlePuzzlePlayground => 'Puzzle\nPlayground';
+
+  @override
+  String get instructionMatchShadows => 'Match each picture to its shadow!';
+
+  @override
+  String get headingShadows => 'Shadows';
+
+  @override
+  String get headingPictures => 'Pictures';
+
+  @override
+  String labelPuzzleSession(String number) {
+    return 'Puzzle $number';
+  }
+
+  @override
+  String get feedbackPuzzleMatched => 'Awesome! You matched the shadow!';
+
+  @override
+  String get feedbackPuzzleTryAgain => 'Oops, try matching another shadow!';
+
+  @override
+  String get feedbackPuzzleComplete => 'Great job! All shadows matched!';
+
+  @override
+  String get puzzleCongratsTitle => 'Puzzle Master!';
+
+  @override
+  String get puzzleCongratsSubtitle =>
+      'You solved all 4 puzzles and earned 10 stars!';
+
+  @override
+  String get titleAnimals => 'Animals';
+
+  @override
+  String get animalsHubSubtitle => 'Meet your friendly animal friends!';
+
+  @override
+  String get animalsSession1Title => 'Session 1';
+
+  @override
+  String get animalsSession1Subtitle => 'Elephant, Cat, Tiger & Friends';
+
+  @override
+  String get animalsSession2Title => 'Session 2';
+
+  @override
+  String get animalsSession2Subtitle => 'Rabbit, Parrot, Fish & Friends';
+
+  @override
+  String animalsItemProgress(int current, int total) {
+    return '$current of $total';
+  }
+
+  @override
+  String get btnPlaySound => 'Play Sound';
+
+  @override
+  String get animalCongratsTitle => 'Animal Explorer!';
+
+  @override
+  String get animalCongratsSubtitle =>
+      'You learned all 10 animals in this session and earned 5 stars!';
+
+  @override
+  String get animalElephant => 'Elephant';
+
+  @override
+  String get animalCat => 'Cat';
+
+  @override
+  String get animalTiger => 'Tiger';
+
+  @override
+  String get animalLion => 'Lion';
+
+  @override
+  String get animalCow => 'Cow';
+
+  @override
+  String get animalGoat => 'Goat';
+
+  @override
+  String get animalMonkey => 'Monkey';
+
+  @override
+  String get animalDog => 'Dog';
+
+  @override
+  String get animalHen => 'Hen';
+
+  @override
+  String get animalHorse => 'Horse';
+
+  @override
+  String get animalRabbit => 'Rabbit';
+
+  @override
+  String get animalParrot => 'Parrot';
+
+  @override
+  String get animalFish => 'Fish';
+
+  @override
+  String get animalGiraffe => 'Giraffe';
+
+  @override
+  String get animalZebra => 'Zebra';
+
+  @override
+  String get animalDeer => 'Deer';
+
+  @override
+  String get animalPeacock => 'Peacock';
+
+  @override
+  String get animalFrog => 'Frog';
+
+  @override
+  String get animalCamel => 'Camel';
+
+  @override
+  String get animalBear => 'Bear';
 }

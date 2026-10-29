@@ -37,10 +37,10 @@ class TracingCanvas extends StatefulWidget {
   final bool isCompleted;
 
   @override
-  State<TracingCanvas> createState() => _TracingCanvasState();
+  State<TracingCanvas> createState() => TracingCanvasState();
 }
 
-class _TracingCanvasState extends State<TracingCanvas> {
+class TracingCanvasState extends State<TracingCanvas> {
   final List<Offset?> _userPoints = [];
   Offset? _currentCursor;
   final Set<int> _hitWaypoints = {};
@@ -258,7 +258,7 @@ class _TracingCanvasState extends State<TracingCanvas> {
     // The child must finish the whole letter AND achieve >= 99% path accuracy
     final bool isSuccess = isLetterCompleted && pathAccuracy >= 0.97;
     final double displayAccuracy =
-        isLetterCompleted ? pathAccuracy : (pathAccuracy * (coverage / 0.88));
+        isLetterCompleted ? pathAccuracy : (pathAccuracy * (coverage / 0.97));
 
     if (isSuccess) {
       _triggerSuccess(pathAccuracy);
@@ -298,6 +298,11 @@ class _TracingCanvasState extends State<TracingCanvas> {
       if (!mounted) return;
       _resetCanvas();
     });
+  }
+
+  /// Clears all user drawn strokes and restores original dotted guide pattern.
+  void resetCanvas() {
+    _resetCanvas();
   }
 
   void _resetCanvas() {

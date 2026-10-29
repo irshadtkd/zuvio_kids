@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="tigerSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFA000"/>
+      <stop offset="100%" stop-color="#F57C00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Round Ear -->
+  <circle cx="68" cy="72" r="24" fill="url(#tigerSkin)" stroke="#E65100" stroke-width="4"/>
+  <circle cx="68" cy="72" r="14" fill="#FFE0B2"/>
+
+  <!-- Right Round Ear -->
+  <circle cx="172" cy="72" r="24" fill="url(#tigerSkin)" stroke="#E65100" stroke-width="4"/>
+  <circle cx="172" cy="72" r="14" fill="#FFE0B2"/>
+
+  <!-- Body -->
+  <ellipse cx="120" cy="172" rx="56" ry="46" fill="url(#tigerSkin)" stroke="#E65100" stroke-width="4"/>
+  <!-- Belly -->
+  <ellipse cx="120" cy="176" rx="34" ry="32" fill="#FFF8E1"/>
+
+  <!-- Body Stripes -->
+  <path d="M 68 165 L 85 168 L 68 174 Z" fill="#212121"/>
+  <path d="M 66 182 L 82 184 L 66 189 Z" fill="#212121"/>
+  <path d="M 172 165 L 155 168 L 172 174 Z" fill="#212121"/>
+  <path d="M 174 182 L 158 184 L 174 189 Z" fill="#212121"/>
+
+  <!-- Paws -->
+  <circle cx="94" cy="206" r="14" fill="#FFF8E1" stroke="#FFA000" stroke-width="3"/>
+  <circle cx="146" cy="206" r="14" fill="#FFF8E1" stroke="#FFA000" stroke-width="3"/>
+
+  <!-- Head -->
+  <ellipse cx="120" cy="112" rx="58" ry="48" fill="url(#tigerSkin)" stroke="#E65100" stroke-width="4"/>
+
+  <!-- Forehead Stripes -->
+  <polygon points="120,70 115,86 125,86" fill="#212121"/>
+  <polygon points="105,74 105,86 112,82" fill="#212121"/>
+  <polygon points="135,74 135,86 128,82" fill="#212121"/>
+
+  <!-- Cheek Stripes -->
+  <polygon points="63,110 78,113 63,118" fill="#212121"/>
+  <polygon points="63,124 76,126 63,130" fill="#212121"/>
+  <polygon points="177,110 162,113 177,118" fill="#212121"/>
+  <polygon points="177,124 164,126 177,130" fill="#212121"/>
+
+  <!-- White Muzzle -->
+  <ellipse cx="108" cy="132" rx="16" ry="12" fill="#FFFFFF"/>
+  <ellipse cx="132" cy="132" rx="16" ry="12" fill="#FFFFFF"/>
+
+  <!-- Eyes -->
+  <ellipse cx="94" cy="102" rx="8" ry="11" fill="#212121"/>
+  <circle cx="91" cy="98" r="3.5" fill="#FFFFFF"/>
+  <circle cx="96" cy="106" r="1.5" fill="#FFFFFF"/>
+
+  <ellipse cx="146" cy="102" rx="8" ry="11" fill="#212121"/>
+  <circle cx="143" cy="98" r="3.5" fill="#FFFFFF"/>
+  <circle cx="148" cy="106" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Nose & Mouth -->
+  <polygon points="120,124 112,116 128,116" fill="#212121"/>
+  <path d="M 120 124 L 120 133 M 120 133 Q 112 142 102 135 M 120 133 Q 128 142 138 135" stroke="#212121" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Blush -->
+  <circle cx="78" cy="128" r="8" fill="#FF8A80" opacity="0.5"/>
+  <circle cx="162" cy="128" r="8" fill="#FF8A80" opacity="0.5"/>
+</svg>

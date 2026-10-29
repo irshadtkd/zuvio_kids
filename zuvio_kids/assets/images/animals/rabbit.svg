@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bunnyFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FCE4EC"/>
+    </linearGradient>
+    <linearGradient id="bunnyInnerEar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8BBD0"/>
+      <stop offset="100%" stop-color="#F48FB1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Long Ear -->
+  <path d="M 88 85 C 75 25 90 10 102 12 C 114 15 110 50 100 85 Z" fill="url(#bunnyFur)" stroke="#F8BBD0" stroke-width="3.5"/>
+  <path d="M 91 75 C 82 32 92 20 100 22 C 107 24 104 50 97 75 Z" fill="url(#bunnyInnerEar)"/>
+
+  <!-- Right Long Ear -->
+  <path d="M 152 85 C 165 25 150 10 138 12 C 126 15 130 50 140 85 Z" fill="url(#bunnyFur)" stroke="#F8BBD0" stroke-width="3.5"/>
+  <path d="M 149 75 C 158 32 148 20 140 22 C 133 24 136 50 143 75 Z" fill="url(#bunnyInnerEar)"/>
+
+  <!-- Body -->
+  <ellipse cx="120" cy="174" rx="54" ry="44" fill="url(#bunnyFur)" stroke="#F8BBD0" stroke-width="4"/>
+
+  <!-- Paws tucked -->
+  <ellipse cx="102" cy="180" rx="12" ry="8" fill="#FFFFFF" stroke="#F8BBD0" stroke-width="2"/>
+  <ellipse cx="138" cy="180" rx="12" ry="8" fill="#FFFFFF" stroke="#F8BBD0" stroke-width="2"/>
+
+  <!-- Feet at bottom -->
+  <ellipse cx="88" cy="210" rx="16" ry="10" fill="#FFFFFF" stroke="#F8BBD0" stroke-width="2"/>
+  <ellipse cx="152" cy="210" rx="16" ry="10" fill="#FFFFFF" stroke="#F8BBD0" stroke-width="2"/>
+
+  <!-- Head -->
+  <ellipse cx="120" cy="116" rx="50" ry="42" fill="url(#bunnyFur)" stroke="#F8BBD0" stroke-width="4"/>
+
+  <!-- Big Sparkling Eyes -->
+  <ellipse cx="96" cy="108" rx="8" ry="11" fill="#4A148C"/>
+  <circle cx="93" cy="104" r="3.5" fill="#FFFFFF"/>
+  <circle cx="98" cy="112" r="1.5" fill="#FFFFFF"/>
+
+  <ellipse cx="144" cy="108" rx="8" ry="11" fill="#4A148C"/>
+  <circle cx="141" cy="104" r="3.5" fill="#FFFFFF"/>
+  <circle cx="146" cy="112" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Whiskers -->
+  <line x1="86" y1="126" x2="52" y2="122" stroke="#B0BEC5" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="86" y1="132" x2="55" y2="135" stroke="#B0BEC5" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="154" y1="126" x2="188" y2="122" stroke="#B0BEC5" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="154" y1="132" x2="185" y2="135" stroke="#B0BEC5" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Pink Nose & Cute Mouth -->
+  <polygon points="120,125 114,119 126,119" fill="#EC407A"/>
+  <path d="M 120 125 L 120 131 M 120 131 Q 114 137 108 132 M 120 131 Q 126 137 132 132" stroke="#AD1457" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Cheeks Blush -->
+  <circle cx="80" cy="126" r="9" fill="#FF80AB" opacity="0.45"/>
+  <circle cx="160" cy="126" r="9" fill="#FF80AB" opacity="0.45"/>
+</svg>

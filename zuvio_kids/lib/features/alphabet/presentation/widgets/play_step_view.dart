@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
@@ -39,10 +40,27 @@ class PlayStepViewState extends State<PlayStepView> {
     AppColors.cardLavender,
   ];
 
+  late List<String> _shuffledOptions;
+
+  List<String> _buildShuffledOptions() {
+    final list = List<String>.from(widget.letter.quizOptions);
+    list.shuffle(Random());
+    return list;
+  }
+
   @override
   void initState() {
     super.initState();
+    _shuffledOptions = _buildShuffledOptions();
     _speakQuestion();
+  }
+
+  @override
+  void didUpdateWidget(covariant PlayStepView oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.letter != widget.letter) {
+      _shuffledOptions = _buildShuffledOptions();
+    }
   }
 
   void playAudioPrompt() {
@@ -50,8 +68,9 @@ class PlayStepViewState extends State<PlayStepView> {
   }
 
   void _speakQuestion() {
-    final phonetic =
-        KidSoundService.instance.getPhoneticLetterName(widget.letter.letter);
+    final phonetic = KidSoundService.instance.getPhoneticLetterName(
+      widget.letter.letter,
+    );
     final question = 'Which starts with $phonetic?';
     KidSoundService.instance.speak(question);
   }
@@ -64,7 +83,7 @@ class PlayStepViewState extends State<PlayStepView> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final options = widget.letter.quizOptions;
+    final options = _shuffledOptions;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -122,11 +141,13 @@ class PlayStepViewState extends State<PlayStepView> {
           Row(
             children: List.generate(options.length, (index) {
               final word = options[index];
+              final displayWord =
+                  widget.letter.isCapital ? word : word.toLowerCase();
               final bgColor = _cardColors[index % _cardColors.length];
               final isChosen = widget.selectedWord == word;
-              final isTargetLetterWord = word
-                  .toLowerCase()
-                  .startsWith(widget.letter.letter.toLowerCase());
+              final isTargetLetterWord = word.toLowerCase().startsWith(
+                widget.letter.letter.toLowerCase(),
+              );
 
               return Expanded(
                 child: Padding(
@@ -149,7 +170,7 @@ class PlayStepViewState extends State<PlayStepView> {
                             ? Border.all(
                                 color: isTargetLetterWord
                                     ? AppColors.kidGreen
-                                    : AppColors.navy,
+                                    : Colors.red,
                                 width: 3.5,
                               )
                             : null,
@@ -168,9 +189,9 @@ class PlayStepViewState extends State<PlayStepView> {
                           AlphabetIllustration(word: word, size: 56),
                           const SizedBox(height: 8),
 
-                          // Word Label ("Cat", "Sun", "Dog")
+                          // Word Label (e.g. "Cat" for capitals, "cat" for small letters)
                           Text(
-                            word,
+                            displayWord,
                             textAlign: TextAlign.center,
                             style: AppTextStyles.base.copyWith(
                               fontSize: 18,
@@ -188,27 +209,13 @@ class PlayStepViewState extends State<PlayStepView> {
           ),
           const SizedBox(height: 12),
 
-          // ── 3 Star Badges Row (matches bottom of Image 3) ────────────────
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(3, (i) {
-              final isEarned = i < widget.stars;
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: Icon(
-                  isEarned ? Icons.star_rounded : Icons.star_outline_rounded,
-                  color: isEarned ? AppColors.starYellow : AppColors.navy,
-                  size: 34,
-                ),
-              );
-            }),
-          ),
-          const SizedBox(height: 12),
-
-          // ── Bottom Next Button ───────────────────────────────────────────
-          KidButton(
-            label: l10n.btnNext,
-            onPressed: widget.onNext,
+          // ── Bottom Next Button (visible only on correct answer) ──────────
+          Visibility(
+            visible: widget.isAnswerCorrect == true,
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            child: KidButton(label: l10n.btnNext, onPressed: widget.onNext),
           ),
           const SizedBox(height: 16),
         ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 
 /// Interactive step tabs row for [1 Discover, 2 Practice, 3 Play].
 /// Layer: Presentation Widget
@@ -18,6 +19,7 @@ class AlphabetStepPills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final palette = context.themePalette;
 
     final steps = [
       (0, l10n.stepDiscover),
@@ -40,12 +42,12 @@ class AlphabetStepPills extends StatelessWidget {
                   duration: const Duration(milliseconds: 200),
                   height: 48,
                   decoration: BoxDecoration(
-                    color: isSelected ? AppColors.cardYellow : Colors.white,
+                    color: isSelected ? palette.highlight : Colors.white,
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
                         color: isSelected
-                            ? const Color(0xFFD69E1F).withValues(alpha: 0.6)
+                            ? palette.highlightShadow.withValues(alpha: 0.6)
                             : Colors.black.withValues(alpha: 0.04),
                         offset: Offset(0, isSelected ? 3 : 2),
                       ),

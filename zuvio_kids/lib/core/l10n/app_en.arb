@@ -349,6 +349,56 @@
     "description": "Profile bottom sheet option to log out / clear profile"
   },
 
+  "menuChangeTheme": "Change Theme",
+  "@menuChangeTheme": {
+    "description": "Profile bottom sheet option to change the app color theme"
+  },
+
+  "themeDialogTitle": "Choose Theme",
+  "@themeDialogTitle": {
+    "description": "Header title of the theme selection modal"
+  },
+
+  "themeDialogSubtitle": "Pick your favourite colors!",
+  "@themeDialogSubtitle": {
+    "description": "Subtitle encouraging kids to pick a color theme"
+  },
+
+  "themeSunnySky": "Sunny Sky",
+  "@themeSunnySky": {
+    "description": "Name of the default blue theme"
+  },
+
+  "themeSunnySkyDesc": "Bright sky blue adventure",
+  "@themeSunnySkyDesc": {
+    "description": "Description of the default blue theme"
+  },
+
+  "themeCandyCarnival": "Candy Carnival",
+  "@themeCandyCarnival": {
+    "description": "Name of the pink candy theme"
+  },
+
+  "themeCandyCarnivalDesc": "Sweet pink & playful candy",
+  "@themeCandyCarnivalDesc": {
+    "description": "Description of the pink candy theme"
+  },
+
+  "themeMagicMeadow": "Magic Meadow",
+  "@themeMagicMeadow": {
+    "description": "Name of the green meadow theme"
+  },
+
+  "themeMagicMeadowDesc": "Fresh green playful meadow",
+  "@themeMagicMeadowDesc": {
+    "description": "Description of the green meadow theme"
+  },
+
+  "themeSelected": "Active",
+  "@themeSelected": {
+    "description": "Label indicating which theme is currently selected"
+  },
+
   "errorNameLength": "Name must be 2–10 characters.",
   "@errorNameLength": {
     "description": "Validation error shown when name is too short or too long"
@@ -580,5 +630,476 @@
   "btnUnmute": "Unmute sound",
   "@btnUnmute": {
     "description": "Accessibility label for unmute button"
+  },
+
+  "numbersHubTitle": "Numbers 1-100",
+  "@numbersHubTitle": {
+    "description": "Title on the numbers hub screen"
+  },
+
+  "numbersHubSubtitle": "Pick a level. Stars unlock the next one!",
+  "@numbersHubSubtitle": {
+    "description": "Subtitle on the numbers hub screen"
+  },
+
+  "meetTheNumber": "Meet the number",
+  "@meetTheNumber": {
+    "description": "Header for discover number step"
+  },
+
+  "tapNumberToHearAgain": "Tap the number to hear it again",
+  "@tapNumberToHearAgain": {
+    "description": "Helper text on discover number step"
+  },
+
+  "traceTheNumber": "Trace the number",
+  "@traceTheNumber": {
+    "description": "Header for practice tracing step"
+  },
+
+  "followDotsWithFinger": "Follow the dots with your finger!",
+  "@followDotsWithFinger": {
+    "description": "Helper speech bubble on tracing step"
+  },
+
+  "btnShowMe": "Show me",
+  "@btnShowMe": {
+    "description": "Button to demonstrate tracing pattern"
+  },
+
+  "findTheNumber": "Find the number",
+  "@findTheNumber": {
+    "description": "Header for play quiz step"
+  },
+
+  "whichNumberIsThis": "Which number is this?",
+  "@whichNumberIsThis": {
+    "description": "Question on play quiz step"
+  },
+
+  "countAgainYouCanDoIt": "Count them again. You can do it!",
+  "@countAgainYouCanDoIt": {
+    "description": "Encouraging speech bubble on play quiz step"
+  },
+
+  "numbersCongratsTitle": "Congratulations!",
+  "@numbersCongratsTitle": {
+    "description": "Title on congratulations screen"
+  },
+
+  "numbersCongratsSubtitle": "You completed session {session}!",
+  "@numbersCongratsSubtitle": {
+    "description": "Subtitle on congratulations screen",
+    "placeholders": {
+      "session": {
+        "type": "String",
+        "example": "1-10"
+      }
+    }
+  },
+
+  "numbersStarsEarned": "+10 Stars Earned!",
+  "@numbersStarsEarned": {
+    "description": "Stars badge text on congratulations screen"
+  },
+
+  "btnClear": "Clear",
+  "@btnClear": {
+    "description": "Label and tooltip for the reset or clear tracing button"
+  },
+
+  "colorMagic": "Color Magic",
+  "@colorMagic": {
+    "description": "Title on the paint step screen"
+  },
+
+  "discoverTheColor": "Discover the color",
+  "@discoverTheColor": {
+    "description": "Title on discover color step screen"
+  },
+
+  "paintTheObject": "Paint the {object} {color}!",
+  "@paintTheObject": {
+    "description": "Prompt instructing child to paint the object with a specific color",
+    "placeholders": {
+      "object": {
+        "type": "String",
+        "example": "apple"
+      },
+      "color": {
+        "type": "String",
+        "example": "red"
+      }
+    }
+  },
+
+  "tapColorThenObject": "Tap a color, then tap the {object}.",
+  "@tapColorThenObject": {
+    "description": "Helper instruction for painting the object",
+    "placeholders": {
+      "object": {
+        "type": "String",
+        "example": "apple"
+      }
+    }
+  },
+
+  "tapColorToHearAgain": "Tap the color to hear it again",
+  "@tapColorToHearAgain": {
+    "description": "Helper text on discover color step"
+  },
+
+  "colorsCongratsSubtitle": "You learned all 7 colors!",
+  "@colorsCongratsSubtitle": {
+    "description": "Subtitle on colors congratulations screen"
+  },
+
+  "colorRed": "Red",
+  "@colorRed": { "description": "Color name" },
+  "colorYellow": "Yellow",
+  "@colorYellow": { "description": "Color name" },
+  "colorGreen": "Green",
+  "@colorGreen": { "description": "Color name" },
+  "colorBlue": "Blue",
+  "@colorBlue": { "description": "Color name" },
+  "colorOrange": "Orange",
+  "@colorOrange": { "description": "Color name" },
+  "colorPurple": "Purple",
+  "@colorPurple": { "description": "Color name" },
+  "colorPink": "Pink",
+  "@colorPink": { "description": "Color name" },
+
+  "objectApple": "apple",
+  "@objectApple": { "description": "Object name" },
+  "objectBanana": "banana",
+  "@objectBanana": { "description": "Object name" },
+  "objectLeaf": "leaf",
+  "@objectLeaf": { "description": "Object name" },
+  "objectBalloon": "balloon",
+  "@objectBalloon": { "description": "Object name" },
+  "objectCarrot": "carrot",
+  "@objectCarrot": { "description": "Object name" },
+  "objectGrapes": "grapes",
+  "@objectGrapes": { "description": "Object name" },
+  "objectFlower": "flower",
+  "@objectFlower": { "description": "Object name" },
+
+  "shapesHubTitle": "Shapes Fun",
+  "@shapesHubTitle": {
+    "description": "Title on Shapes Hub screen"
+  },
+  "shapesHubSubtitle": "Explore shapes! 3 steps to master each one.",
+  "@shapesHubSubtitle": {
+    "description": "Subtitle on Shapes Hub screen"
+  },
+  "shapesDiscoverTitle": "Discover Shape",
+  "@shapesDiscoverTitle": {
+    "description": "Title for Discover Shape step"
+  },
+  "thisIsA": "This is a {shapeName}!",
+  "@thisIsA": {
+    "description": "Announcement of the shape",
+    "placeholders": {
+      "shapeName": {
+        "type": "String",
+        "example": "Circle"
+      }
+    }
+  },
+  "shapeExampleDesc": "Like a {exampleName}!",
+  "@shapeExampleDesc": {
+    "description": "Real world example phrase",
+    "placeholders": {
+      "exampleName": {
+        "type": "String",
+        "example": "Ball"
+      }
+    }
+  },
+  "tapShapeToHear": "Tap the shape to hear its name!",
+  "@tapShapeToHear": {
+    "description": "Helper instruction on discover step"
+  },
+  "shapesPracticeTitle": "Practice Shape",
+  "@shapesPracticeTitle": {
+    "description": "Title for Practice Shape step"
+  },
+  "shapesTraceInstruction": "Trace the dotted shape!",
+  "@shapesTraceInstruction": {
+    "description": "Instruction for tracing shape"
+  },
+  "shapesMatchingTitle": "Shape Matching",
+  "@shapesMatchingTitle": {
+    "description": "Title for Matching step"
+  },
+  "shapesMatchInstruction": "Find the {shapeName}!",
+  "@shapesMatchInstruction": {
+    "description": "Instruction for matching shape",
+    "placeholders": {
+      "shapeName": {
+        "type": "String",
+        "example": "Circle"
+      }
+    }
+  },
+  "shapesMatchCorrect": "Super! That's the {shapeName}!",
+  "@shapesMatchCorrect": {
+    "description": "Feedback message when matching shape is correct",
+    "placeholders": {
+      "shapeName": {
+        "type": "String",
+        "example": "Circle"
+      }
+    }
+  },
+  "shapesCongratsTitle": "Shapes Champion!",
+  "@shapesCongratsTitle": {
+    "description": "Title on Shapes congratulations screen"
+  },
+  "shapesCongratsSubtitle": "You completed this session and earned 10 stars!",
+  "@shapesCongratsSubtitle": {
+    "description": "Subtitle on Shapes congratulations screen"
+  },
+  "btnNextSession": "Next Session",
+  "@btnNextSession": {
+    "description": "Button to advance to next session"
+  },
+
+  "shapeCircle": "Circle",
+  "@shapeCircle": { "description": "Shape name" },
+  "shapeSquare": "Square",
+  "@shapeSquare": { "description": "Shape name" },
+  "shapeTriangle": "Triangle",
+  "@shapeTriangle": { "description": "Shape name" },
+  "shapeRectangle": "Rectangle",
+  "@shapeRectangle": { "description": "Shape name" },
+  "shapeOval": "Oval",
+  "@shapeOval": { "description": "Shape name" },
+  "shapeStar": "Star",
+  "@shapeStar": { "description": "Shape name" },
+  "shapeHeart": "Heart",
+  "@shapeHeart": { "description": "Shape name" },
+  "shapeDiamond": "Diamond",
+  "@shapeDiamond": { "description": "Shape name" },
+  "shapePentagon": "Pentagon",
+  "@shapePentagon": { "description": "Shape name" },
+  "shapeHexagon": "Hexagon",
+  "@shapeHexagon": { "description": "Shape name" },
+  "shapeCrescent": "Crescent",
+  "@shapeCrescent": { "description": "Shape name" },
+  "shapeSemicircle": "Semicircle",
+  "@shapeSemicircle": { "description": "Shape name" },
+
+  "exampleClock": "Clock",
+  "@exampleClock": { "description": "Real world item name" },
+  "exampleBall": "Ball",
+  "@exampleBall": { "description": "Real world item name" },
+  "exampleGiftBox": "Gift Box",
+  "@exampleGiftBox": { "description": "Real world item name" },
+  "examplePizza": "Pizza Slice",
+  "@examplePizza": { "description": "Real world item name" },
+  "exampleDoor": "Door",
+  "@exampleDoor": { "description": "Real world item name" },
+  "exampleEgg": "Egg",
+  "@exampleEgg": { "description": "Real world item name" },
+  "exampleStarfish": "Starfish",
+  "@exampleStarfish": { "description": "Real world item name" },
+  "exampleBalloon": "Balloon",
+  "@exampleBalloon": { "description": "Real world item name" },
+  "exampleKite": "Kite",
+  "@exampleKite": { "description": "Real world item name" },
+  "exampleBirdhouse": "Birdhouse",
+  "@exampleBirdhouse": { "description": "Real world item name" },
+  "exampleHoneycomb": "Honeycomb",
+  "@exampleHoneycomb": { "description": "Real world item name" },
+  "exampleMoon": "Moon",
+  "@exampleMoon": { "description": "Real world item name" },
+  "exampleWatermelon": "Watermelon Slice",
+  "@exampleWatermelon": { "description": "Real world item name" },
+
+  "shapeFilledLabel": "Solid",
+  "@shapeFilledLabel": {
+    "description": "Label for filled solid shape representation"
+  },
+  "shapeOutlineLabel": "Outline",
+  "@shapeOutlineLabel": {
+    "description": "Label for outline unfilled shape representation"
+  },
+
+  "titlePuzzlePlayground": "Puzzle\nPlayground",
+  "@titlePuzzlePlayground": {
+    "description": "Screen title for the puzzle sessions screen"
+  },
+  "instructionMatchShadows": "Match each picture to its shadow!",
+  "@instructionMatchShadows": {
+    "description": "Instruction message for matching shadows puzzle"
+  },
+  "headingShadows": "Shadows",
+  "@headingShadows": {
+    "description": "Heading for shadow target slots"
+  },
+  "headingPictures": "Pictures",
+  "@headingPictures": {
+    "description": "Heading for draggable/selectable pictures"
+  },
+  "labelPuzzleSession": "Puzzle {number}",
+  "@labelPuzzleSession": {
+    "description": "Label for puzzle session pill",
+    "placeholders": {
+      "number": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  },
+  "feedbackPuzzleMatched": "Awesome! You matched the shadow!",
+  "@feedbackPuzzleMatched": {
+    "description": "Positive feedback when a shadow match is correct"
+  },
+  "feedbackPuzzleTryAgain": "Oops, try matching another shadow!",
+  "@feedbackPuzzleTryAgain": {
+    "description": "Gentle guidance when dropped on wrong shadow"
+  },
+  "feedbackPuzzleComplete": "Great job! All shadows matched!",
+  "@feedbackPuzzleComplete": {
+    "description": "Feedback when current puzzle session is completed"
+  },
+  "puzzleCongratsTitle": "Puzzle Master!",
+  "@puzzleCongratsTitle": {
+    "description": "Title on puzzle congratulations screen"
+  },
+  "puzzleCongratsSubtitle": "You solved all 4 puzzles and earned 10 stars!",
+  "@puzzleCongratsSubtitle": {
+    "description": "Subtitle on puzzle congratulations screen"
+  },
+  "titleAnimals": "Animals",
+  "@titleAnimals": {
+    "description": "Title on the animals hub screen"
+  },
+  "animalsHubSubtitle": "Meet your friendly animal friends!",
+  "@animalsHubSubtitle": {
+    "description": "Subtitle on the animals hub screen"
+  },
+  "animalsSession1Title": "Session 1",
+  "@animalsSession1Title": {
+    "description": "Title for session 1 of animals"
+  },
+  "animalsSession1Subtitle": "Elephant, Cat, Tiger & Friends",
+  "@animalsSession1Subtitle": {
+    "description": "Subtitle for session 1 of animals"
+  },
+  "animalsSession2Title": "Session 2",
+  "@animalsSession2Title": {
+    "description": "Title for session 2 of animals"
+  },
+  "animalsSession2Subtitle": "Rabbit, Parrot, Fish & Friends",
+  "@animalsSession2Subtitle": {
+    "description": "Subtitle for session 2 of animals"
+  },
+  "animalsItemProgress": "{current} of {total}",
+  "@animalsItemProgress": {
+    "description": "Current item position in learning session",
+    "placeholders": {
+      "current": {
+        "type": "int",
+        "example": "1"
+      },
+      "total": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "btnPlaySound": "Play Sound",
+  "@btnPlaySound": {
+    "description": "Button to play the animal sound effect"
+  },
+  "animalCongratsTitle": "Animal Explorer!",
+  "@animalCongratsTitle": {
+    "description": "Title on animals congratulations screen"
+  },
+  "animalCongratsSubtitle": "You learned all 10 animals in this session and earned 5 stars!",
+  "@animalCongratsSubtitle": {
+    "description": "Subtitle on animals congratulations screen"
+  },
+  "animalElephant": "Elephant",
+  "@animalElephant": {
+    "description": "Name for Elephant"
+  },
+  "animalCat": "Cat",
+  "@animalCat": {
+    "description": "Name for Cat"
+  },
+  "animalTiger": "Tiger",
+  "@animalTiger": {
+    "description": "Name for Tiger"
+  },
+  "animalLion": "Lion",
+  "@animalLion": {
+    "description": "Name for Lion"
+  },
+  "animalCow": "Cow",
+  "@animalCow": {
+    "description": "Name for Cow"
+  },
+  "animalGoat": "Goat",
+  "@animalGoat": {
+    "description": "Name for Goat"
+  },
+  "animalMonkey": "Monkey",
+  "@animalMonkey": {
+    "description": "Name for Monkey"
+  },
+  "animalDog": "Dog",
+  "@animalDog": {
+    "description": "Name for Dog"
+  },
+  "animalHen": "Hen",
+  "@animalHen": {
+    "description": "Name for Hen"
+  },
+  "animalHorse": "Horse",
+  "@animalHorse": {
+    "description": "Name for Horse"
+  },
+  "animalRabbit": "Rabbit",
+  "@animalRabbit": {
+    "description": "Name for Rabbit"
+  },
+  "animalParrot": "Parrot",
+  "@animalParrot": {
+    "description": "Name for Parrot"
+  },
+  "animalFish": "Fish",
+  "@animalFish": {
+    "description": "Name for Fish"
+  },
+  "animalGiraffe": "Giraffe",
+  "@animalGiraffe": {
+    "description": "Name for Giraffe"
+  },
+  "animalZebra": "Zebra",
+  "@animalZebra": {
+    "description": "Name for Zebra"
+  },
+  "animalDeer": "Deer",
+  "@animalDeer": {
+    "description": "Name for Deer"
+  },
+  "animalPeacock": "Peacock",
+  "@animalPeacock": {
+    "description": "Name for Peacock"
+  },
+  "animalFrog": "Frog",
+  "@animalFrog": {
+    "description": "Name for Frog"
+  },
+  "animalCamel": "Camel",
+  "@animalCamel": {
+    "description": "Name for Camel"
+  },
+  "animalBear": "Bear",
+  "@animalBear": {
+    "description": "Name for Bear"
   }
 }

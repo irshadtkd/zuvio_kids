@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="henBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#ECEFF1"/>
+    </linearGradient>
+    <linearGradient id="henComb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF5252"/>
+      <stop offset="100%" stop-color="#D32F2F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tail Feathers -->
+  <path d="M 50 120 Q 30 95 38 75 Q 55 90 65 110 Z" fill="url(#henComb)" stroke="#B71C1C" stroke-width="2"/>
+  <path d="M 60 115 Q 40 85 52 68 Q 68 85 75 105 Z" fill="#FF9800" stroke="#E65100" stroke-width="2"/>
+  <path d="M 70 110 Q 55 75 70 60 Q 82 80 82 105 Z" fill="#FFEB3B" stroke="#F57F17" stroke-width="2"/>
+
+  <!-- Feet -->
+  <line x1="105" y1="195" x2="105" y2="215" stroke="#FFA000" stroke-width="4" stroke-linecap="round"/>
+  <line x1="105" y1="215" x2="92" y2="218" stroke="#FFA000" stroke-width="4" stroke-linecap="round"/>
+  <line x1="105" y1="215" x2="118" y2="218" stroke="#FFA000" stroke-width="4" stroke-linecap="round"/>
+
+  <line x1="135" y1="195" x2="135" y2="215" stroke="#FFA000" stroke-width="4" stroke-linecap="round"/>
+  <line x1="135" y1="215" x2="122" y2="218" stroke="#FFA000" stroke-width="4" stroke-linecap="round"/>
+  <line x1="135" y1="215" x2="148" y2="218" stroke="#FFA000" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Plump Body -->
+  <ellipse cx="125" cy="155" rx="55" ry="45" fill="url(#henBody)" stroke="#CFD8DC" stroke-width="4"/>
+
+  <!-- Wing -->
+  <path d="M 95 145 C 85 160 90 180 115 182 C 135 184 140 165 130 150 C 122 138 105 135 95 145 Z" fill="#FFF9C4" stroke="#FFE082" stroke-width="3"/>
+
+  <!-- Head -->
+  <circle cx="150" cy="100" r="32" fill="url(#henBody)" stroke="#CFD8DC" stroke-width="4"/>
+
+  <!-- Comb / Crown -->
+  <g fill="url(#henComb)" stroke="#B71C1C" stroke-width="2">
+    <circle cx="140" cy="68" r="10"/>
+    <circle cx="154" cy="62" r="12"/>
+    <circle cx="168" cy="68" r="10"/>
+  </g>
+
+  <!-- Wattle under beak -->
+  <path d="M 180 118 C 185 132 172 135 170 122 Z" fill="url(#henComb)"/>
+
+  <!-- Yellow Beak -->
+  <polygon points="175,102 205,112 175,120" fill="#FFC107" stroke="#FFA000" stroke-width="2"/>
+
+  <!-- Eye -->
+  <ellipse cx="155" cy="96" rx="6" ry="8" fill="#212121"/>
+  <circle cx="153" cy="93" r="2.5" fill="#FFFFFF"/>
+  <circle cx="156" cy="98" r="1" fill="#FFFFFF"/>
+
+  <!-- Rosy Blush -->
+  <circle cx="145" cy="112" r="7" fill="#FF8A80" opacity="0.5"/>
+</svg>

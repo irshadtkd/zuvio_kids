@@ -11,8 +11,10 @@ abstract final class AppStrings {
 
   // ── Asset paths ───────────────────────────────────────────────────────
   static const String assetsImages = 'assets/images/';
+  static const String assetsAnimals = 'assets/images/animals/';
   static const String assetsLottie = 'assets/lottie/';
   static const String assetsAudio = 'assets/audio/';
+  static const String assetClappingSound = 'assets/audio/clapping.wav';
 
   // ── Shared Preference keys ────────────────────────────────────────────
   static const String prefLocale = 'pref_locale';
@@ -24,6 +26,23 @@ abstract final class AppStrings {
   static const String prefAlphabetCompletedSessions = 'pref_alphabet_completed_sessions_';
   static const String prefAlphabetStars = 'pref_alphabet_stars_';
   static const String prefAlphabetCurrentLetter = 'pref_alphabet_current_letter_';
+  static const String prefNumbersCompletedSessions = 'pref_numbers_completed_sessions_';
+  static const String prefNumbersStars = 'pref_numbers_stars_';
+  static const String prefColorsCompleted = 'pref_colors_completed_';
+  static const String prefColorsStars = 'pref_colors_stars_';
+  static const String prefShapesCompletedSessions = 'pref_shapes_completed_sessions_';
+  static const String prefShapesUnlockedSessions = 'pref_shapes_unlocked_sessions_';
+  static const String prefShapesStars = 'pref_shapes_stars_';
+  static const String prefAnimalsCompletedSessions = 'pref_animals_completed_sessions_';
+  static const String prefAnimalsStars = 'pref_animals_stars_';
+  static const String prefTotalStarPoints = 'pref_total_star_points';
+  static const String prefThemeMode = 'pref_theme_mode';
+  static const String prefPuzzleCompletedSessions = 'pref_puzzle_completed_sessions';
+  static const String prefPuzzleCompletedVariations = 'pref_puzzle_completed_variations';
+
+  // ── Animals Session Identifiers ───────────────────────────────────────
+  static const String sessionAnimals1 = 'animals_session_1';
+  static const String sessionAnimals2 = 'animals_session_2';
 
   // ── Alphabet Session Identifiers ──────────────────────────────────────
   static const String sessionCapital1 = 'capital_1';

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goatFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8E1"/>
+      <stop offset="100%" stop-color="#FFECB3"/>
+    </linearGradient>
+    <linearGradient id="goatHorn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BCAAA4"/>
+      <stop offset="100%" stop-color="#8D6E63"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Curved Horns -->
+  <path d="M 92 68 Q 80 25 65 32 Q 78 55 86 74 Z" fill="url(#goatHorn)" stroke="#6D4C41" stroke-width="2.5"/>
+  <path d="M 148 68 Q 160 25 175 32 Q 162 55 154 74 Z" fill="url(#goatHorn)" stroke="#6D4C41" stroke-width="2.5"/>
+
+  <!-- Left Drooping Ear -->
+  <path d="M 72 90 C 35 95 35 130 65 116 Z" fill="url(#goatFur)" stroke="#D7CCC8" stroke-width="3"/>
+  <path d="M 68 95 C 45 98 45 122 62 114 Z" fill="#FFCDD2"/>
+
+  <!-- Right Drooping Ear -->
+  <path d="M 168 90 C 205 95 205 130 175 116 Z" fill="url(#goatFur)" stroke="#D7CCC8" stroke-width="3"/>
+  <path d="M 172 95 C 195 98 195 122 178 114 Z" fill="#FFCDD2"/>
+
+  <!-- Body -->
+  <ellipse cx="120" cy="174" rx="54" ry="44" fill="url(#goatFur)" stroke="#D7CCC8" stroke-width="4"/>
+
+  <!-- Beard -->
+  <path d="M 112 155 Q 120 185 124 185 Q 128 155 120 155 Z" fill="#FFFFFF" stroke="#D7CCC8" stroke-width="2"/>
+
+  <!-- Head -->
+  <path d="M 85 85 Q 120 70 155 85 Q 160 135 140 155 Q 120 162 100 155 Q 80 135 85 85 Z" fill="url(#goatFur)" stroke="#D7CCC8" stroke-width="4"/>
+
+  <!-- Eyes with sweet horizontal cute pupils -->
+  <ellipse cx="98" cy="106" rx="8" ry="9" fill="#5D4037"/>
+  <ellipse cx="98" cy="106" rx="6" ry="4" fill="#212121"/>
+  <circle cx="95" cy="102" r="3" fill="#FFFFFF"/>
+  <circle cx="100" cy="108" r="1.2" fill="#FFFFFF"/>
+
+  <ellipse cx="142" cy="106" rx="8" ry="9" fill="#5D4037"/>
+  <ellipse cx="142" cy="106" rx="6" ry="4" fill="#212121"/>
+  <circle cx="139" cy="102" r="3" fill="#FFFFFF"/>
+  <circle cx="144" cy="108" r="1.2" fill="#FFFFFF"/>
+
+  <!-- Soft Pink Snout & Smile -->
+  <ellipse cx="120" cy="138" rx="18" ry="12" fill="#FFCDD2"/>
+  <polygon points="120,135 115,130 125,130" fill="#8D6E63"/>
+  <path d="M 120 135 L 120 142 M 120 142 Q 114 148 108 144 M 120 142 Q 126 148 132 144" stroke="#8D6E63" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Blush -->
+  <circle cx="86" cy="122" r="7" fill="#FF8A80" opacity="0.45"/>
+  <circle cx="154" cy="122" r="7" fill="#FF8A80" opacity="0.45"/>
+</svg>

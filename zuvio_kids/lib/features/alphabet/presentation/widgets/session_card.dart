@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/features/alphabet/domain/entities/alphabet_session_entity.dart';
 
 /// Card representing one of the 4 learning sessions in the Alphabet Hub.
@@ -16,17 +17,11 @@ class SessionCard extends StatelessWidget {
   final AlphabetSessionEntity session;
   final VoidCallback onTap;
 
-  static const List<Color> _sessionCardColors = [
-    AppColors.cardYellow,
-    AppColors.cardPink,
-    AppColors.cardGreen,
-    AppColors.cardLavender,
-  ];
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final color = _sessionCardColors[(session.sessionNumber - 1) % _sessionCardColors.length];
+    final sessionColors = context.themePalette.sessionColors;
+    final color = sessionColors[(session.sessionNumber - 1) % sessionColors.length];
 
     String title;
     String subtitle;

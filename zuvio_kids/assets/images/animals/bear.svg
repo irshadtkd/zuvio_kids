@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bearFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8D6E63"/>
+      <stop offset="100%" stop-color="#6D4C41"/>
+    </linearGradient>
+    <linearGradient id="bearSnout" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFEBE9"/>
+      <stop offset="100%" stop-color="#D7CCC8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left Round Ear -->
+  <circle cx="70" cy="76" r="22" fill="url(#bearFur)" stroke="#4E342E" stroke-width="4"/>
+  <circle cx="70" cy="76" r="12" fill="url(#bearSnout)"/>
+
+  <!-- Right Round Ear -->
+  <circle cx="170" cy="76" r="22" fill="url(#bearFur)" stroke="#4E342E" stroke-width="4"/>
+  <circle cx="170" cy="76" r="12" fill="url(#bearSnout)"/>
+
+  <!-- Body -->
+  <ellipse cx="120" cy="174" rx="56" ry="46" fill="url(#bearFur)" stroke="#4E342E" stroke-width="4"/>
+  <!-- Tummy Patch -->
+  <ellipse cx="120" cy="178" rx="36" ry="30" fill="url(#bearSnout)"/>
+
+  <!-- Paws -->
+  <circle cx="92" cy="208" r="14" fill="url(#bearSnout)" stroke="#8D6E63" stroke-width="3"/>
+  <circle cx="148" cy="208" r="14" fill="url(#bearSnout)" stroke="#8D6E63" stroke-width="3"/>
+
+  <!-- Head -->
+  <ellipse cx="120" cy="114" rx="56" ry="46" fill="url(#bearFur)" stroke="#4E342E" stroke-width="4"/>
+
+  <!-- Big Friendly Sparkling Eyes -->
+  <ellipse cx="96" cy="104" rx="8" ry="11" fill="#212121"/>
+  <circle cx="93" cy="99" r="3.5" fill="#FFFFFF"/>
+  <circle cx="98" cy="108" r="1.5" fill="#FFFFFF"/>
+
+  <ellipse cx="144" cy="104" rx="8" ry="11" fill="#212121"/>
+  <circle cx="141" cy="99" r="3.5" fill="#FFFFFF"/>
+  <circle cx="146" cy="108" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Cream Snout -->
+  <ellipse cx="120" cy="132" rx="26" ry="18" fill="url(#bearSnout)" stroke="#BCAAA4" stroke-width="2"/>
+
+  <!-- Cute Heart/Triangle Nose -->
+  <path d="M 120 128 C 114 120 126 120 120 128 Z" fill="#3E2723"/>
+  <circle cx="120" cy="123" r="5" fill="#3E2723"/>
+
+  <!-- Smile -->
+  <path d="M 120 128 L 120 135 M 120 135 Q 112 143 105 137 M 120 135 Q 128 143 135 137" stroke="#3E2723" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Rosy Cheeks -->
+  <circle cx="78" cy="126" r="8" fill="#FF8A80" opacity="0.5"/>
+  <circle cx="162" cy="126" r="8" fill="#FF8A80" opacity="0.5"/>
+</svg>

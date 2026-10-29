@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="deerCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D7A86E"/>
+      <stop offset="100%" stop-color="#C59253"/>
+    </linearGradient>
+    <linearGradient id="antlerColor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8D6E63"/>
+      <stop offset="100%" stop-color="#6D4C41"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Antlers -->
+  <path d="M 96 68 L 86 36 M 86 48 L 74 42" stroke="url(#antlerColor)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 144 68 L 154 36 M 154 48 L 166 42" stroke="url(#antlerColor)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Ears -->
+  <path d="M 85 75 C 50 68 50 102 78 92 Z" fill="url(#deerCoat)" stroke="#8D6E63" stroke-width="2.5"/>
+  <path d="M 80 77 C 58 72 58 98 75 90 Z" fill="#FFF8E1"/>
+
+  <path d="M 155 75 C 190 68 190 102 162 92 Z" fill="url(#deerCoat)" stroke="#8D6E63" stroke-width="2.5"/>
+  <path d="M 160 77 C 182 72 182 98 165 90 Z" fill="#FFF8E1"/>
+
+  <!-- Body -->
+  <ellipse cx="120" cy="174" rx="54" ry="44" fill="url(#deerCoat)" stroke="#8D6E63" stroke-width="4"/>
+  <!-- White Chest & Spots -->
+  <ellipse cx="120" cy="180" rx="28" ry="26" fill="#FFF9C4"/>
+  <circle cx="85" cy="165" r="4.5" fill="#FFFFFF"/>
+  <circle cx="95" cy="185" r="4" fill="#FFFFFF"/>
+  <circle cx="155" cy="165" r="4.5" fill="#FFFFFF"/>
+  <circle cx="145" cy="185" r="4" fill="#FFFFFF"/>
+
+  <!-- Head -->
+  <path d="M 92 82 Q 120 70 148 82 Q 158 120 140 140 Q 120 148 100 140 Q 82 120 92 82 Z" fill="url(#deerCoat)" stroke="#8D6E63" stroke-width="4"/>
+
+  <!-- Spots on forehead -->
+  <circle cx="114" cy="86" r="3" fill="#FFFFFF"/>
+  <circle cx="126" cy="86" r="3" fill="#FFFFFF"/>
+  <circle cx="120" cy="94" r="3" fill="#FFFFFF"/>
+
+  <!-- Big Doe Eyes -->
+  <ellipse cx="102" cy="108" rx="8" ry="11" fill="#212121"/>
+  <circle cx="99" cy="103" r="3.5" fill="#FFFFFF"/>
+  <circle cx="104" cy="112" r="1.5" fill="#FFFFFF"/>
+
+  <ellipse cx="138" cy="108" rx="8" ry="11" fill="#212121"/>
+  <circle cx="135" cy="103" r="3.5" fill="#FFFFFF"/>
+  <circle cx="140" cy="112" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Soft White Muzzle -->
+  <ellipse cx="120" cy="134" rx="18" ry="12" fill="#FFF9C4"/>
+  <ellipse cx="120" cy="128" rx="6" ry="4" fill="#212121"/>
+  <path d="M 115 136 Q 120 140 125 136" stroke="#212121" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Cheeks Blush -->
+  <circle cx="86" cy="122" r="7" fill="#FF8A80" opacity="0.5"/>
+  <circle cx="154" cy="122" r="7" fill="#FF8A80" opacity="0.5"/>
+</svg>

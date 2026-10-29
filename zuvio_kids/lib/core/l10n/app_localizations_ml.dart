@@ -217,6 +217,37 @@ class AppLocalizationsMl extends AppLocalizations {
   String get menuLogout => 'ലോഗൗട്ട്';
 
   @override
+  String get menuChangeTheme => 'തീം മാറ്റുക';
+
+  @override
+  String get themeDialogTitle => 'തീം തിരഞ്ഞെടുക്കുക';
+
+  @override
+  String get themeDialogSubtitle =>
+      'നിങ്ങൾക്ക് ഇഷ്ടപ്പെട്ട നിറങ്ങൾ തിരഞ്ഞെടുക്കുക!';
+
+  @override
+  String get themeSunnySky => 'സണ്ണി സ്കൈ';
+
+  @override
+  String get themeSunnySkyDesc => 'നീല ആകാശ സാഹസികത';
+
+  @override
+  String get themeCandyCarnival => 'കാൻഡി കാർണിവൽ';
+
+  @override
+  String get themeCandyCarnivalDesc => 'മധുരമുള്ള പിങ്ക് കാൻഡി';
+
+  @override
+  String get themeMagicMeadow => 'മാജിക് മെഡോ';
+
+  @override
+  String get themeMagicMeadowDesc => 'പച്ചപ്പ് നിറഞ്ഞ പുൽമേട്';
+
+  @override
+  String get themeSelected => 'സജീവം';
+
+  @override
   String get errorNameLength => 'പേര് 2–10 അക്ഷരങ്ങള്‍ ഉണ്ടായിരിക്കണം.';
 
   @override
@@ -339,4 +370,376 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get btnUnmute => 'ശബ്ദം ഓണാക്കുക';
+
+  @override
+  String get numbersHubTitle => 'സംഖ്യകൾ 1-100';
+
+  @override
+  String get numbersHubSubtitle =>
+      'ഒരു ലെവൽ തിരഞ്ഞെടുക്കൂ. അടുത്തത് തുറക്കാൻ നക്ഷത്രങ്ങൾ നേടൂ!';
+
+  @override
+  String get meetTheNumber => 'സംഖ്യയെ അറിയാം';
+
+  @override
+  String get tapNumberToHearAgain => 'വീണ്ടും കേൾക്കാൻ സംഖ്യയിൽ തൊടുക';
+
+  @override
+  String get traceTheNumber => 'സംഖ്യ വരയ്ക്കാം';
+
+  @override
+  String get followDotsWithFinger => 'വിരൽ കൊണ്ട് ഡോട്ടുകൾ പിന്തുടരുക!';
+
+  @override
+  String get btnShowMe => 'കാണിച്ചുതരിക';
+
+  @override
+  String get findTheNumber => 'സംഖ്യ കണ്ടെത്താം';
+
+  @override
+  String get whichNumberIsThis => 'ഇത് ഏത് സംഖ്യയാണ്?';
+
+  @override
+  String get countAgainYouCanDoIt => 'വീണ്ടും എണ്ണൂ. നിങ്ങൾക്ക് സാധിക്കും!';
+
+  @override
+  String get numbersCongratsTitle => 'അഭിനന്ദനങ്ങൾ!';
+
+  @override
+  String numbersCongratsSubtitle(String session) {
+    return 'നിങ്ങൾ സെഷൻ $session പൂർത്തിയാക്കി!';
+  }
+
+  @override
+  String get numbersStarsEarned => '+10 നക്ഷത്രങ്ങൾ ലഭിച്ചു!';
+
+  @override
+  String get btnClear => 'മായ്ക്കുക';
+
+  @override
+  String get colorMagic => 'നിറങ്ങളുടെ മാജിക്';
+
+  @override
+  String get discoverTheColor => 'നിറം അറിയാം';
+
+  @override
+  String paintTheObject(String object, String color) {
+    return '$objectന് $color നിറം നൽകൂ!';
+  }
+
+  @override
+  String tapColorThenObject(String object) {
+    return 'ഒരു നിറത്തിൽ തൊടൂ, ശേഷം $objectൽ തൊടൂ.';
+  }
+
+  @override
+  String get tapColorToHearAgain => 'വീണ്ടും കേൾക്കാൻ നിറത്തിൽ തൊടുക';
+
+  @override
+  String get colorsCongratsSubtitle =>
+      'നിങ്ങൾ എല്ലാ 7 നിറങ്ങളും പഠിച്ചു കഴിഞ്ഞു!';
+
+  @override
+  String get colorRed => 'ചുവപ്പ്';
+
+  @override
+  String get colorYellow => 'മഞ്ഞ';
+
+  @override
+  String get colorGreen => 'പച്ച';
+
+  @override
+  String get colorBlue => 'നീല';
+
+  @override
+  String get colorOrange => 'ഓറഞ്ച്';
+
+  @override
+  String get colorPurple => 'വയലറ്റ്';
+
+  @override
+  String get colorPink => 'പിങ്ക്';
+
+  @override
+  String get objectApple => 'ആപ്പിൾ';
+
+  @override
+  String get objectBanana => 'പഴം';
+
+  @override
+  String get objectLeaf => 'ഇല';
+
+  @override
+  String get objectBalloon => 'ബലൂൺ';
+
+  @override
+  String get objectCarrot => 'കാരറ്റ്';
+
+  @override
+  String get objectGrapes => 'മുന്തിരി';
+
+  @override
+  String get objectFlower => 'പൂവ്';
+
+  @override
+  String get shapesHubTitle => 'രൂപങ്ങൾ';
+
+  @override
+  String get shapesHubSubtitle => 'രൂപങ്ങൾ പഠിക്കാം! ഓരോന്നിനും 3 ഘട്ടങ്ങൾ.';
+
+  @override
+  String get shapesDiscoverTitle => 'രൂപം കണ്ടെത്തുക';
+
+  @override
+  String thisIsA(String shapeName) {
+    return 'ഇതാണ് $shapeName!';
+  }
+
+  @override
+  String shapeExampleDesc(String exampleName) {
+    return 'ഒരു $exampleName പോലെ!';
+  }
+
+  @override
+  String get tapShapeToHear => 'പേര് കേൾക്കാൻ രൂപത്തിൽ തൊടുക!';
+
+  @override
+  String get shapesPracticeTitle => 'പരിശീലിക്കാം';
+
+  @override
+  String get shapesTraceInstruction => 'ഡോട്ടുകളിലൂടെ വരയ്ക്കൂ!';
+
+  @override
+  String get shapesMatchingTitle => 'രൂപങ്ങൾ യോജിപ്പിക്കാം';
+
+  @override
+  String shapesMatchInstruction(String shapeName) {
+    return '$shapeName കണ്ടെത്തൂ!';
+  }
+
+  @override
+  String shapesMatchCorrect(String shapeName) {
+    return 'കൊള്ളാം! അതാണ് $shapeName!';
+  }
+
+  @override
+  String get shapesCongratsTitle => 'രൂപങ്ങളുടെ വിജയി!';
+
+  @override
+  String get shapesCongratsSubtitle =>
+      'നിങ്ങൾ ഈ സെഷൻ പൂർത്തിയാക്കി 10 നക്ഷത്രങ്ങൾ നേടി!';
+
+  @override
+  String get btnNextSession => 'അടുത്ത സെഷൻ';
+
+  @override
+  String get shapeCircle => 'വൃത്തം';
+
+  @override
+  String get shapeSquare => 'സമചതുരം';
+
+  @override
+  String get shapeTriangle => 'ത്രികോണം';
+
+  @override
+  String get shapeRectangle => 'ദീർഘചതുരം';
+
+  @override
+  String get shapeOval => 'അണ്ഡാകൃതി';
+
+  @override
+  String get shapeStar => 'നക്ഷത്രം';
+
+  @override
+  String get shapeHeart => 'ഹൃദയം';
+
+  @override
+  String get shapeDiamond => 'ഡയമണ്ട്';
+
+  @override
+  String get shapePentagon => 'പഞ്ചഭുജം';
+
+  @override
+  String get shapeHexagon => 'ഷഡ്ഭുജം';
+
+  @override
+  String get shapeCrescent => 'ചന്ദ്രക്കല';
+
+  @override
+  String get shapeSemicircle => 'അർദ്ധവൃത്തം';
+
+  @override
+  String get exampleClock => 'ക്ലോക്ക്';
+
+  @override
+  String get exampleBall => 'പന്ത്';
+
+  @override
+  String get exampleGiftBox => 'സമ്മാനപ്പെട്ടി';
+
+  @override
+  String get examplePizza => 'പിസ്സ കഷ്ണം';
+
+  @override
+  String get exampleDoor => 'വാതിൽ';
+
+  @override
+  String get exampleEgg => 'മുട്ട';
+
+  @override
+  String get exampleStarfish => 'നക്ഷത്രമത്സ്യം';
+
+  @override
+  String get exampleBalloon => 'ബലൂൺ';
+
+  @override
+  String get exampleKite => 'പട്ടം';
+
+  @override
+  String get exampleBirdhouse => 'പക്ഷിക്കൂട്';
+
+  @override
+  String get exampleHoneycomb => 'തേൻകൂട്';
+
+  @override
+  String get exampleMoon => 'ചന്ദ്രൻ';
+
+  @override
+  String get exampleWatermelon => 'തണ്ണീർമത്തൻ';
+
+  @override
+  String get shapeFilledLabel => 'നിറമുള്ളത്';
+
+  @override
+  String get shapeOutlineLabel => 'ഔട്ട്ലൈൻ';
+
+  @override
+  String get titlePuzzlePlayground => 'പസിൽ\nകളിക്കളം';
+
+  @override
+  String get instructionMatchShadows =>
+      'ഓരോ ചിത്രവും അതിന്റെ നിഴലുമായി പൊരുത്തപ്പെടുത്തുക!';
+
+  @override
+  String get headingShadows => 'നിഴലുകൾ';
+
+  @override
+  String get headingPictures => 'ചിത്രങ്ങൾ';
+
+  @override
+  String labelPuzzleSession(String number) {
+    return 'പസിൽ $number';
+  }
+
+  @override
+  String get feedbackPuzzleMatched => 'ഗംഭീരം! നിങ്ങൾ നിഴൽ പൊരുത്തപ്പെടുത്തി!';
+
+  @override
+  String get feedbackPuzzleTryAgain =>
+      'അത് ശരിയായ നിഴലല്ല. വീണ്ടും ശ്രമിക്കുക!';
+
+  @override
+  String get feedbackPuzzleComplete =>
+      'മിടുക്കൻ! എല്ലാ നിഴലുകളും പൊരുത്തപ്പെടുത്തി!';
+
+  @override
+  String get puzzleCongratsTitle => 'പസിൽ മാസ്റ്റർ!';
+
+  @override
+  String get puzzleCongratsSubtitle =>
+      'നിങ്ങൾ 4 പസിലുകളും പൂർത്തിയാക്കി 10 നക്ഷത്രങ്ങൾ നേടി!';
+
+  @override
+  String get titleAnimals => 'മൃഗങ്ങൾ';
+
+  @override
+  String get animalsHubSubtitle =>
+      'നിങ്ങളുടെ പ്രിയപ്പെട്ട മൃഗങ്ങളെ കണ്ടുമുട്ടൂ!';
+
+  @override
+  String get animalsSession1Title => 'സെഷൻ 1';
+
+  @override
+  String get animalsSession1Subtitle => 'ആന, പൂച്ച, കടുവ കൂട്ടുകാർ';
+
+  @override
+  String get animalsSession2Title => 'സെഷൻ 2';
+
+  @override
+  String get animalsSession2Subtitle => 'മുയൽ, തത്ത, മത്സ്യം കൂട്ടുകാർ';
+
+  @override
+  String animalsItemProgress(int current, int total) {
+    return '$total-ൽ $current';
+  }
+
+  @override
+  String get btnPlaySound => 'ശബ്ദം കേൾക്കൂ';
+
+  @override
+  String get animalCongratsTitle => 'അനിമൽ എക്സ്പ്ലോറർ!';
+
+  @override
+  String get animalCongratsSubtitle =>
+      'നിങ്ങൾ ഈ സെഷനിലെ 10 മൃഗങ്ങളെയും പഠിച്ച് 5 നക്ഷത്രങ്ങൾ നേടി!';
+
+  @override
+  String get animalElephant => 'ആന';
+
+  @override
+  String get animalCat => 'പൂച്ച';
+
+  @override
+  String get animalTiger => 'കടുവ';
+
+  @override
+  String get animalLion => 'സിംഹം';
+
+  @override
+  String get animalCow => 'പശു';
+
+  @override
+  String get animalGoat => 'ആട്';
+
+  @override
+  String get animalMonkey => 'കുരങ്ങൻ';
+
+  @override
+  String get animalDog => 'പട്ടി';
+
+  @override
+  String get animalHen => 'കോഴി';
+
+  @override
+  String get animalHorse => 'കുതിര';
+
+  @override
+  String get animalRabbit => 'മുയൽ';
+
+  @override
+  String get animalParrot => 'തത്ത';
+
+  @override
+  String get animalFish => 'മത്സ്യം';
+
+  @override
+  String get animalGiraffe => 'ജിറാഫ്';
+
+  @override
+  String get animalZebra => 'സീബ്ര';
+
+  @override
+  String get animalDeer => 'മാൻ';
+
+  @override
+  String get animalPeacock => 'മയിൽ';
+
+  @override
+  String get animalFrog => 'തവള';
+
+  @override
+  String get animalCamel => 'ഒട്ടകം';
+
+  @override
+  String get animalBear => 'കരടി';
 }

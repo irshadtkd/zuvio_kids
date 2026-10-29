@@ -4,6 +4,7 @@ import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
+import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/providers/alphabet_provider.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/widgets/session_card.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/star_badge.dart';
@@ -26,7 +27,7 @@ class AlphabetHubScreen extends ConsumerWidget {
     final notifier = ref.read(alphabetNotifierProvider.notifier);
 
     return Scaffold(
-      backgroundColor: AppColors.appSkyBlue,
+      backgroundColor: context.themePalette.scaffoldBackground,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),

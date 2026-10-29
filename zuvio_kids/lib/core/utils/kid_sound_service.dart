@@ -21,8 +21,9 @@ class KidSoundService {
   final FlutterTts _tts = FlutterTts();
   bool _ttsInitialised = false;
 
-  // ── Audio player ─────────────────────────────────────────────────────────
+  // ── Audio players ─────────────────────────────────────────────────────────
   final AudioPlayer _player = AudioPlayer();
+  final AudioPlayer _clappingPlayer = AudioPlayer();
 
   // ── Onomatopoeia fallback map (used when WAV asset is unavailable) ────────
   static const Map<String, String> _animalOnomatopoeia = {
@@ -166,20 +167,90 @@ class KidSoundService {
     }
   }
 
+  /// Plays the celebratory clapping sound.
+  Future<void> playClappingSound() async {
+    if (_isMuted) return;
+    try {
+      await _clappingPlayer.stop();
+      await _clappingPlayer.setAsset(AppStrings.assetClappingSound);
+      await _clappingPlayer.seek(Duration.zero);
+      await _clappingPlayer.play();
+    } catch (e) {
+      AppLogger.error('KidSoundService: playClappingSound failed', e);
+    }
+  }
+
+  /// Plays the selected character's sound and the clapping sound simultaneously.
+  /// Runs both audio players concurrently so neither delays or interrupts the other.
+  Future<void> playCelebrationSounds(String animalId) async {
+    if (_isMuted) return;
+    final id = animalId.toLowerCase();
+    final animalAssetPath = '${AppStrings.assetsAudio}animals/$id.wav';
+
+    try {
+      try {
+        await _tts.stop();
+      } catch (_) {}
+
+      try {
+        await Future.wait([
+          _player.stop(),
+          _clappingPlayer.stop(),
+        ]);
+      } catch (_) {}
+
+      // Play animal sound
+      final playAnimal = () async {
+        try {
+          await _player.setAsset(animalAssetPath);
+          await _player.seek(Duration.zero);
+          await _player.play();
+        } catch (e) {
+          AppLogger.error(
+            'KidSoundService: celebration animal sound failed for "$id", falling back to TTS',
+            e,
+          );
+          final fallback = _animalOnomatopoeia[id] ?? id;
+          await speak(fallback);
+        }
+      }();
+
+      // Play clapping sound
+      final playClap = () async {
+        try {
+          await _clappingPlayer.setAsset(AppStrings.assetClappingSound);
+          await _clappingPlayer.seek(Duration.zero);
+          await _clappingPlayer.play();
+        } catch (e) {
+          AppLogger.error(
+            'KidSoundService: celebration clapping sound failed',
+            e,
+          );
+        }
+      }();
+
+      await Future.wait([playAnimal, playClap]);
+    } catch (e) {
+      AppLogger.error('KidSoundService: playCelebrationSounds unexpected error', e);
+    }
+  }
+
   /// Stops any currently playing TTS or audio.
   Future<void> stop() async {
     try {
       await _tts.stop();
       await _player.stop();
+      await _clappingPlayer.stop();
     } catch (e) {
       AppLogger.error('KidSoundService: stop failed', e);
     }
   }
 
-  /// Disposes the audio player. Call when the app is shutting down.
+  /// Disposes audio players. Call when the app is shutting down.
   Future<void> dispose() async {
     try {
       await _player.dispose();
+      await _clappingPlayer.dispose();
     } catch (e) {
       AppLogger.error('KidSoundService: dispose failed', e);
     }
