@@ -742,4 +742,154 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get animalBear => 'കരടി';
+
+  @override
+  String mascotGreetingHome(String name) {
+    return 'ഹലോ $name! ഇന്ന് എന്ത് പഠിക്കണം?';
+  }
+
+  @override
+  String get mascotGreetingAnimals => 'നമുക്ക് അത്ഭുതകരമായ മൃഗങ്ങളെ കാണാം!';
+
+  @override
+  String get mascotGreetingAlphabet => 'നമുക്ക് A B C പഠിക്കാം!';
+
+  @override
+  String get mascotGreetingNumbers => 'ഇതാ നമ്പറുകൾ! എന്നോടൊപ്പം എണ്ണൂ!';
+
+  @override
+  String get mascotGreetingColors => 'നമുക്ക് മനോഹരമായ നിറങ്ങൾ കണ്ടെത്താം!';
+
+  @override
+  String get mascotGreetingShapes => 'ആകൃതികൾ കണ്ടെത്തി! നമുക്ക് പോകാം!';
+
+  @override
+  String get mascotGreetingPuzzles => 'പസിൽ സമയം! നിനക്ക് പസിൽ ഇഷ്ടമാണ്!';
+
+  @override
+  String get mascotCelebrate => 'അടിപൊളി! നീ ചെയ്തു! നീ ഒരു സൂപ്പർ സ്റ്റാർ!';
+
+  @override
+  String get mascotEncourage => 'നിനക്ക് ചെയ്യാം! വീണ്ടും ശ്രമിക്കൂ!';
+
+  @override
+  String get feedbackCorrect1 => 'അതെ! ശരിയാണ്! നീ വളരെ ബുദ്ധിമാൻ!';
+
+  @override
+  String get feedbackCorrect2 => 'ഹൂ! അദ്ഭുതകരമായ ഉത്തരം!';
+
+  @override
+  String get feedbackCorrect3 => 'ബ്രില്ലിയൻ്റ്! നിന്നെത്തന്നെ ഒന്ന് കൊട്ടൂ!';
+
+  @override
+  String get feedbackCorrect4 => 'പർഫക്ട്! നീ ഒരു ജീനിയസ്!';
+
+  @override
+  String get feedbackCorrect5 => 'അടുക്കൽ! ഫാൻ്റാസ്റ്റിക് ജോലി!';
+
+  @override
+  String get feedbackWrong1 => 'ഏതാണ്ട് ശരി! ഒന്നൂടെ നോക്കൂ!';
+
+  @override
+  String get feedbackWrong2 => 'ഹ്മ്മ്, വീണ്ടും ശ്രമിക്കാം — നിനക്ക് ചെയ്യാം!';
+
+  @override
+  String get feedbackWrong3 => 'വിഷമിക്കേണ്ട, ഒരിക്കൽ കൂടി ശ്രമിക്കൂ!';
+
+  @override
+  String get achievementAnimalExplorer => 'മൃഗ സഞ്ചാരി';
+
+  @override
+  String get achievementAnimalMaster => 'മൃഗ മാസ്റ്റർ';
+
+  @override
+  String get achievementAlphabetStar => 'അക്ഷര നക്ഷത്രം';
+
+  @override
+  String get achievementNumberNinja => 'നമ്പർ നിൻജ';
+
+  @override
+  String get achievementColorArtist => 'നിറ കലാകാരൻ';
+
+  @override
+  String get achievementShapeFinder => 'ആകൃതി കണ്ടെത്തുന്നവൻ';
+
+  @override
+  String get achievementPuzzleChampion => 'പസിൽ ചാമ്പ്യൻ';
+
+  @override
+  String get achievementStarCollector => 'നക്ഷത്ര ശേഖരണം';
+
+  @override
+  String get achievementOnFire => 'കത്തിക്കൊണ്ടിരിക്കുന്നു!';
+
+  @override
+  String get trophyRoomTitle => 'എൻ്റെ ട്രോഫി റൂം';
+
+  @override
+  String get trophyRoomSubtitle => 'നിൻ്റെ അദ്ഭുതകരമായ ബാഡ്ജുകൾ നോക്കൂ!';
+
+  @override
+  String get badgeLockedHint => 'അൺലോക്ക് ചെയ്യാൻ പഠിക്കുക!';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ദിവസ സ്ട്രീക്ക്!',
+      one: '1 ദിവസ സ്ട്രീക്ക്!',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get streakNewRecord => 'പുതിയ സ്ട്രീക്ക് റെക്കോർഡ്!';
+
+  @override
+  String get levelLittleLearner => 'ചെറിയ പഠിതാവ്';
+
+  @override
+  String get levelRisingStar => 'ഉദിക്കുന്ന നക്ഷത്രം';
+
+  @override
+  String get levelExplorer => 'സഞ്ചാരി';
+
+  @override
+  String get levelHero => 'ലേണിംഗ് ഹീറോ';
+
+  @override
+  String get levelChampion => 'ZuvioKids ചാമ്പ്യൻ';
+
+  @override
+  String get levelUp => 'ലെവൽ അപ്!';
+
+  @override
+  String levelLabel(String level) {
+    return 'ലെവൽ: $level';
+  }
+
+  @override
+  String get dailyAdventureTitle => 'ഇന്നത്തെ സ冒险';
+
+  @override
+  String get dailyAdventureSubtitle =>
+      'ബോണസ് സ്റ്റാറുകൾ നേടാൻ ഇന്നത്തെ പ്രവർത്തനങ്ങൾ പൂർത്തിയാക്കൂ!';
+
+  @override
+  String get dailyAdventureComplete => 'എല്ലാം ചെയ്തു! ഇന്ന് അദ്ഭുതകരമായ ജോലി!';
+
+  @override
+  String welcomeBack(String name) {
+    return 'തിരിച്ചു വരവ് സ്വാഗതം, $name! പഠിക്കാൻ തയ്യാർ?';
+  }
+
+  @override
+  String get animalsQuizTitle => 'ഈ ശബ്ദം ഏത് മൃഗത്തിൻ്റേതാണ്?';
+
+  @override
+  String get animalsQuizHint => 'കേൾക്കൂ, മൃഗത്തെ ടാപ്പ് ചെയ്യൂ!';
+
+  @override
+  String get animalsQuizPlaySound => 'ശബ്ദം വീണ്ടും പ്ലേ ചെയ്യൂ';
 }

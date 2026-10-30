@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
+import 'package:zuvio_kids/features/achievements/presentation/screens/trophy_room_screen.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_congratulations_screen.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_hub_screen.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/screens/alphabet_learning_screen.dart';
 import 'package:zuvio_kids/features/animals/presentation/screens/animals_congratulations_screen.dart';
 import 'package:zuvio_kids/features/animals/presentation/screens/animals_hub_screen.dart';
 import 'package:zuvio_kids/features/animals/presentation/screens/animals_learning_screen.dart';
+import 'package:zuvio_kids/features/animals/presentation/screens/animals_quiz_screen.dart';
 import 'package:zuvio_kids/features/colors/presentation/screens/colors_congratulations_screen.dart';
 import 'package:zuvio_kids/features/colors/presentation/screens/colors_learning_screen.dart';
 import 'package:zuvio_kids/features/home/presentation/screens/home_screen.dart';
@@ -125,6 +127,18 @@ abstract final class AppRouter {
       case AppRoutes.animalsCongrats:
         return MaterialPageRoute(
           builder: (_) => const AnimalsCongratulationsScreen(),
+          settings: settings,
+        );
+      case AppRoutes.animalsQuiz:
+        return MaterialPageRoute(
+          builder: (ctx) => AnimalsQuizScreen(
+            onQuizComplete: () => Navigator.pop(ctx),
+          ),
+          settings: settings,
+        );
+      case AppRoutes.trophyRoom:
+        return MaterialPageRoute(
+          builder: (_) => const TrophyRoomScreen(),
           settings: settings,
         );
 

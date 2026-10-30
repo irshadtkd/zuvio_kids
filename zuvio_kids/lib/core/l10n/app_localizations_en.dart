@@ -732,4 +732,154 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get animalBear => 'Bear';
+
+  @override
+  String mascotGreetingHome(String name) {
+    return 'Hello $name! What do you want to learn today?';
+  }
+
+  @override
+  String get mascotGreetingAnimals => 'Let\'s meet some amazing animals!';
+
+  @override
+  String get mascotGreetingAlphabet => 'Let\'s learn the A B C s!';
+
+  @override
+  String get mascotGreetingNumbers => 'Time for numbers! Count with me!';
+
+  @override
+  String get mascotGreetingColors => 'Let\'s discover beautiful colors!';
+
+  @override
+  String get mascotGreetingShapes => 'Wow, you found the shapes! Let\'s go!';
+
+  @override
+  String get mascotGreetingPuzzles => 'Puzzle time! You love puzzles!';
+
+  @override
+  String get mascotCelebrate => 'Amazing! You did it! You are a superstar!';
+
+  @override
+  String get mascotEncourage => 'You can do it! Try again!';
+
+  @override
+  String get feedbackCorrect1 => 'Yes! That is right! You are so smart!';
+
+  @override
+  String get feedbackCorrect2 => 'Woohoo! Amazing answer!';
+
+  @override
+  String get feedbackCorrect3 => 'Brilliant! Give yourself a clap!';
+
+  @override
+  String get feedbackCorrect4 => 'Perfect! You are a genius!';
+
+  @override
+  String get feedbackCorrect5 => 'Incredible! Fantastic job!';
+
+  @override
+  String get feedbackWrong1 => 'Almost! Have another look!';
+
+  @override
+  String get feedbackWrong2 => 'Hmm, let us try again — you can do it!';
+
+  @override
+  String get feedbackWrong3 => 'Do not worry, try once more!';
+
+  @override
+  String get achievementAnimalExplorer => 'Animal Explorer';
+
+  @override
+  String get achievementAnimalMaster => 'Animal Master';
+
+  @override
+  String get achievementAlphabetStar => 'Alphabet Star';
+
+  @override
+  String get achievementNumberNinja => 'Number Ninja';
+
+  @override
+  String get achievementColorArtist => 'Color Artist';
+
+  @override
+  String get achievementShapeFinder => 'Shape Finder';
+
+  @override
+  String get achievementPuzzleChampion => 'Puzzle Champion';
+
+  @override
+  String get achievementStarCollector => 'Star Collector';
+
+  @override
+  String get achievementOnFire => 'On Fire!';
+
+  @override
+  String get trophyRoomTitle => 'My Trophy Room';
+
+  @override
+  String get trophyRoomSubtitle => 'Look at all your amazing badges!';
+
+  @override
+  String get badgeLockedHint => 'Keep learning to unlock!';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Days Streak!',
+      one: '1 Day Streak!',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get streakNewRecord => 'New streak record!';
+
+  @override
+  String get levelLittleLearner => 'Little Learner';
+
+  @override
+  String get levelRisingStar => 'Rising Star';
+
+  @override
+  String get levelExplorer => 'Explorer';
+
+  @override
+  String get levelHero => 'Learning Hero';
+
+  @override
+  String get levelChampion => 'ZuvioKids Champion';
+
+  @override
+  String get levelUp => 'Level Up!';
+
+  @override
+  String levelLabel(String level) {
+    return 'Level: $level';
+  }
+
+  @override
+  String get dailyAdventureTitle => 'Today\'s Adventure';
+
+  @override
+  String get dailyAdventureSubtitle =>
+      'Complete today\'s activities to earn bonus stars!';
+
+  @override
+  String get dailyAdventureComplete => 'All done! Amazing work today!';
+
+  @override
+  String welcomeBack(String name) {
+    return 'Welcome back, $name! Ready to learn?';
+  }
+
+  @override
+  String get animalsQuizTitle => 'Which animal makes this sound?';
+
+  @override
+  String get animalsQuizHint => 'Listen and tap the animal!';
+
+  @override
+  String get animalsQuizPlaySound => 'Play Sound Again';
 }

@@ -51,13 +51,24 @@ class SessionCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-        color: isLocked ? Colors.white.withValues(alpha: 0.7) : Colors.white,
+        color: isLocked ? Colors.white.withValues(alpha: 0.76) : Colors.white,
         borderRadius: BorderRadius.circular(28),
+        border: Border.all(
+          color: isLocked ? AppColors.cardLocked : Colors.white,
+          width: 2.5,
+        ),
         boxShadow: [
+          // 3D tactile block bevel
           BoxShadow(
-            color: Colors.black.withValues(alpha: isLocked ? 0.02 : 0.06),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
+            color: isLocked
+                ? Colors.black.withValues(alpha: 0.04)
+                : color.withValues(alpha: 0.38),
+            offset: const Offset(0, 5),
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isLocked ? 0.02 : 0.07),
+            blurRadius: 14,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
@@ -70,13 +81,31 @@ class SessionCard extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Row(
               children: [
-                // Colorful Session Number Badge
+                // Colorful Session Number Badge with gradient
                 Container(
-                  width: 60,
-                  height: 60,
+                  width: 64,
+                  height: 64,
                   decoration: BoxDecoration(
-                    color: isLocked ? AppColors.divider : color,
-                    borderRadius: BorderRadius.circular(20),
+                    gradient: isLocked
+                        ? null
+                        : LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              color,
+                              color.withValues(alpha: 0.76),
+                            ],
+                          ),
+                    color: isLocked ? AppColors.cardLocked : null,
+                    borderRadius: BorderRadius.circular(22),
+                    boxShadow: [
+                      if (!isLocked)
+                        BoxShadow(
+                          color: color.withValues(alpha: 0.28),
+                          blurRadius: 6,
+                          offset: const Offset(0, 3),
+                        ),
+                    ],
                   ),
                   child: Center(
                     child: Text(

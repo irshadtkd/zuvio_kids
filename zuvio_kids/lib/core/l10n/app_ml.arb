@@ -1101,5 +1101,205 @@
   "animalBear": "കരടി",
   "@animalBear": {
     "description": "Name for Bear"
+  },
+
+  "mascotGreetingHome": "ഹലോ {name}! ഇന്ന് എന്ത് പഠിക്കണം?",
+  "@mascotGreetingHome": {
+    "description": "Mascot greeting on home screen",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "mascotGreetingAnimals": "നമുക്ക് അത്ഭുതകരമായ മൃഗങ്ങളെ കാണാം!",
+  "@mascotGreetingAnimals": {
+    "description": "Mascot greeting when entering the Animals section"
+  },
+  "mascotGreetingAlphabet": "നമുക്ക് A B C പഠിക്കാം!",
+  "@mascotGreetingAlphabet": {
+    "description": "Mascot greeting when entering the Alphabet section"
+  },
+  "mascotGreetingNumbers": "ഇതാ നമ്പറുകൾ! എന്നോടൊപ്പം എണ്ണൂ!",
+  "@mascotGreetingNumbers": {
+    "description": "Mascot greeting when entering the Numbers section"
+  },
+  "mascotGreetingColors": "നമുക്ക് മനോഹരമായ നിറങ്ങൾ കണ്ടെത്താം!",
+  "@mascotGreetingColors": {
+    "description": "Mascot greeting when entering the Colors section"
+  },
+  "mascotGreetingShapes": "ആകൃതികൾ കണ്ടെത്തി! നമുക്ക് പോകാം!",
+  "@mascotGreetingShapes": {
+    "description": "Mascot greeting when entering the Shapes section"
+  },
+  "mascotGreetingPuzzles": "പസിൽ സമയം! നിനക്ക് പസിൽ ഇഷ്ടമാണ്!",
+  "@mascotGreetingPuzzles": {
+    "description": "Mascot greeting when entering the Puzzles section"
+  },
+  "mascotCelebrate": "അടിപൊളി! നീ ചെയ്തു! നീ ഒരു സൂപ്പർ സ്റ്റാർ!",
+  "@mascotCelebrate": {
+    "description": "Mascot celebration when session completes"
+  },
+  "mascotEncourage": "നിനക്ക് ചെയ്യാം! വീണ്ടും ശ്രമിക്കൂ!",
+  "@mascotEncourage": {
+    "description": "Mascot encouragement on wrong answer"
+  },
+
+  "feedbackCorrect1": "അതെ! ശരിയാണ്! നീ വളരെ ബുദ്ധിമാൻ!",
+  "@feedbackCorrect1": {
+    "description": "First correct answer feedback phrase"
+  },
+  "feedbackCorrect2": "ഹൂ! അദ്ഭുതകരമായ ഉത്തരം!",
+  "@feedbackCorrect2": {
+    "description": "Second correct answer feedback phrase"
+  },
+  "feedbackCorrect3": "ബ്രില്ലിയൻ്റ്! നിന്നെത്തന്നെ ഒന്ന് കൊട്ടൂ!",
+  "@feedbackCorrect3": {
+    "description": "Third correct answer feedback phrase"
+  },
+  "feedbackCorrect4": "പർഫക്ട്! നീ ഒരു ജീനിയസ്!",
+  "@feedbackCorrect4": {
+    "description": "Fourth correct answer feedback phrase"
+  },
+  "feedbackCorrect5": "അടുക്കൽ! ഫാൻ്റാസ്റ്റിക് ജോലി!",
+  "@feedbackCorrect5": {
+    "description": "Fifth correct answer feedback phrase"
+  },
+  "feedbackWrong1": "ഏതാണ്ട് ശരി! ഒന്നൂടെ നോക്കൂ!",
+  "@feedbackWrong1": {
+    "description": "First wrong answer feedback phrase"
+  },
+  "feedbackWrong2": "ഹ്മ്മ്, വീണ്ടും ശ്രമിക്കാം — നിനക്ക് ചെയ്യാം!",
+  "@feedbackWrong2": {
+    "description": "Second wrong answer feedback phrase"
+  },
+  "feedbackWrong3": "വിഷമിക്കേണ്ട, ഒരിക്കൽ കൂടി ശ്രമിക്കൂ!",
+  "@feedbackWrong3": {
+    "description": "Third wrong answer feedback phrase"
+  },
+
+  "achievementAnimalExplorer": "മൃഗ സഞ്ചാരി",
+  "@achievementAnimalExplorer": {
+    "description": "Badge name for completing Animals Session 1"
+  },
+  "achievementAnimalMaster": "മൃഗ മാസ്റ്റർ",
+  "@achievementAnimalMaster": {
+    "description": "Badge name for completing Animals Session 2"
+  },
+  "achievementAlphabetStar": "അക്ഷര നക്ഷത്രം",
+  "@achievementAlphabetStar": {
+    "description": "Badge name for completing any Alphabet session"
+  },
+  "achievementNumberNinja": "നമ്പർ നിൻജ",
+  "@achievementNumberNinja": {
+    "description": "Badge name for completing Numbers"
+  },
+  "achievementColorArtist": "നിറ കലാകാരൻ",
+  "@achievementColorArtist": {
+    "description": "Badge name for completing Colors"
+  },
+  "achievementShapeFinder": "ആകൃതി കണ്ടെത്തുന്നവൻ",
+  "@achievementShapeFinder": {
+    "description": "Badge name for completing Shapes"
+  },
+  "achievementPuzzleChampion": "പസിൽ ചാമ്പ്യൻ",
+  "@achievementPuzzleChampion": {
+    "description": "Badge name for completing Puzzles"
+  },
+  "achievementStarCollector": "നക്ഷത്ര ശേഖരണം",
+  "@achievementStarCollector": {
+    "description": "Badge name for earning 50 total stars"
+  },
+  "achievementOnFire": "കത്തിക്കൊണ്ടിരിക്കുന്നു!",
+  "@achievementOnFire": {
+    "description": "Badge name for 3 sessions in one day"
+  },
+  "trophyRoomTitle": "എൻ്റെ ട്രോഫി റൂം",
+  "@trophyRoomTitle": {
+    "description": "Title for the trophy room screen"
+  },
+  "trophyRoomSubtitle": "നിൻ്റെ അദ്ഭുതകരമായ ബാഡ്ജുകൾ നോക്കൂ!",
+  "@trophyRoomSubtitle": {
+    "description": "Subtitle for the trophy room screen"
+  },
+  "badgeLockedHint": "അൺലോക്ക് ചെയ്യാൻ പഠിക്കുക!",
+  "@badgeLockedHint": {
+    "description": "Hint shown under a locked badge"
+  },
+
+  "streakDays": "{count, plural, =1{1 ദിവസ സ്ട്രീക്ക്!} other{{count} ദിവസ സ്ട്രീക്ക്!}}",
+  "@streakDays": {
+    "description": "Streak counter label",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "streakNewRecord": "പുതിയ സ്ട്രീക്ക് റെക്കോർഡ്!",
+  "@streakNewRecord": {
+    "description": "Label shown when a new streak record is set"
+  },
+
+  "levelLittleLearner": "ചെറിയ പഠിതാവ്",
+  "@levelLittleLearner": {
+    "description": "Level 1 title (0-15 stars)"
+  },
+  "levelRisingStar": "ഉദിക്കുന്ന നക്ഷത്രം",
+  "@levelRisingStar": {
+    "description": "Level 2 title (16-35 stars)"
+  },
+  "levelExplorer": "സഞ്ചാരി",
+  "@levelExplorer": {
+    "description": "Level 3 title (36-60 stars)"
+  },
+  "levelHero": "ലേണിംഗ് ഹീറോ",
+  "@levelHero": {
+    "description": "Level 4 title (61-100 stars)"
+  },
+  "levelChampion": "ZuvioKids ചാമ്പ്യൻ",
+  "@levelChampion": {
+    "description": "Level 5 title (100+ stars)"
+  },
+  "levelUp": "ലെവൽ അപ്!",
+  "@levelUp": {
+    "description": "Message shown when levelling up"
+  },
+  "levelLabel": "ലെവൽ: {level}",
+  "@levelLabel": {
+    "description": "Label showing current level name",
+    "placeholders": {
+      "level": { "type": "String" }
+    }
+  },
+
+  "dailyAdventureTitle": "ഇന്നത്തെ സ冒险",
+  "@dailyAdventureTitle": {
+    "description": "Title for the daily adventure card on home screen"
+  },
+  "dailyAdventureSubtitle": "ബോണസ് സ്റ്റാറുകൾ നേടാൻ ഇന്നത്തെ പ്രവർത്തനങ്ങൾ പൂർത്തിയാക്കൂ!",
+  "@dailyAdventureSubtitle": {
+    "description": "Subtitle for the daily adventure card"
+  },
+  "dailyAdventureComplete": "എല്ലാം ചെയ്തു! ഇന്ന് അദ്ഭുതകരമായ ജോലി!",
+  "@dailyAdventureComplete": {
+    "description": "Message when daily adventure is fully completed"
+  },
+
+  "welcomeBack": "തിരിച്ചു വരവ് സ്വാഗതം, {name}! പഠിക്കാൻ തയ്യാർ?",
+  "@welcomeBack": {
+    "description": "Welcome back message when child returns after a day",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "animalsQuizTitle": "ഈ ശബ്ദം ഏത് മൃഗത്തിൻ്റേതാണ്?",
+  "@animalsQuizTitle": {
+    "description": "Title prompt for the animals sound quiz"
+  },
+  "animalsQuizHint": "കേൾക്കൂ, മൃഗത്തെ ടാപ്പ് ചെയ്യൂ!",
+  "@animalsQuizHint": {
+    "description": "Hint for the animals sound quiz"
+  },
+  "animalsQuizPlaySound": "ശബ്ദം വീണ്ടും പ്ലേ ചെയ്യൂ",
+  "@animalsQuizPlaySound": {
+    "description": "Button to replay the animal sound in quiz"
   }
 }

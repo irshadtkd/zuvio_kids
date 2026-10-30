@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
-import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
+import 'package:zuvio_kids/core/widgets/animated_kid_background.dart';
 import 'package:zuvio_kids/features/colors/presentation/providers/colors_provider.dart';
 import 'package:zuvio_kids/features/colors/presentation/providers/colors_state.dart';
 import 'package:zuvio_kids/features/colors/presentation/widgets/color_discover_step_view.dart';
@@ -56,8 +56,10 @@ class _ColorsLearningScreenState extends ConsumerState<ColorsLearningScreen> {
     final asyncState = ref.watch(colorsNotifierProvider);
 
     return Scaffold(
-      backgroundColor: context.themePalette.scaffoldBackground,
-      body: SafeArea(
+      body: AnimatedKidBackground(
+        primaryColor: const Color(0xFFD8F1FE),
+        secondaryColor: const Color(0xFFF1F9FE),
+        child: SafeArea(
         child: asyncState.when(
           loading: () => const Center(
             child: CircularProgressIndicator(color: AppColors.navy),
@@ -126,6 +128,7 @@ class _ColorsLearningScreenState extends ConsumerState<ColorsLearningScreen> {
             );
           },
         ),
+      ),
       ),
     );
   }

@@ -6,7 +6,7 @@ import 'package:zuvio_kids/core/constants/app_sizes.dart';
 import 'package:zuvio_kids/core/errors/error_handler.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
-import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
+import 'package:zuvio_kids/core/widgets/animated_kid_background.dart';
 import 'package:zuvio_kids/features/shapes/presentation/providers/shapes_provider.dart';
 import 'package:zuvio_kids/features/shapes/presentation/widgets/shape_session_card.dart';
 
@@ -21,8 +21,10 @@ class ShapesHubScreen extends ConsumerWidget {
     final asyncState = ref.watch(shapesNotifierProvider);
 
     return Scaffold(
-      backgroundColor: context.themePalette.scaffoldBackground,
-      body: SafeArea(
+      body: AnimatedKidBackground(
+        primaryColor: const Color(0xFFD8F1FE),
+        secondaryColor: const Color(0xFFF1F9FE),
+        child: SafeArea(
         child: asyncState.when(
           loading: () => const Center(
             child: CircularProgressIndicator(color: AppColors.navy),
@@ -142,6 +144,7 @@ class ShapesHubScreen extends ConsumerWidget {
             );
           },
         ),
+      ),
       ),
     );
   }

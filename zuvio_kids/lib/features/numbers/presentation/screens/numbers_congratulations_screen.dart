@@ -8,6 +8,8 @@ import 'package:zuvio_kids/core/theme/app_text_styles.dart';
 import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
 import 'package:zuvio_kids/core/widgets/kid_button.dart';
+import 'package:zuvio_kids/core/widgets/kid_confetti_overlay.dart';
+import 'package:zuvio_kids/features/achievements/presentation/providers/achievements_provider.dart';
 import 'package:zuvio_kids/features/numbers/presentation/providers/numbers_provider.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/providers/onboarding_provider.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/widgets/animal_avatar.dart';
@@ -27,6 +29,7 @@ class _NumbersCongratulationsScreenState
     extends ConsumerState<NumbersCongratulationsScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _sparkleController;
+  final _confettiKey = GlobalKey<KidConfettiOverlayState>();
   bool _hasPlayedCelebrationAudio = false;
 
   @override
@@ -41,11 +44,13 @@ class _NumbersCongratulationsScreenState
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted || _hasPlayedCelebrationAudio) return;
       _hasPlayedCelebrationAudio = true;
+      _confettiKey.currentState?.burst();
       final onboardingState = ref.read(onboardingNotifierProvider).valueOrNull;
       final friend = onboardingState?.friendAvatar.isNotEmpty == true
           ? onboardingState!.friendAvatar
           : AppStrings.defaultFriend;
       KidSoundService.instance.playCelebrationSounds(friend);
+      ref.read(achievementsNotifierProvider.notifier).unlock('number_ninja');
     });
   }
 
@@ -101,7 +106,9 @@ class _NumbersCongratulationsScreenState
 
     return Scaffold(
       backgroundColor: context.themePalette.scaffoldBackground,
-      body: SafeArea(
+      body: Stack(
+        children: [
+          SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           child: Column(
@@ -220,7 +227,10 @@ class _NumbersCongratulationsScreenState
           ),
         ),
       ),
-    );
+      KidConfettiOverlay(key: _confettiKey),
+    ],
+  ),
+);
   }
 }
 

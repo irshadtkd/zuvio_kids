@@ -4,8 +4,8 @@ import 'package:zuvio_kids/core/constants/app_colors.dart';
 import 'package:zuvio_kids/core/constants/app_routes.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
-import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
+import 'package:zuvio_kids/core/widgets/animated_kid_background.dart';
 import 'package:zuvio_kids/core/widgets/kid_button.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/providers/onboarding_provider.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/widgets/animal_avatar.dart';
@@ -89,11 +89,11 @@ class _PuzzleSessionsScreenState extends ConsumerState<PuzzleSessionsScreen> {
         ? onboardingState!.friendAvatar
         : AppStrings.defaultFriend;
 
-    final themePalette = context.themePalette;
-
     return Scaffold(
-      backgroundColor: themePalette.scaffoldBackground,
-      body: SafeArea(
+      body: AnimatedKidBackground(
+        primaryColor: const Color(0xFFD8F1FE),
+        secondaryColor: const Color(0xFFF1F9FE),
+        child: SafeArea(
         child: puzzleAsync.when(
           loading: () => const Center(
             child: CircularProgressIndicator(color: AppColors.primary),
@@ -346,6 +346,7 @@ class _PuzzleSessionsScreenState extends ConsumerState<PuzzleSessionsScreen> {
             );
           },
         ),
+      ),
       ),
     );
   }

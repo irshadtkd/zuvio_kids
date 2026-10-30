@@ -7,12 +7,18 @@ import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/providers/app_theme_provider.dart';
 import 'package:zuvio_kids/core/providers/star_points_provider.dart';
+import 'package:zuvio_kids/core/providers/streak_provider.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
 import 'package:zuvio_kids/core/theme/app_theme_mode.dart';
 import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
+import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
+import 'package:zuvio_kids/core/widgets/floating_mascot.dart';
+import 'package:zuvio_kids/core/widgets/level_badge.dart';
+import 'package:zuvio_kids/core/widgets/streak_badge.dart';
 import 'package:zuvio_kids/features/alphabet/presentation/providers/alphabet_provider.dart';
 import 'package:zuvio_kids/features/animals/presentation/providers/animals_provider.dart';
 import 'package:zuvio_kids/features/colors/presentation/providers/colors_provider.dart';
+import 'package:zuvio_kids/features/home/presentation/widgets/animated_background.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/category_card.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/star_badge.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/theme_selection_dialog.dart';
@@ -145,6 +151,7 @@ class HomeScreen extends ConsumerWidget {
     await ref.read(animalsNotifierProvider.notifier).clearAllProgress();
     await ref.read(onboardingNotifierProvider.notifier).resetProfile();
     await ref.read(appThemeNotifierProvider.notifier).resetToDefault();
+    await ref.read(streakNotifierProvider.notifier).clear();
     if (!context.mounted) return;
     Navigator.pushNamedAndRemoveUntil(
       context,
@@ -153,58 +160,133 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
+  void _openTrophyRoom(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.trophyRoom);
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final themePalette = context.themePalette;
     final state = ref.watch(onboardingNotifierProvider).valueOrNull;
     final stars = ref.watch(starPointsNotifierProvider).valueOrNull ?? 0;
+    final streak = ref.watch(streakNotifierProvider).valueOrNull ?? 0;
     final name =
         state?.name.isNotEmpty == true ? state!.name : AppStrings.defaultChildName;
     final avatar = state?.friendAvatar.isNotEmpty == true
         ? state!.friendAvatar
         : AppStrings.defaultFriend;
 
+    // Speak mascot greeting once on first build
+    ref.listen(onboardingNotifierProvider, (previous, next) {
+      if (previous?.valueOrNull == null && next.valueOrNull != null) {
+        final childName = next.valueOrNull?.name ?? AppStrings.defaultChildName;
+        KidSoundService.instance.speak(
+          l10n.mascotGreetingHome(childName),
+        );
+      }
+    });
+
     return Scaffold(
       backgroundColor: themePalette.scaffoldBackground,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
-          child: Column(
+      body: AnimatedKidBackground(
+        primaryColor: themePalette.scaffoldBackground,
+        secondaryColor: Colors.white,
+        child: SafeArea(
+          child: Stack(
             children: [
-              // ── Top Bar: Avatar + Greeting + Star Badge ───────────────
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () => _showProfileMenu(context, ref),
-                    child: AnimalAvatar(avatarType: avatar, size: 58),
-                  ),
-                  const SizedBox(width: 14),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+                child: Column(
+                  children: [
+                    // ── Top Bar: Avatar + Greeting + Trophy + Star Badge ─────
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () => _showProfileMenu(context, ref),
+                          child: Container(
+                            padding: const EdgeInsets.all(2.5),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFFFFD13B), Color(0xFFFF6B6B)],
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0xFFFFD13B).withValues(alpha: 0.35),
+                                  blurRadius: 8,
+                                  spreadRadius: 1,
+                                ),
+                              ],
+                            ),
+                            child: AnimalAvatar(avatarType: avatar, size: 50),
+                          ),
+                        ),
+                        const SizedBox(width: 12),
                   Expanded(
                     child: GestureDetector(
                       onTap: () => _showProfileMenu(context, ref),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
                             l10n.homeGreeting(name),
                             style: AppTextStyles.homeGreeting,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
+                          const SizedBox(height: 2),
                           Text(
                             l10n.homePlayAndLearn,
                             style: AppTextStyles.homePlaySubtitle,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),
                     ),
                   ),
+                  const SizedBox(width: 8),
+                  // Trophy room access
+                  GestureDetector(
+                    onTap: () => _openTrophyRoom(context),
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.08),
+                            blurRadius: 6,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: const Center(
+                        child: Text('🏆', style: TextStyle(fontSize: 18)),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
                   StarBadge(
                     stars: stars,
                     onTap: () => _showProfileMenu(context, ref),
                   ),
                 ],
               ),
-              const SizedBox(height: 18),
+              const SizedBox(height: 10),
+              // ── Progress Row: Level Badge & Streak Badge ──────────────
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  LevelBadge(stars: stars),
+                  if (streak > 0) StreakBadge(streak: streak),
+                ],
+              ),
+              const SizedBox(height: 14),
 
               // ── 2×3 Learning Category Grid ────────────────────────────
               Expanded(
@@ -217,19 +299,13 @@ class HomeScreen extends ConsumerWidget {
                     CategoryCard(
                       title: l10n.categoryAlphabet,
                       backgroundColor: themePalette.cardAlphabet,
-                      visual: Text(
-                        l10n.visualAlphabetAbc,
-                        style: AppTextStyles.categoryIconText,
-                      ),
+                      visual: const AlphabetVisual(),
                       onTap: () => Navigator.pushNamed(context, AppRoutes.alphabetHub),
                     ),
                     CategoryCard(
                       title: l10n.categoryNumbers,
                       backgroundColor: themePalette.cardNumbers,
-                      visual: Text(
-                        l10n.visualNumbers123,
-                        style: AppTextStyles.categoryIconText,
-                      ),
+                      visual: const NumbersVisual(),
                       onTap: () => Navigator.pushNamed(context, AppRoutes.numbersHub),
                     ),
                     CategoryCard(
@@ -268,8 +344,16 @@ class HomeScreen extends ConsumerWidget {
             ],
           ),
         ),
+          const Positioned(
+            right: 18,
+            bottom: 12,
+            child: FloatingMascot(size: 58),
+          ),
+        ],
       ),
-    );
+    ),
+  ),
+);
   }
 }
 

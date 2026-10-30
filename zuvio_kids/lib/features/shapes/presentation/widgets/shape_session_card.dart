@@ -45,11 +45,19 @@ class ShapeSessionCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.circular(26),
+          border: Border.all(
+            color: Colors.white.withValues(alpha: isLocked ? 0.4 : 0.7),
+            width: 2.2,
+          ),
           boxShadow: [
             BoxShadow(
               color: shadowColor,
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+              offset: const Offset(0, 5),
+            ),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: isLocked ? 0.02 : 0.07),
+              blurRadius: 12,
+              offset: const Offset(0, 6),
             ),
           ],
         ),

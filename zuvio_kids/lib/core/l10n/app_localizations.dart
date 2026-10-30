@@ -1453,6 +1453,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Bear'**
   String get animalBear;
+
+  /// Mascot greeting on home screen
+  ///
+  /// In en, this message translates to:
+  /// **'Hello {name}! What do you want to learn today?'**
+  String mascotGreetingHome(String name);
+
+  /// Mascot greeting when entering the Animals section
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s meet some amazing animals!'**
+  String get mascotGreetingAnimals;
+
+  /// Mascot greeting when entering the Alphabet section
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s learn the A B C s!'**
+  String get mascotGreetingAlphabet;
+
+  /// Mascot greeting when entering the Numbers section
+  ///
+  /// In en, this message translates to:
+  /// **'Time for numbers! Count with me!'**
+  String get mascotGreetingNumbers;
+
+  /// Mascot greeting when entering the Colors section
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s discover beautiful colors!'**
+  String get mascotGreetingColors;
+
+  /// Mascot greeting when entering the Shapes section
+  ///
+  /// In en, this message translates to:
+  /// **'Wow, you found the shapes! Let\'s go!'**
+  String get mascotGreetingShapes;
+
+  /// Mascot greeting when entering the Puzzles section
+  ///
+  /// In en, this message translates to:
+  /// **'Puzzle time! You love puzzles!'**
+  String get mascotGreetingPuzzles;
+
+  /// Mascot celebration when session completes
+  ///
+  /// In en, this message translates to:
+  /// **'Amazing! You did it! You are a superstar!'**
+  String get mascotCelebrate;
+
+  /// Mascot encouragement on wrong answer
+  ///
+  /// In en, this message translates to:
+  /// **'You can do it! Try again!'**
+  String get mascotEncourage;
+
+  /// First correct answer feedback phrase
+  ///
+  /// In en, this message translates to:
+  /// **'Yes! That is right! You are so smart!'**
+  String get feedbackCorrect1;
+
+  /// Second correct answer feedback phrase
+  ///
+  /// In en, this message translates to:
+  /// **'Woohoo! Amazing answer!'**
+  String get feedbackCorrect2;
+
+  /// Third correct answer feedback phrase
+  ///
+  /// In en, this message translates to:
+  /// **'Brilliant! Give yourself a clap!'**
+  String get feedbackCorrect3;
+
+  /// Fourth correct answer feedback phrase
+  ///
+  /// In en, this message translates to:
+  /// **'Perfect! You are a genius!'**
+  String get feedbackCorrect4;
+
+  /// Fifth correct answer feedback phrase
+  ///
+  /// In en, this message translates to:
+  /// **'Incredible! Fantastic job!'**
+  String get feedbackCorrect5;
+
+  /// First wrong answer feedback phrase
+  ///
+  /// In en, this message translates to:
+  /// **'Almost! Have another look!'**
+  String get feedbackWrong1;
+
+  /// Second wrong answer feedback phrase
+  ///
+  /// In en, this message translates to:
+  /// **'Hmm, let us try again — you can do it!'**
+  String get feedbackWrong2;
+
+  /// Third wrong answer feedback phrase
+  ///
+  /// In en, this message translates to:
+  /// **'Do not worry, try once more!'**
+  String get feedbackWrong3;
+
+  /// Badge name for completing Animals Session 1
+  ///
+  /// In en, this message translates to:
+  /// **'Animal Explorer'**
+  String get achievementAnimalExplorer;
+
+  /// Badge name for completing Animals Session 2
+  ///
+  /// In en, this message translates to:
+  /// **'Animal Master'**
+  String get achievementAnimalMaster;
+
+  /// Badge name for completing any Alphabet session
+  ///
+  /// In en, this message translates to:
+  /// **'Alphabet Star'**
+  String get achievementAlphabetStar;
+
+  /// Badge name for completing Numbers
+  ///
+  /// In en, this message translates to:
+  /// **'Number Ninja'**
+  String get achievementNumberNinja;
+
+  /// Badge name for completing Colors
+  ///
+  /// In en, this message translates to:
+  /// **'Color Artist'**
+  String get achievementColorArtist;
+
+  /// Badge name for completing Shapes
+  ///
+  /// In en, this message translates to:
+  /// **'Shape Finder'**
+  String get achievementShapeFinder;
+
+  /// Badge name for completing Puzzles
+  ///
+  /// In en, this message translates to:
+  /// **'Puzzle Champion'**
+  String get achievementPuzzleChampion;
+
+  /// Badge name for earning 50 total stars
+  ///
+  /// In en, this message translates to:
+  /// **'Star Collector'**
+  String get achievementStarCollector;
+
+  /// Badge name for 3 sessions in one day
+  ///
+  /// In en, this message translates to:
+  /// **'On Fire!'**
+  String get achievementOnFire;
+
+  /// Title for the trophy room screen
+  ///
+  /// In en, this message translates to:
+  /// **'My Trophy Room'**
+  String get trophyRoomTitle;
+
+  /// Subtitle for the trophy room screen
+  ///
+  /// In en, this message translates to:
+  /// **'Look at all your amazing badges!'**
+  String get trophyRoomSubtitle;
+
+  /// Hint shown under a locked badge
+  ///
+  /// In en, this message translates to:
+  /// **'Keep learning to unlock!'**
+  String get badgeLockedHint;
+
+  /// Streak counter label
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 Day Streak!} other{{count} Days Streak!}}'**
+  String streakDays(int count);
+
+  /// Label shown when a new streak record is set
+  ///
+  /// In en, this message translates to:
+  /// **'New streak record!'**
+  String get streakNewRecord;
+
+  /// Level 1 title (0-15 stars)
+  ///
+  /// In en, this message translates to:
+  /// **'Little Learner'**
+  String get levelLittleLearner;
+
+  /// Level 2 title (16-35 stars)
+  ///
+  /// In en, this message translates to:
+  /// **'Rising Star'**
+  String get levelRisingStar;
+
+  /// Level 3 title (36-60 stars)
+  ///
+  /// In en, this message translates to:
+  /// **'Explorer'**
+  String get levelExplorer;
+
+  /// Level 4 title (61-100 stars)
+  ///
+  /// In en, this message translates to:
+  /// **'Learning Hero'**
+  String get levelHero;
+
+  /// Level 5 title (100+ stars)
+  ///
+  /// In en, this message translates to:
+  /// **'ZuvioKids Champion'**
+  String get levelChampion;
+
+  /// Message shown when levelling up
+  ///
+  /// In en, this message translates to:
+  /// **'Level Up!'**
+  String get levelUp;
+
+  /// Label showing current level name
+  ///
+  /// In en, this message translates to:
+  /// **'Level: {level}'**
+  String levelLabel(String level);
+
+  /// Title for the daily adventure card on home screen
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s Adventure'**
+  String get dailyAdventureTitle;
+
+  /// Subtitle for the daily adventure card
+  ///
+  /// In en, this message translates to:
+  /// **'Complete today\'s activities to earn bonus stars!'**
+  String get dailyAdventureSubtitle;
+
+  /// Message when daily adventure is fully completed
+  ///
+  /// In en, this message translates to:
+  /// **'All done! Amazing work today!'**
+  String get dailyAdventureComplete;
+
+  /// Welcome back message when child returns after a day
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back, {name}! Ready to learn?'**
+  String welcomeBack(String name);
+
+  /// Title prompt for the animals sound quiz
+  ///
+  /// In en, this message translates to:
+  /// **'Which animal makes this sound?'**
+  String get animalsQuizTitle;
+
+  /// Hint for the animals sound quiz
+  ///
+  /// In en, this message translates to:
+  /// **'Listen and tap the animal!'**
+  String get animalsQuizHint;
+
+  /// Button to replay the animal sound in quiz
+  ///
+  /// In en, this message translates to:
+  /// **'Play Sound Again'**
+  String get animalsQuizPlaySound;
 }
 
 class _AppLocalizationsDelegate

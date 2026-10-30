@@ -8,6 +8,8 @@ import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
 import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
+import 'package:zuvio_kids/core/widgets/animated_kid_background.dart';
+import 'package:zuvio_kids/core/widgets/floating_mascot.dart';
 import '../providers/animals_provider.dart';
 import '../widgets/animal_animated_illustration.dart';
 import '../widgets/animal_step_indicator.dart';
@@ -88,8 +90,15 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
     }
   }
 
+  bool _hasShownMidQuiz = false;
+
   Future<void> _handleNext() async {
     final notifier = ref.read(animalsNotifierProvider.notifier);
+    final state = ref.read(animalsNotifierProvider).valueOrNull;
+    if (state != null && state.currentAnimalIndex == 4 && !_hasShownMidQuiz) {
+      _hasShownMidQuiz = true;
+      await Navigator.pushNamed(context, AppRoutes.animalsQuiz);
+    }
     final isFinished = await notifier.nextAnimal();
     if (isFinished && mounted) {
       Navigator.pushReplacementNamed(context, AppRoutes.animalsCongrats);
@@ -103,8 +112,10 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
     final palette = context.themePalette;
 
     return Scaffold(
-      backgroundColor: palette.scaffoldBackground,
-      body: SafeArea(
+      body: AnimatedKidBackground(
+        primaryColor: const Color(0xFFD6F0FD),
+        secondaryColor: const Color(0xFFEFF8FE),
+        child: SafeArea(
         child: asyncState.when(
           loading: () => const Center(
             child: CircularProgressIndicator(color: AppColors.navy),
@@ -141,12 +152,14 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
             final isLast = currentIndex == totalCount - 1;
             final animalColor = Color(animal.colorValue);
 
-            return Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSizes.paddingL,
-                vertical: AppSizes.paddingM,
-              ),
-              child: Column(
+            return Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSizes.paddingL,
+                    vertical: AppSizes.paddingM,
+                  ),
+                  child: Column(
                 children: [
                   // ── Top Header Bar ──────────────────────────────────────────
                   Row(
@@ -267,16 +280,44 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
 
                   // ── Main Animal Presentation Card ─────────────────────────
                   Expanded(
-                    child: Container(
+                    child: GestureDetector(
+                      onHorizontalDragEnd: (details) {
+                        final vx = details.primaryVelocity;
+                        if (vx != null) {
+                          if (vx < -200) {
+                            _handleNext();
+                          } else if (vx > 200) {
+                            ref
+                                .read(animalsNotifierProvider.notifier)
+                                .previousAnimal();
+                          }
+                        }
+                      },
+                      child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.white,
+                            animalColor.withValues(alpha: 0.08),
+                          ],
+                        ),
                         borderRadius: BorderRadius.circular(36),
+                        border: Border.all(
+                          color: animalColor.withValues(alpha: 0.25),
+                          width: 3,
+                        ),
                         boxShadow: [
+                          BoxShadow(
+                            color: animalColor.withValues(alpha: 0.3),
+                            offset: const Offset(0, 8),
+                          ),
                           BoxShadow(
                             color: Colors.black.withValues(alpha: 0.08),
                             blurRadius: 20,
-                            offset: const Offset(0, 8),
+                            offset: const Offset(0, 10),
                           ),
                         ],
                       ),
@@ -371,6 +412,7 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
                       ),
                     ),
                   ),
+                ),
 
                   const SizedBox(height: 20),
 
@@ -467,9 +509,17 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
                   ),
                 ],
               ),
-            );
-          },
+            ),
+            const Positioned(
+              left: 20,
+              bottom: 90,
+              child: FloatingMascot(size: 60),
+            ),
+          ],
+        );
+      },
         ),
+      ),
       ),
     );
   }

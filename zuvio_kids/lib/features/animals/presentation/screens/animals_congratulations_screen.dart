@@ -9,6 +9,8 @@ import 'package:zuvio_kids/core/theme/app_text_styles.dart';
 import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
 import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
 import 'package:zuvio_kids/core/widgets/kid_button.dart';
+import 'package:zuvio_kids/core/widgets/kid_confetti_overlay.dart';
+import 'package:zuvio_kids/features/achievements/presentation/providers/achievements_provider.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/providers/onboarding_provider.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/widgets/animal_avatar.dart';
 import '../providers/animals_provider.dart';
@@ -29,6 +31,7 @@ class _AnimalsCongratulationsScreenState
     with SingleTickerProviderStateMixin {
   late final AnimationController _sparkleController;
   late final Animation<double> _scaleAnimation;
+  final _confettiKey = GlobalKey<KidConfettiOverlayState>();
   bool _hasPlayedCelebrationAudio = false;
 
   @override
@@ -47,11 +50,19 @@ class _AnimalsCongratulationsScreenState
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted || _hasPlayedCelebrationAudio) return;
       _hasPlayedCelebrationAudio = true;
+      _confettiKey.currentState?.burst();
       final onboardingState = ref.read(onboardingNotifierProvider).valueOrNull;
       final friend = onboardingState?.friendAvatar.isNotEmpty == true
           ? onboardingState!.friendAvatar
           : AppStrings.defaultFriend;
       KidSoundService.instance.playCelebrationSounds(friend);
+
+      final session = ref.read(animalsNotifierProvider).valueOrNull?.selectedSession;
+      if (session?.sessionNumber == 1) {
+        ref.read(achievementsNotifierProvider.notifier).unlock('animal_explorer');
+      } else if (session?.sessionNumber == 2) {
+        ref.read(achievementsNotifierProvider.notifier).unlock('animal_master');
+      }
     });
   }
 
@@ -107,7 +118,9 @@ class _AnimalsCongratulationsScreenState
 
     return Scaffold(
       backgroundColor: palette.scaffoldBackground,
-      body: SafeArea(
+      body: Stack(
+        children: [
+          SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: AppSizes.paddingL,
@@ -276,6 +289,9 @@ class _AnimalsCongratulationsScreenState
           ),
         ),
       ),
-    );
+      KidConfettiOverlay(key: _confettiKey),
+    ],
+  ),
+);
   }
 }

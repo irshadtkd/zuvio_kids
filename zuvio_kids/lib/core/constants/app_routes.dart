@@ -22,4 +22,6 @@ abstract final class AppRoutes {
   static const String animalsHub = '/animals';
   static const String animalsLearning = '/animals/learning';
   static const String animalsCongrats = '/animals/congrats';
+  static const String animalsQuiz = '/animals/quiz';
+  static const String trophyRoom = '/trophy-room';
 }

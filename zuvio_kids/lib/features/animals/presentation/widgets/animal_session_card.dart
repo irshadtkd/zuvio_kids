@@ -50,13 +50,26 @@ class AnimalSessionCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 18),
       decoration: BoxDecoration(
-        color: isLocked ? Colors.white.withValues(alpha: 0.72) : Colors.white,
+        color: isLocked ? Colors.white.withValues(alpha: 0.76) : Colors.white,
         borderRadius: BorderRadius.circular(28),
+        border: Border.all(
+          color: isLocked
+              ? AppColors.cardLocked
+              : Colors.white,
+          width: 2.5,
+        ),
         boxShadow: [
+          // 3D tactile block bevel
+          BoxShadow(
+            color: isLocked
+                ? Colors.black.withValues(alpha: 0.04)
+                : badgeColor.withValues(alpha: 0.4),
+            offset: const Offset(0, 5),
+          ),
           BoxShadow(
             color: Colors.black.withValues(alpha: isLocked ? 0.02 : 0.07),
             blurRadius: 14,
-            offset: const Offset(0, 5),
+            offset: const Offset(0, 7),
           ),
         ],
       ),
@@ -71,11 +84,29 @@ class AnimalSessionCard extends StatelessWidget {
               children: [
                 // ── Preview Container with Avatar / SVG Icons ─────────────────
                 Container(
-                  width: 74,
-                  height: 74,
+                  width: 78,
+                  height: 78,
                   decoration: BoxDecoration(
-                    color: isLocked ? AppColors.cardLocked : badgeColor,
-                    borderRadius: BorderRadius.circular(22),
+                    gradient: isLocked
+                        ? null
+                        : LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              badgeColor,
+                              badgeColor.withValues(alpha: 0.75),
+                            ],
+                          ),
+                    color: isLocked ? AppColors.cardLocked : null,
+                    borderRadius: BorderRadius.circular(24),
+                    boxShadow: [
+                      if (!isLocked)
+                        BoxShadow(
+                          color: badgeColor.withValues(alpha: 0.28),
+                          blurRadius: 8,
+                          offset: const Offset(0, 3),
+                        ),
+                    ],
                   ),
                   child: Stack(
                     alignment: Alignment.center,

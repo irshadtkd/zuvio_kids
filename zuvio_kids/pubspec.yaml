@@ -41,6 +41,9 @@ dependencies:
   just_audio: ^0.10.6
   flutter_svg: ^2.3.0
 
+  # ── Celebration Effects ─────────────────────────────────────────────────
+  confetti: ^0.7.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

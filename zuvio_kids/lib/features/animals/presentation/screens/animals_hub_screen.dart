@@ -6,7 +6,7 @@ import 'package:zuvio_kids/core/constants/app_sizes.dart';
 import 'package:zuvio_kids/core/errors/error_handler.dart';
 import 'package:zuvio_kids/core/l10n/app_localizations.dart';
 import 'package:zuvio_kids/core/theme/app_text_styles.dart';
-import 'package:zuvio_kids/core/theme/app_theme_palette.dart';
+import 'package:zuvio_kids/core/widgets/animated_kid_background.dart';
 import 'package:zuvio_kids/features/home/presentation/widgets/star_badge.dart';
 import '../providers/animals_provider.dart';
 import '../widgets/animal_session_card.dart';
@@ -20,11 +20,12 @@ class AnimalsHubScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final asyncState = ref.watch(animalsNotifierProvider);
-    final palette = context.themePalette;
 
     return Scaffold(
-      backgroundColor: palette.scaffoldBackground,
-      body: SafeArea(
+      body: AnimatedKidBackground(
+        primaryColor: const Color(0xFFD8F1FE),
+        secondaryColor: const Color(0xFFF1F9FE),
+        child: SafeArea(
         child: asyncState.when(
           loading: () => const Center(
             child: CircularProgressIndicator(color: AppColors.navy),
@@ -130,11 +131,83 @@ class AnimalsHubScreen extends ConsumerWidget {
                       },
                     ),
                   ),
+                  const SizedBox(height: 12),
+
+                  // ── Sound Quiz Mini-Game Banner ────────────────────────────
+                  GestureDetector(
+                    onTap: () =>
+                        Navigator.pushNamed(context, AppRoutes.animalsQuiz),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 18,
+                        vertical: 14,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [AppColors.accent, AppColors.starYellow],
+                        ),
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.accent.withValues(alpha: 0.3),
+                            blurRadius: 10,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 48,
+                            height: 48,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Center(
+                              child: Text('🔊', style: TextStyle(fontSize: 24)),
+                            ),
+                          ),
+                          const SizedBox(width: 14),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  l10n.animalsQuizTitle,
+                                  style: AppTextStyles.base.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w900,
+                                    color: AppColors.navy,
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  l10n.animalsQuizHint,
+                                  style: AppTextStyles.base.copyWith(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColors.navy.withValues(alpha: 0.7),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Icon(
+                            Icons.play_circle_fill_rounded,
+                            color: AppColors.navy,
+                            size: 32,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             );
           },
         ),
+      ),
       ),
     );
   }
