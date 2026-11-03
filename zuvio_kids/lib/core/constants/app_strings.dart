@@ -37,8 +37,15 @@ abstract final class AppStrings {
   static const String prefAnimalsStars = 'pref_animals_stars_';
   static const String prefTotalStarPoints = 'pref_total_star_points';
   static const String prefThemeMode = 'pref_theme_mode';
-  static const String prefPuzzleCompletedSessions = 'pref_puzzle_completed_sessions';
-  static const String prefPuzzleCompletedVariations = 'pref_puzzle_completed_variations';
+  static const String prefPuzzleCompletedSessions =
+      'pref_puzzle_completed_sessions';
+  static const String prefPuzzleCompletedVariations =
+      'pref_puzzle_completed_variations';
+  static const String prefAiStudioApiKey = 'pref_ai_studio_api_key';
+
+  // ── AI Studio Configuration ───────────────────────────────────────────
+  static const String defaultAiStudioApiKey =
+      'your_key_here';
 
   // ── Animals Session Identifiers ───────────────────────────────────────
   static const String sessionAnimals1 = 'animals_session_1';
