@@ -1,4 +1,5 @@
 import 'package:fpdart/fpdart.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/errors/app_exception.dart';
 import 'package:zuvio_kids/core/errors/failure.dart';
@@ -28,7 +29,17 @@ class ColorRepositoryImpl implements ColorRepository {
 
       // UKG students get the extended 13-color session.
       // PreKG and LKG keep the exact existing 7-color session.
-      final cleanClass = studentClass.trim().toUpperCase();
+      var resolvedClass = studentClass;
+      if (resolvedClass.isEmpty) {
+        try {
+          final prefs = await SharedPreferences.getInstance();
+          resolvedClass = prefs.getString(AppStrings.prefUserClass) ??
+              prefs.getString(AppStrings.prefStudentLevel) ??
+              '';
+        } catch (_) {}
+      }
+
+      final cleanClass = resolvedClass.trim().toUpperCase();
       final isUkg = cleanClass == AppStrings.idClassUkg.toUpperCase() ||
           cleanClass.contains('UKG');
       final baseSession =

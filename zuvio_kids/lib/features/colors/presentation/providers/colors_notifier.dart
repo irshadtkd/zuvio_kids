@@ -7,6 +7,7 @@ import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
 import 'package:zuvio_kids/features/colors/data/datasources/color_data.dart';
 import 'package:zuvio_kids/features/colors/presentation/providers/colors_state.dart';
 import 'package:zuvio_kids/features/onboarding/presentation/providers/onboarding_provider.dart';
+import 'package:zuvio_kids/features/onboarding/presentation/providers/onboarding_state.dart';
 import 'colors_provider.dart';
 
 /// Riverpod AsyncNotifier managing state and actions for the Colors learning module.
@@ -14,19 +15,25 @@ import 'colors_provider.dart';
 class ColorsNotifier extends AsyncNotifier<ColorsState> {
   @override
   Future<ColorsState> build() async {
-    return _fetchInitial();
+    // Watch onboardingNotifierProvider so any change to the student profile
+    // or selected level automatically triggers a rebuild with the correct session.
+    final onboardingState = ref.watch(onboardingNotifierProvider).valueOrNull;
+    return _fetchInitial(onboardingState);
   }
 
-  Future<ColorsState> _fetchInitial() async {
-    final onboardingState = ref.read(onboardingNotifierProvider).valueOrNull;
-    final studentName = onboardingState?.name.isNotEmpty == true
-        ? onboardingState!.name
+  Future<ColorsState> _fetchInitial([OnboardingState? onboardingState]) async {
+    final profile = onboardingState ??
+        ref.read(onboardingNotifierProvider).valueOrNull;
+    final studentName = profile?.name.isNotEmpty == true
+        ? profile!.name
         : AppStrings.defaultChildName;
-    var studentClass = onboardingState?.studentClass ?? '';
+    var studentClass = profile?.studentClass ?? '';
     if (studentClass.isEmpty) {
       try {
         final prefs = await SharedPreferences.getInstance();
-        studentClass = prefs.getString(AppStrings.prefUserClass) ?? '';
+        studentClass = prefs.getString(AppStrings.prefUserClass) ??
+            prefs.getString(AppStrings.prefStudentLevel) ??
+            '';
       } catch (_) {}
     }
 
@@ -55,6 +62,7 @@ class ColorsNotifier extends AsyncNotifier<ColorsState> {
 
     return ColorsState(
       studentName: studentName,
+      studentClass: studentClass,
       session: session,
       totalStars: progress?.totalStars ?? 0,
     );
@@ -201,11 +209,44 @@ class ColorsNotifier extends AsyncNotifier<ColorsState> {
   }
 
   /// Replays the Colors session from the first color.
+  /// Also synchronizes with the active student level (UKG vs PreKG/LKG)
+  /// so that if the student level was updated, the session adapts immediately.
   void playAgain() {
     final current = state.valueOrNull;
     if (current == null) return;
 
+    final onboardingState = ref.read(onboardingNotifierProvider).valueOrNull;
+    final studentName = onboardingState?.name.isNotEmpty == true
+        ? onboardingState!.name
+        : (current.studentName.isNotEmpty
+            ? current.studentName
+            : AppStrings.defaultChildName);
+    final studentClass =
+        onboardingState?.studentClass ?? current.studentClass;
+
+    final cleanClass = studentClass.trim().toUpperCase();
+    final isUkg = cleanClass == AppStrings.idClassUkg.toUpperCase() ||
+        cleanClass.contains('UKG');
+    final targetBaseSession =
+        isUkg ? ColorData.ukgSession : ColorData.defaultSession;
+
+    final isSessionDifferent =
+        current.session.colors.length != targetBaseSession.colors.length ||
+        current.studentName != studentName ||
+        current.studentClass != studentClass;
+
+    final session = isSessionDifferent
+        ? targetBaseSession.copyWith(
+            isCompleted: current.session.isCompleted,
+            starsEarned: current.session.starsEarned,
+            currentColorIndex: 0,
+          )
+        : current.session;
+
     state = AsyncData(current.copyWith(
+      studentName: studentName,
+      studentClass: studentClass,
+      session: session,
       currentColorIndex: 0,
       currentStep: 0,
       clearSelectedPaletteColor: true,
@@ -215,11 +256,36 @@ class ColorsNotifier extends AsyncNotifier<ColorsState> {
     ));
   }
 
+  /// Ensures the active Colors session matches the currently selected student level.
+  Future<void> syncWithCurrentClass() async {
+    final onboardingState = ref.read(onboardingNotifierProvider).valueOrNull;
+    var studentClass = onboardingState?.studentClass ?? '';
+    if (studentClass.isEmpty) {
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        studentClass = prefs.getString(AppStrings.prefUserClass) ??
+            prefs.getString(AppStrings.prefStudentLevel) ??
+            '';
+      } catch (_) {}
+    }
+
+    final cleanClass = studentClass.trim().toUpperCase();
+    final isUkg = cleanClass == AppStrings.idClassUkg.toUpperCase() ||
+        cleanClass.contains('UKG');
+    final targetCount =
+        isUkg ? ColorData.ukgItems.length : ColorData.items.length;
+
+    final current = state.valueOrNull;
+    if (current == null || current.session.colors.length != targetCount) {
+      state = const AsyncLoading();
+      state = await AsyncValue.guard(() => _fetchInitial(onboardingState));
+    }
+  }
+
   /// Clears all stored colors learning data (called on logout).
   Future<void> clearAllProgress() async {
     final clearUseCase = ref.read(clearColorProgressUseCaseProvider);
     await clearUseCase();
-    state = const AsyncLoading();
-    state = await AsyncValue.guard(_fetchInitial);
+    ref.invalidateSelf();
   }
 }

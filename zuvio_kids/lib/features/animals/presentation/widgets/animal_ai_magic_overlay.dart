@@ -84,7 +84,7 @@ class _AnimalAiMagicOverlayState extends State<AnimalAiMagicOverlay>
     _particles.clear();
     for (int i = 0; i < 16; i++) {
       _particles.add(_SparkleParticle(
-        angle: (_random.nextDouble() * 2 * math.pi),
+        angle: _random.nextDouble() * 2 * math.pi,
         radius: 90 + _random.nextDouble() * 80,
         size: 6 + _random.nextDouble() * 12,
         phase: _random.nextDouble(),
@@ -356,10 +356,10 @@ class _AnimalAiMagicButtonState extends State<AnimalAiMagicButton>
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 11),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [
-                    const Color(0xFF9B59B6),
-                    const Color(0xFF3498DB),
+                    Color(0xFF9B59B6),
+                    Color(0xFF3498DB),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,

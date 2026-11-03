@@ -28,6 +28,7 @@ class _ColorsLearningScreenState extends ConsumerState<ColorsLearningScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(colorsNotifierProvider.notifier).syncWithCurrentClass();
       final state = ref.read(colorsNotifierProvider).valueOrNull;
       if (state != null && state.isSessionCompleted) {
         ref.read(colorsNotifierProvider.notifier).playAgain();

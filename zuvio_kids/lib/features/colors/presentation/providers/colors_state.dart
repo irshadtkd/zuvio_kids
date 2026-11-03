@@ -6,6 +6,7 @@ import 'package:zuvio_kids/features/colors/domain/entities/color_session_entity.
 class ColorsState {
   const ColorsState({
     required this.studentName,
+    this.studentClass = '',
     required this.session,
     required this.totalStars,
     this.currentColorIndex = 0,
@@ -17,6 +18,7 @@ class ColorsState {
   });
 
   final String studentName;
+  final String studentClass;
   final ColorSessionEntity session;
   final int totalStars;
   final int currentColorIndex;
@@ -36,6 +38,7 @@ class ColorsState {
 
   ColorsState copyWith({
     String? studentName,
+    String? studentClass,
     ColorSessionEntity? session,
     int? totalStars,
     int? currentColorIndex,
@@ -50,6 +53,7 @@ class ColorsState {
   }) {
     return ColorsState(
       studentName: studentName ?? this.studentName,
+      studentClass: studentClass ?? this.studentClass,
       session: session ?? this.session,
       totalStars: totalStars ?? this.totalStars,
       currentColorIndex: currentColorIndex ?? this.currentColorIndex,

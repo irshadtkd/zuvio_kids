@@ -20,7 +20,8 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
       final prefs = await _instance;
       final isDone = prefs.getBool(AppStrings.prefOnboardingDone) ?? false;
       final name = prefs.getString(AppStrings.prefUserName);
-      final studentClass = prefs.getString(AppStrings.prefUserClass);
+      final studentClass = prefs.getString(AppStrings.prefUserClass) ??
+          prefs.getString(AppStrings.prefStudentLevel);
       final friendAvatar = prefs.getString(AppStrings.prefUserFriend);
 
       if (!isDone || name == null || name.isEmpty) {
@@ -48,6 +49,7 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
       );
       await prefs.setString(AppStrings.prefUserName, model.name);
       await prefs.setString(AppStrings.prefUserClass, model.studentClass);
+      await prefs.setString(AppStrings.prefStudentLevel, model.studentClass);
       await prefs.setString(AppStrings.prefUserFriend, model.friendAvatar);
     } catch (e) {
       throw CacheException(message: 'Failed to save user profile: $e');
@@ -61,6 +63,7 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
       await prefs.remove(AppStrings.prefOnboardingDone);
       await prefs.remove(AppStrings.prefUserName);
       await prefs.remove(AppStrings.prefUserClass);
+      await prefs.remove(AppStrings.prefStudentLevel);
       await prefs.remove(AppStrings.prefUserFriend);
     } catch (e) {
       throw CacheException(message: 'Failed to clear user profile: $e');
