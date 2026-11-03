@@ -16,14 +16,12 @@ import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
 class AnimalAiMagicOverlay extends StatefulWidget {
   const AnimalAiMagicOverlay({
     super.key,
-    required this.animalName,
     required this.animalEnglishName,
     required this.animalColor,
     required this.soundAssetId,
     required this.onClose,
   });
 
-  final String animalName;
   final String animalEnglishName;
   final Color animalColor;
   final String soundAssetId;

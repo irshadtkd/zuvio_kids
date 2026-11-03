@@ -1,5 +1,5 @@
-import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/utils/app_logger.dart';
 
@@ -9,10 +9,12 @@ import 'package:zuvio_kids/core/utils/app_logger.dart';
 /// configured AI Studio API key. The service rotates actions to avoid
 /// repeating the same one consecutively.
 ///
-/// API key: set [apiKey] via [configure] before first use.
+/// API key: configured via [AppStrings.defaultAiStudioApiKey] or dynamically via [configure].
 /// Layer: Core Service
 class AiMagicService {
-  AiMagicService._();
+  AiMagicService._() {
+    _initApiKey();
+  }
 
   static final AiMagicService instance = AiMagicService._();
 
@@ -28,10 +30,24 @@ class AiMagicService {
 
   String _apiKey = AppStrings.defaultAiStudioApiKey;
 
-  /// Set the API key for Google AI Studio.
-  void configure(String apiKey) {
-    if (apiKey.isNotEmpty) {
-      _apiKey = apiKey;
+  Future<void> _initApiKey() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final savedKey = prefs.getString(AppStrings.prefAiStudioApiKey);
+      if (savedKey != null && savedKey.trim().isNotEmpty) {
+        _apiKey = savedKey.trim();
+      }
+    } catch (_) {}
+  }
+
+  /// Set the API key for Google AI Studio and persist it.
+  Future<void> configure(String apiKey) async {
+    if (apiKey.trim().isNotEmpty) {
+      _apiKey = apiKey.trim();
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString(AppStrings.prefAiStudioApiKey, _apiKey);
+      } catch (_) {}
     }
   }
 
@@ -41,9 +57,7 @@ class AiMagicService {
   /// Returns a short sentence describing the animal's movement/action.
   /// Avoids repeating [_lastAction] consecutively.
   Future<String?> generateAnimalAction(String animalName) async {
-    if (_apiKey == AppStrings.defaultAiStudioApiKey ||
-        _apiKey.isEmpty ||
-        _apiKey == 'your_key_here') {
+    if (_apiKey.isEmpty || _apiKey == 'your_key_here') {
       // Return a fun fallback animation description when no API key is set.
       return _fallbackAction(animalName);
     }

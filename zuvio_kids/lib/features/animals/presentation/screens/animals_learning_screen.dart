@@ -11,6 +11,7 @@ import 'package:zuvio_kids/core/utils/kid_sound_service.dart';
 import 'package:zuvio_kids/core/widgets/animated_kid_background.dart';
 import 'package:zuvio_kids/core/widgets/floating_mascot.dart';
 import '../providers/animals_provider.dart';
+import '../widgets/animal_ai_magic_overlay.dart';
 import '../widgets/animal_animated_illustration.dart';
 import '../widgets/animal_step_indicator.dart';
 
@@ -547,7 +548,6 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
                     return AnimalAiMagicOverlay(
                       key: ValueKey(
                           'ai_magic_${animal.id}_${DateTime.now().millisecondsSinceEpoch}'),
-                      animalName: animal.englishName.toLowerCase(),
                       animalEnglishName: animal.englishName,
                       animalColor: Color(animal.colorValue),
                       soundAssetId: animal.soundAssetId,
