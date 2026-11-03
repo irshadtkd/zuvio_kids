@@ -461,6 +461,24 @@ class AppLocalizationsMl extends AppLocalizations {
   String get colorPink => 'പിങ്ക്';
 
   @override
+  String get colorWhite => 'വെള്ള';
+
+  @override
+  String get colorBlack => 'കറുപ്പ്';
+
+  @override
+  String get colorBrown => 'തവിട്ട്';
+
+  @override
+  String get colorGray => 'ചാരനിറം';
+
+  @override
+  String get colorSkyBlue => 'ആകാശ നീല';
+
+  @override
+  String get colorGolden => 'സ്വർണ്ണ';
+
+  @override
   String get objectApple => 'ആപ്പിൾ';
 
   @override
@@ -480,6 +498,24 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get objectFlower => 'പൂവ്';
+
+  @override
+  String get objectCloud => 'മേഘം';
+
+  @override
+  String get objectStar => 'നക്ഷത്രം';
+
+  @override
+  String get objectTree => 'മരം';
+
+  @override
+  String get objectMoon => 'ചന്ദ്രൻ';
+
+  @override
+  String get objectKite => 'പട്ടം';
+
+  @override
+  String get objectSun => 'സൂര്യൻ';
 
   @override
   String get shapesHubTitle => 'രൂപങ്ങൾ';
@@ -892,4 +928,16 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get animalsQuizPlaySound => 'ശബ്ദം വീണ്ടും പ്ലേ ചെയ്യൂ';
+
+  @override
+  String get btnAiMagic => '✨ AI Magic';
+
+  @override
+  String get aiMagicLoading => 'Magic ഉണ്ടാക്കുന്നു...';
+
+  @override
+  String get aiMagicError => 'Magic ഇപ്പോൾ ഇല്ല. വീണ്ടും ശ്രമിക്കൂ!';
+
+  @override
+  String get colorsCongratsSubtitleUkg => 'നിങ്ങൾ എല്ലാ 13 നിറങ്ങളും പഠിച്ചു!';
 }

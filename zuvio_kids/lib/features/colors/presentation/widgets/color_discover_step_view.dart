@@ -123,8 +123,21 @@ class _ColorDiscoverStepViewState extends State<ColorDiscoverStepView>
       case 'purple':
         return l10n.colorPurple;
       case 'pink':
-      default:
         return l10n.colorPink;
+      case 'white':
+        return l10n.colorWhite;
+      case 'black':
+        return l10n.colorBlack;
+      case 'brown':
+        return l10n.colorBrown;
+      case 'gray':
+        return l10n.colorGray;
+      case 'sky_blue':
+        return l10n.colorSkyBlue;
+      case 'golden':
+        return l10n.colorGolden;
+      default:
+        return widget.colorItem.name;
     }
   }
 
@@ -171,6 +184,12 @@ class _ColorDiscoverStepViewState extends State<ColorDiscoverStepView>
                             decoration: BoxDecoration(
                               color: color,
                               shape: BoxShape.circle,
+                              border: widget.colorItem.id == 'white'
+                                  ? Border.all(
+                                      color: const Color(0xFFCFD8DC),
+                                      width: 3,
+                                    )
+                                  : null,
                               boxShadow: [
                                 BoxShadow(
                                   color: color.withValues(alpha: 0.4),

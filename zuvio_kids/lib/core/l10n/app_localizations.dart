@@ -926,6 +926,42 @@ abstract class AppLocalizations {
   /// **'Pink'**
   String get colorPink;
 
+  /// Color name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'White'**
+  String get colorWhite;
+
+  /// Color name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'Black'**
+  String get colorBlack;
+
+  /// Color name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'Brown'**
+  String get colorBrown;
+
+  /// Color name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'Gray'**
+  String get colorGray;
+
+  /// Color name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'Sky Blue'**
+  String get colorSkyBlue;
+
+  /// Color name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'Golden'**
+  String get colorGolden;
+
   /// Object name
   ///
   /// In en, this message translates to:
@@ -967,6 +1003,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'flower'**
   String get objectFlower;
+
+  /// Object name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'cloud'**
+  String get objectCloud;
+
+  /// Object name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'star'**
+  String get objectStar;
+
+  /// Object name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'tree'**
+  String get objectTree;
+
+  /// Object name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'moon'**
+  String get objectMoon;
+
+  /// Object name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'kite'**
+  String get objectKite;
+
+  /// Object name for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'sun'**
+  String get objectSun;
 
   /// Title on Shapes Hub screen
   ///
@@ -1723,6 +1795,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Play Sound Again'**
   String get animalsQuizPlaySound;
+
+  /// Button label for the AI Magic feature in Animals session
+  ///
+  /// In en, this message translates to:
+  /// **'✨ AI Magic'**
+  String get btnAiMagic;
+
+  /// Message shown while AI magic is loading
+  ///
+  /// In en, this message translates to:
+  /// **'Generating magic...'**
+  String get aiMagicLoading;
+
+  /// Message shown when AI magic fails
+  ///
+  /// In en, this message translates to:
+  /// **'Magic is resting. Try again!'**
+  String get aiMagicError;
+
+  /// Subtitle on colors congratulations screen for UKG
+  ///
+  /// In en, this message translates to:
+  /// **'You learned all 13 colors!'**
+  String get colorsCongratsSubtitleUkg;
 }
 
 class _AppLocalizationsDelegate

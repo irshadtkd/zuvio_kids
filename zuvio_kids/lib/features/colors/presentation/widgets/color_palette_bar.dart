@@ -32,7 +32,11 @@ class ColorPaletteBar extends StatelessWidget {
               color: Color(colorValue),
               shape: BoxShape.circle,
               border: Border.all(
-                color: isSelected ? AppColors.navy : Colors.white,
+                color: isSelected
+                    ? AppColors.navy
+                    : (colorValue == 0xFFF5F5F5
+                        ? const Color(0xFFCFD8DC)
+                        : Colors.white),
                 width: isSelected ? 4.0 : 3.0,
               ),
               boxShadow: [

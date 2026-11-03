@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/providers/star_points_provider.dart';
 import 'package:zuvio_kids/core/utils/app_logger.dart';
@@ -21,7 +22,13 @@ class ColorsNotifier extends AsyncNotifier<ColorsState> {
     final studentName = onboardingState?.name.isNotEmpty == true
         ? onboardingState!.name
         : AppStrings.defaultChildName;
-    final studentClass = onboardingState?.studentClass ?? '';
+    var studentClass = onboardingState?.studentClass ?? '';
+    if (studentClass.isEmpty) {
+      try {
+        final prefs = await SharedPreferences.getInstance();
+        studentClass = prefs.getString(AppStrings.prefUserClass) ?? '';
+      } catch (_) {}
+    }
 
     final getSessionUseCase = ref.read(getColorSessionUseCaseProvider);
     final getProgressUseCase = ref.read(getColorProgressUseCaseProvider);

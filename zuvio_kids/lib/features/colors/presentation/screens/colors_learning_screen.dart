@@ -91,10 +91,13 @@ class _ColorsLearningScreenState extends ConsumerState<ColorsLearningScreen> {
                   onBack: () => Navigator.pop(context),
                 ),
 
-                // ── Progress Pills for the 7 Colors ────────────────────────
-                NumbersStepPills(
-                  totalItems: state.session.colors.length,
-                  currentIndex: state.currentColorIndex,
+                // ── Progress Pills for the Colors ────────────────────────
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: NumbersStepPills(
+                    totalItems: state.session.colors.length,
+                    currentIndex: state.currentColorIndex,
+                  ),
                 ),
 
                 // ── Step View Body ─────────────────────────────────────────

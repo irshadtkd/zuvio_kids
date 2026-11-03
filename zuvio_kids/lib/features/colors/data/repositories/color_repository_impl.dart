@@ -27,9 +27,12 @@ class ColorRepositoryImpl implements ColorRepository {
       final isCompleted = progress?.isCompleted ?? false;
 
       // UKG students get the extended 13-color session.
-      final baseSession = studentClass == AppStrings.idClassUkg
-          ? ColorData.ukgSession
-          : ColorData.defaultSession;
+      // PreKG and LKG keep the exact existing 7-color session.
+      final cleanClass = studentClass.trim().toUpperCase();
+      final isUkg = cleanClass == AppStrings.idClassUkg.toUpperCase() ||
+          cleanClass.contains('UKG');
+      final baseSession =
+          isUkg ? ColorData.ukgSession : ColorData.defaultSession;
 
       final session = baseSession.copyWith(
         isCompleted: isCompleted,

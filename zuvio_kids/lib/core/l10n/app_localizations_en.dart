@@ -455,6 +455,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get colorPink => 'Pink';
 
   @override
+  String get colorWhite => 'White';
+
+  @override
+  String get colorBlack => 'Black';
+
+  @override
+  String get colorBrown => 'Brown';
+
+  @override
+  String get colorGray => 'Gray';
+
+  @override
+  String get colorSkyBlue => 'Sky Blue';
+
+  @override
+  String get colorGolden => 'Golden';
+
+  @override
   String get objectApple => 'apple';
 
   @override
@@ -474,6 +492,24 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get objectFlower => 'flower';
+
+  @override
+  String get objectCloud => 'cloud';
+
+  @override
+  String get objectStar => 'star';
+
+  @override
+  String get objectTree => 'tree';
+
+  @override
+  String get objectMoon => 'moon';
+
+  @override
+  String get objectKite => 'kite';
+
+  @override
+  String get objectSun => 'sun';
 
   @override
   String get shapesHubTitle => 'Shapes Fun';
@@ -882,4 +918,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get animalsQuizPlaySound => 'Play Sound Again';
+
+  @override
+  String get btnAiMagic => '✨ AI Magic';
+
+  @override
+  String get aiMagicLoading => 'Generating magic...';
+
+  @override
+  String get aiMagicError => 'Magic is resting. Try again!';
+
+  @override
+  String get colorsCongratsSubtitleUkg => 'You learned all 13 colors!';
 }

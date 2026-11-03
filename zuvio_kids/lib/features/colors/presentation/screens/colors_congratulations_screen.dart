@@ -177,7 +177,9 @@ class _ColorsCongratulationsScreenState
                   const SizedBox(height: 12),
 
                   Text(
-                    l10n.colorsCongratsSubtitle,
+                    (colorsState?.session.colors.length ?? 7) > 7
+                        ? l10n.colorsCongratsSubtitleUkg
+                        : l10n.colorsCongratsSubtitle,
                     textAlign: TextAlign.center,
                     style: AppTextStyles.base.copyWith(
                       fontSize: 18,

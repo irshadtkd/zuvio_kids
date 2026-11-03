@@ -73,57 +73,9 @@ abstract final class ColorData {
     ),
   ];
 
-  /// The extended 13-color list for UKG (7 base + 6 additional).
+  /// The extended 13-color list for UKG (reuses the 7 base colors + 6 additional).
   static const List<ColorItemEntity> ukgItems = [
-    ColorItemEntity(
-      id: 'red',
-      name: 'Red',
-      objectName: 'apple',
-      colorValue: hexRed,
-      paletteOptions: [hexRed, hexYellow, hexGreen, hexBlue, hexPurple],
-    ),
-    ColorItemEntity(
-      id: 'yellow',
-      name: 'Yellow',
-      objectName: 'banana',
-      colorValue: hexYellow,
-      paletteOptions: [hexRed, hexYellow, hexGreen, hexBlue, hexOrange],
-    ),
-    ColorItemEntity(
-      id: 'green',
-      name: 'Green',
-      objectName: 'leaf',
-      colorValue: hexGreen,
-      paletteOptions: [hexPink, hexYellow, hexGreen, hexBlue, hexPurple],
-    ),
-    ColorItemEntity(
-      id: 'blue',
-      name: 'Blue',
-      objectName: 'balloon',
-      colorValue: hexBlue,
-      paletteOptions: [hexRed, hexYellow, hexGreen, hexBlue, hexPurple],
-    ),
-    ColorItemEntity(
-      id: 'orange',
-      name: 'Orange',
-      objectName: 'carrot',
-      colorValue: hexOrange,
-      paletteOptions: [hexRed, hexOrange, hexYellow, hexGreen, hexBlue],
-    ),
-    ColorItemEntity(
-      id: 'purple',
-      name: 'Purple',
-      objectName: 'grapes',
-      colorValue: hexPurple,
-      paletteOptions: [hexRed, hexYellow, hexGreen, hexPurple, hexPink],
-    ),
-    ColorItemEntity(
-      id: 'pink',
-      name: 'Pink',
-      objectName: 'flower',
-      colorValue: hexPink,
-      paletteOptions: [hexYellow, hexGreen, hexBlue, hexOrange, hexPink],
-    ),
+    ...items,
     // UKG additional colors
     ColorItemEntity(
       id: 'white',

@@ -22,247 +22,6 @@ class PaintableObjectWidget extends StatelessWidget {
   final double width;
   final double height;
 
-  // ── 8. Cloud ──────────────────────────────────────────────────────────────
-  void _drawCloud(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Draw cloud as overlapping circles
-    final circles = [
-      Offset(cx - 35, cy + 10),
-      Offset(cx, cy - 10),
-      Offset(cx + 35, cy + 10),
-      Offset(cx - 15, cy + 20),
-      Offset(cx + 15, cy + 20),
-    ];
-    final radii = [28.0, 36.0, 28.0, 22.0, 22.0];
-
-    for (int i = 0; i < circles.length; i++) {
-      canvas.drawCircle(circles[i], radii[i], fillPaint);
-    }
-    if (!isColored) {
-      for (int i = 0; i < circles.length; i++) {
-        canvas.drawCircle(circles[i], radii[i], borderPaint);
-      }
-    }
-  }
-
-  // ── 9. Star ───────────────────────────────────────────────────────────────
-  void _drawStar(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-    const outerRadius = 72.0;
-    const innerRadius = 30.0;
-    const numPoints = 5;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    final starPath = Path();
-    for (int i = 0; i < numPoints * 2; i++) {
-      final angle =
-          (i * math.pi / numPoints) - math.pi / 2;
-      final radius = i.isEven ? outerRadius : innerRadius;
-      final x = cx + math.cos(angle) * radius;
-      final y = cy + math.sin(angle) * radius;
-      if (i == 0) {
-        starPath.moveTo(x, y);
-      } else {
-        starPath.lineTo(x, y);
-      }
-    }
-    starPath.close();
-
-    canvas.drawPath(starPath, fillPaint);
-    if (!isColored) {
-      canvas.drawPath(starPath, borderPaint);
-    }
-  }
-
-  // ── 10. Tree ──────────────────────────────────────────────────────────────
-  void _drawTree(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-
-    // Trunk
-    final trunkPaint = Paint()
-      ..color = const Color(0xFF8D6E63)
-      ..style = PaintingStyle.fill;
-    canvas.drawRect(
-      Rect.fromCenter(
-        center: Offset(cx, cy + 55),
-        width: 24,
-        height: 50,
-      ),
-      trunkPaint,
-    );
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Three stacked triangles for foliage
-    final triangles = [
-      [Offset(cx, cy - 75), Offset(cx - 55, cy - 10), Offset(cx + 55, cy - 10)],
-      [Offset(cx, cy - 40), Offset(cx - 60, cy + 25), Offset(cx + 60, cy + 25)],
-      [Offset(cx, cy - 10), Offset(cx - 55, cy + 50), Offset(cx + 55, cy + 50)],
-    ];
-
-    for (final tri in triangles) {
-      final path = Path()
-        ..moveTo(tri[0].dx, tri[0].dy)
-        ..lineTo(tri[1].dx, tri[1].dy)
-        ..lineTo(tri[2].dx, tri[2].dy)
-        ..close();
-      canvas.drawPath(path, fillPaint);
-      if (!isColored) {
-        canvas.drawPath(path, borderPaint);
-      }
-    }
-  }
-
-  // ── 11. Moon ──────────────────────────────────────────────────────────────
-  void _drawMoon(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Crescent via full circle minus an overlapping circle
-    final moonPath = Path()
-      ..addOval(Rect.fromCenter(center: Offset(cx, cy), width: 130, height: 130));
-
-    // Cut-out circle to form crescent
-    final cutPath = Path()
-      ..addOval(Rect.fromCenter(
-        center: Offset(cx + 38, cy - 18),
-        width: 120,
-        height: 120,
-      ));
-
-    final crescent = Path.combine(PathOperation.difference, moonPath, cutPath);
-
-    canvas.drawPath(crescent, fillPaint);
-    if (!isColored) {
-      canvas.drawPath(crescent, borderPaint);
-    }
-  }
-
-  // ── 12. Kite ──────────────────────────────────────────────────────────────
-  void _drawKite(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2 - 10;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Diamond kite shape
-    final kitePath = Path()
-      ..moveTo(cx, cy - 75)
-      ..lineTo(cx + 55, cy)
-      ..lineTo(cx, cy + 60)
-      ..lineTo(cx - 55, cy)
-      ..close();
-
-    canvas.drawPath(kitePath, fillPaint);
-    if (!isColored) {
-      canvas.drawPath(kitePath, borderPaint);
-    }
-
-    // Tail
-    final tailPaint = Paint()
-      ..color = const Color(0xFF64748B)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.0
-      ..strokeCap = StrokeCap.round;
-
-    final tailPath = Path()
-      ..moveTo(cx, cy + 60)
-      ..quadraticBezierTo(cx + 20, cy + 90, cx - 10, cy + 110)
-      ..quadraticBezierTo(cx + 15, cy + 130, cx, cy + 150);
-    canvas.drawPath(tailPath, tailPaint);
-
-    // String
-    final stringPaint = Paint()
-      ..color = const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-    canvas.drawLine(Offset(cx, cy - 75), Offset(cx - 40, cy + 100), stringPaint);
-  }
-
-  // ── 13. Sun ───────────────────────────────────────────────────────────────
-  void _drawSun(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Rays
-    const numRays = 12;
-    const rayStart = 50.0;
-    const rayEnd = 78.0;
-    final rayPaint = Paint()
-      ..color = isColored ? fillColor : const Color(0xFFB0BEC5)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 6.0
-      ..strokeCap = StrokeCap.round;
-
-    for (int i = 0; i < numRays; i++) {
-      final angle = (i * 2 * math.pi) / numRays;
-      canvas.drawLine(
-        Offset(cx + math.cos(angle) * rayStart, cy + math.sin(angle) * rayStart),
-        Offset(cx + math.cos(angle) * rayEnd, cy + math.sin(angle) * rayEnd),
-        rayPaint,
-      );
-    }
-
-    // Sun circle
-    canvas.drawCircle(Offset(cx, cy), 44, fillPaint);
-    if (!isColored) {
-      canvas.drawCircle(Offset(cx, cy), 44, borderPaint);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -297,247 +56,6 @@ class _PaintableObjectPainter extends CustomPainter {
   final String objectName;
   final Color fillColor;
   final bool isColored;
-
-  // ── 8. Cloud ──────────────────────────────────────────────────────────────
-  void _drawCloud(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Draw cloud as overlapping circles
-    final circles = [
-      Offset(cx - 35, cy + 10),
-      Offset(cx, cy - 10),
-      Offset(cx + 35, cy + 10),
-      Offset(cx - 15, cy + 20),
-      Offset(cx + 15, cy + 20),
-    ];
-    final radii = [28.0, 36.0, 28.0, 22.0, 22.0];
-
-    for (int i = 0; i < circles.length; i++) {
-      canvas.drawCircle(circles[i], radii[i], fillPaint);
-    }
-    if (!isColored) {
-      for (int i = 0; i < circles.length; i++) {
-        canvas.drawCircle(circles[i], radii[i], borderPaint);
-      }
-    }
-  }
-
-  // ── 9. Star ───────────────────────────────────────────────────────────────
-  void _drawStar(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-    const outerRadius = 72.0;
-    const innerRadius = 30.0;
-    const numPoints = 5;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    final starPath = Path();
-    for (int i = 0; i < numPoints * 2; i++) {
-      final angle =
-          (i * math.pi / numPoints) - math.pi / 2;
-      final radius = i.isEven ? outerRadius : innerRadius;
-      final x = cx + math.cos(angle) * radius;
-      final y = cy + math.sin(angle) * radius;
-      if (i == 0) {
-        starPath.moveTo(x, y);
-      } else {
-        starPath.lineTo(x, y);
-      }
-    }
-    starPath.close();
-
-    canvas.drawPath(starPath, fillPaint);
-    if (!isColored) {
-      canvas.drawPath(starPath, borderPaint);
-    }
-  }
-
-  // ── 10. Tree ──────────────────────────────────────────────────────────────
-  void _drawTree(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-
-    // Trunk
-    final trunkPaint = Paint()
-      ..color = const Color(0xFF8D6E63)
-      ..style = PaintingStyle.fill;
-    canvas.drawRect(
-      Rect.fromCenter(
-        center: Offset(cx, cy + 55),
-        width: 24,
-        height: 50,
-      ),
-      trunkPaint,
-    );
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Three stacked triangles for foliage
-    final triangles = [
-      [Offset(cx, cy - 75), Offset(cx - 55, cy - 10), Offset(cx + 55, cy - 10)],
-      [Offset(cx, cy - 40), Offset(cx - 60, cy + 25), Offset(cx + 60, cy + 25)],
-      [Offset(cx, cy - 10), Offset(cx - 55, cy + 50), Offset(cx + 55, cy + 50)],
-    ];
-
-    for (final tri in triangles) {
-      final path = Path()
-        ..moveTo(tri[0].dx, tri[0].dy)
-        ..lineTo(tri[1].dx, tri[1].dy)
-        ..lineTo(tri[2].dx, tri[2].dy)
-        ..close();
-      canvas.drawPath(path, fillPaint);
-      if (!isColored) {
-        canvas.drawPath(path, borderPaint);
-      }
-    }
-  }
-
-  // ── 11. Moon ──────────────────────────────────────────────────────────────
-  void _drawMoon(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Crescent via full circle minus an overlapping circle
-    final moonPath = Path()
-      ..addOval(Rect.fromCenter(center: Offset(cx, cy), width: 130, height: 130));
-
-    // Cut-out circle to form crescent
-    final cutPath = Path()
-      ..addOval(Rect.fromCenter(
-        center: Offset(cx + 38, cy - 18),
-        width: 120,
-        height: 120,
-      ));
-
-    final crescent = Path.combine(PathOperation.difference, moonPath, cutPath);
-
-    canvas.drawPath(crescent, fillPaint);
-    if (!isColored) {
-      canvas.drawPath(crescent, borderPaint);
-    }
-  }
-
-  // ── 12. Kite ──────────────────────────────────────────────────────────────
-  void _drawKite(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2 - 10;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Diamond kite shape
-    final kitePath = Path()
-      ..moveTo(cx, cy - 75)
-      ..lineTo(cx + 55, cy)
-      ..lineTo(cx, cy + 60)
-      ..lineTo(cx - 55, cy)
-      ..close();
-
-    canvas.drawPath(kitePath, fillPaint);
-    if (!isColored) {
-      canvas.drawPath(kitePath, borderPaint);
-    }
-
-    // Tail
-    final tailPaint = Paint()
-      ..color = const Color(0xFF64748B)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.0
-      ..strokeCap = StrokeCap.round;
-
-    final tailPath = Path()
-      ..moveTo(cx, cy + 60)
-      ..quadraticBezierTo(cx + 20, cy + 90, cx - 10, cy + 110)
-      ..quadraticBezierTo(cx + 15, cy + 130, cx, cy + 150);
-    canvas.drawPath(tailPath, tailPaint);
-
-    // String
-    final stringPaint = Paint()
-      ..color = const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-    canvas.drawLine(Offset(cx, cy - 75), Offset(cx - 40, cy + 100), stringPaint);
-  }
-
-  // ── 13. Sun ───────────────────────────────────────────────────────────────
-  void _drawSun(Canvas canvas, Size size) {
-    final cx = size.width / 2;
-    final cy = size.height / 2;
-
-    final fillPaint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
-
-    final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
-
-    // Rays
-    const numRays = 12;
-    const rayStart = 50.0;
-    const rayEnd = 78.0;
-    final rayPaint = Paint()
-      ..color = isColored ? fillColor : const Color(0xFFB0BEC5)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 6.0
-      ..strokeCap = StrokeCap.round;
-
-    for (int i = 0; i < numRays; i++) {
-      final angle = (i * 2 * math.pi) / numRays;
-      canvas.drawLine(
-        Offset(cx + math.cos(angle) * rayStart, cy + math.sin(angle) * rayStart),
-        Offset(cx + math.cos(angle) * rayEnd, cy + math.sin(angle) * rayEnd),
-        rayPaint,
-      );
-    }
-
-    // Sun circle
-    canvas.drawCircle(Offset(cx, cy), 44, fillPaint);
-    if (!isColored) {
-      canvas.drawCircle(Offset(cx, cy), 44, borderPaint);
-    }
-  }
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -873,7 +391,7 @@ class _PaintableObjectPainter extends CustomPainter {
     canvas.drawCircle(Offset(cx, cy), 20, centerPaint);
   }
 
-  // ── 8. Cloud ──────────────────────────────────────────────────────────────
+  // ── 8. Cloud (UKG - White) ────────────────────────────────────────────────
   void _drawCloud(Canvas canvas, Size size) {
     final cx = size.width / 2;
     final cy = size.height / 2;
@@ -882,37 +400,36 @@ class _PaintableObjectPainter extends CustomPainter {
       ..color = fillColor
       ..style = PaintingStyle.fill;
 
+    // Cloud uses a visible outline so white cloud is visible on white background
     final borderPaint = Paint()
-      ..color = isColored ? Colors.transparent : const Color(0xFF94A3B8)
+      ..color = isColored ? const Color(0xFFB0BEC5) : const Color(0xFF94A3B8)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.5;
+      ..strokeWidth = 3.0;
 
     // Draw cloud as overlapping circles
     final circles = [
-      Offset(cx - 35, cy + 10),
-      Offset(cx, cy - 10),
-      Offset(cx + 35, cy + 10),
-      Offset(cx - 15, cy + 20),
-      Offset(cx + 15, cy + 20),
+      Offset(cx - 40, cy + 8),
+      Offset(cx - 15, cy - 14),
+      Offset(cx + 20, cy - 12),
+      Offset(cx + 45, cy + 8),
+      Offset(cx, cy + 16),
     ];
-    final radii = [28.0, 36.0, 28.0, 22.0, 22.0];
+    final radii = [28.0, 34.0, 32.0, 26.0, 26.0];
 
     for (int i = 0; i < circles.length; i++) {
       canvas.drawCircle(circles[i], radii[i], fillPaint);
     }
-    if (!isColored) {
-      for (int i = 0; i < circles.length; i++) {
-        canvas.drawCircle(circles[i], radii[i], borderPaint);
-      }
+    for (int i = 0; i < circles.length; i++) {
+      canvas.drawCircle(circles[i], radii[i], borderPaint);
     }
   }
 
-  // ── 9. Star ───────────────────────────────────────────────────────────────
+  // ── 9. Star (UKG - Black) ─────────────────────────────────────────────────
   void _drawStar(Canvas canvas, Size size) {
     final cx = size.width / 2;
     final cy = size.height / 2;
-    const outerRadius = 72.0;
-    const innerRadius = 30.0;
+    const outerRadius = 68.0;
+    const innerRadius = 28.0;
     const numPoints = 5;
 
     final fillPaint = Paint()
@@ -926,8 +443,7 @@ class _PaintableObjectPainter extends CustomPainter {
 
     final starPath = Path();
     for (int i = 0; i < numPoints * 2; i++) {
-      final angle =
-          (i * math.pi / numPoints) - math.pi / 2;
+      final angle = (i * math.pi / numPoints) - math.pi / 2;
       final radius = i.isEven ? outerRadius : innerRadius;
       final x = cx + math.cos(angle) * radius;
       final y = cy + math.sin(angle) * radius;
@@ -945,24 +461,32 @@ class _PaintableObjectPainter extends CustomPainter {
     }
   }
 
-  // ── 10. Tree ──────────────────────────────────────────────────────────────
+  // ── 10. Tree (UKG - Brown) ────────────────────────────────────────────────
   void _drawTree(Canvas canvas, Size size) {
     final cx = size.width / 2;
     final cy = size.height / 2;
 
-    // Trunk
-    final trunkPaint = Paint()
-      ..color = const Color(0xFF8D6E63)
+    // Green foliage on top
+    final foliagePaint = Paint()
+      ..color = const Color(0xFF4CAF50)
       ..style = PaintingStyle.fill;
-    canvas.drawRect(
-      Rect.fromCenter(
-        center: Offset(cx, cy + 55),
-        width: 24,
-        height: 50,
-      ),
-      trunkPaint,
-    );
 
+    final foliageBorder = Paint()
+      ..color = const Color(0xFF388E3C)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.5;
+
+    final circles = [
+      Offset(cx - 30, cy - 35),
+      Offset(cx + 30, cy - 35),
+      Offset(cx, cy - 55),
+    ];
+    for (final c in circles) {
+      canvas.drawCircle(c, 32, foliagePaint);
+      canvas.drawCircle(c, 32, foliageBorder);
+    }
+
+    // Paintable Trunk (colored brown by child)
     final fillPaint = Paint()
       ..color = fillColor
       ..style = PaintingStyle.fill;
@@ -972,27 +496,20 @@ class _PaintableObjectPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3.5;
 
-    // Three stacked triangles for foliage
-    final triangles = [
-      [Offset(cx, cy - 75), Offset(cx - 55, cy - 10), Offset(cx + 55, cy - 10)],
-      [Offset(cx, cy - 40), Offset(cx - 60, cy + 25), Offset(cx + 60, cy + 25)],
-      [Offset(cx, cy - 10), Offset(cx - 55, cy + 50), Offset(cx + 55, cy + 50)],
-    ];
+    final trunkPath = Path()
+      ..moveTo(cx - 16, cy - 20)
+      ..lineTo(cx + 16, cy - 20)
+      ..lineTo(cx + 26, cy + 65)
+      ..quadraticBezierTo(cx, cy + 60, cx - 26, cy + 65)
+      ..close();
 
-    for (final tri in triangles) {
-      final path = Path()
-        ..moveTo(tri[0].dx, tri[0].dy)
-        ..lineTo(tri[1].dx, tri[1].dy)
-        ..lineTo(tri[2].dx, tri[2].dy)
-        ..close();
-      canvas.drawPath(path, fillPaint);
-      if (!isColored) {
-        canvas.drawPath(path, borderPaint);
-      }
+    canvas.drawPath(trunkPath, fillPaint);
+    if (!isColored) {
+      canvas.drawPath(trunkPath, borderPaint);
     }
   }
 
-  // ── 11. Moon ──────────────────────────────────────────────────────────────
+  // ── 11. Moon (UKG - Gray) ─────────────────────────────────────────────────
   void _drawMoon(Canvas canvas, Size size) {
     final cx = size.width / 2;
     final cy = size.height / 2;
@@ -1006,16 +523,15 @@ class _PaintableObjectPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3.5;
 
-    // Crescent via full circle minus an overlapping circle
+    // Crescent moon shape
     final moonPath = Path()
       ..addOval(Rect.fromCenter(center: Offset(cx, cy), width: 130, height: 130));
 
-    // Cut-out circle to form crescent
     final cutPath = Path()
       ..addOval(Rect.fromCenter(
-        center: Offset(cx + 38, cy - 18),
-        width: 120,
-        height: 120,
+        center: Offset(cx + 36, cy - 16),
+        width: 115,
+        height: 115,
       ));
 
     final crescent = Path.combine(PathOperation.difference, moonPath, cutPath);
@@ -1026,7 +542,7 @@ class _PaintableObjectPainter extends CustomPainter {
     }
   }
 
-  // ── 12. Kite ──────────────────────────────────────────────────────────────
+  // ── 12. Kite (UKG - Sky Blue) ─────────────────────────────────────────────
   void _drawKite(Canvas canvas, Size size) {
     final cx = size.width / 2;
     final cy = size.height / 2 - 10;
@@ -1040,11 +556,11 @@ class _PaintableObjectPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3.5;
 
-    // Diamond kite shape
+    // Diamond kite
     final kitePath = Path()
-      ..moveTo(cx, cy - 75)
+      ..moveTo(cx, cy - 65)
       ..lineTo(cx + 55, cy)
-      ..lineTo(cx, cy + 60)
+      ..lineTo(cx, cy + 55)
       ..lineTo(cx - 55, cy)
       ..close();
 
@@ -1053,28 +569,29 @@ class _PaintableObjectPainter extends CustomPainter {
       canvas.drawPath(kitePath, borderPaint);
     }
 
-    // Tail
-    final tailPaint = Paint()
+    // Spars
+    final sparPaint = Paint()
       ..color = const Color(0xFF64748B)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.0
+      ..strokeWidth = 2.0;
+    canvas.drawLine(Offset(cx, cy - 65), Offset(cx, cy + 55), sparPaint);
+    canvas.drawLine(Offset(cx - 55, cy), Offset(cx + 55, cy), sparPaint);
+
+    // Tail
+    final tailPaint = Paint()
+      ..color = const Color(0xFF94A3B8)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2.5
       ..strokeCap = StrokeCap.round;
 
     final tailPath = Path()
-      ..moveTo(cx, cy + 60)
-      ..quadraticBezierTo(cx + 20, cy + 90, cx - 10, cy + 110)
-      ..quadraticBezierTo(cx + 15, cy + 130, cx, cy + 150);
+      ..moveTo(cx, cy + 55)
+      ..quadraticBezierTo(cx + 25, cy + 85, cx - 10, cy + 105)
+      ..quadraticBezierTo(cx + 20, cy + 125, cx, cy + 145);
     canvas.drawPath(tailPath, tailPaint);
-
-    // String
-    final stringPaint = Paint()
-      ..color = const Color(0xFF94A3B8)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
-    canvas.drawLine(Offset(cx, cy - 75), Offset(cx - 40, cy + 100), stringPaint);
   }
 
-  // ── 13. Sun ───────────────────────────────────────────────────────────────
+  // ── 13. Sun (UKG - Golden) ────────────────────────────────────────────────
   void _drawSun(Canvas canvas, Size size) {
     final cx = size.width / 2;
     final cy = size.height / 2;
@@ -1088,14 +605,14 @@ class _PaintableObjectPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3.5;
 
-    // Rays
+    // Sun Rays
     const numRays = 12;
-    const rayStart = 50.0;
-    const rayEnd = 78.0;
+    const rayStart = 48.0;
+    const rayEnd = 72.0;
     final rayPaint = Paint()
       ..color = isColored ? fillColor : const Color(0xFFB0BEC5)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 6.0
+      ..strokeWidth = 5.0
       ..strokeCap = StrokeCap.round;
 
     for (int i = 0; i < numRays; i++) {
@@ -1107,10 +624,10 @@ class _PaintableObjectPainter extends CustomPainter {
       );
     }
 
-    // Sun circle
-    canvas.drawCircle(Offset(cx, cy), 44, fillPaint);
+    // Center disk
+    canvas.drawCircle(Offset(cx, cy), 42, fillPaint);
     if (!isColored) {
-      canvas.drawCircle(Offset(cx, cy), 44, borderPaint);
+      canvas.drawCircle(Offset(cx, cy), 42, borderPaint);
     }
   }
 

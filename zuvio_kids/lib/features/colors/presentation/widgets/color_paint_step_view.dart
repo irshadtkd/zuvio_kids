@@ -62,8 +62,21 @@ class ColorPaintStepView extends StatelessWidget {
       case 'grapes':
         return l10n.objectGrapes;
       case 'flower':
-      default:
         return l10n.objectFlower;
+      case 'cloud':
+        return l10n.objectCloud;
+      case 'star':
+        return l10n.objectStar;
+      case 'tree':
+        return l10n.objectTree;
+      case 'moon':
+        return l10n.objectMoon;
+      case 'kite':
+        return l10n.objectKite;
+      case 'sun':
+        return l10n.objectSun;
+      default:
+        return name;
     }
   }
 
@@ -82,8 +95,21 @@ class ColorPaintStepView extends StatelessWidget {
       case 'purple':
         return l10n.colorPurple;
       case 'pink':
-      default:
         return l10n.colorPink;
+      case 'white':
+        return l10n.colorWhite;
+      case 'black':
+        return l10n.colorBlack;
+      case 'brown':
+        return l10n.colorBrown;
+      case 'gray':
+        return l10n.colorGray;
+      case 'sky_blue':
+        return l10n.colorSkyBlue;
+      case 'golden':
+        return l10n.colorGolden;
+      default:
+        return colorItem.name;
     }
   }
 
