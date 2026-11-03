@@ -92,6 +92,18 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
 
   bool _hasShownMidQuiz = false;
 
+  /// Controls the AI Magic overlay visibility.
+  bool _showAiMagic = false;
+
+  void _openAiMagic() {
+    KidSoundService.instance.stop();
+    setState(() => _showAiMagic = true);
+  }
+
+  void _closeAiMagic() {
+    setState(() => _showAiMagic = false);
+  }
+
   Future<void> _handleNext() async {
     final notifier = ref.read(animalsNotifierProvider.notifier);
     final state = ref.read(animalsNotifierProvider).valueOrNull;
@@ -408,6 +420,13 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
                             ),
                           ),
                           const SizedBox(height: 18),
+
+                          // ── AI Magic Button ──────────────────────────────
+                          AnimalAiMagicButton(
+                            animalColor: animalColor,
+                            onPressed: _openAiMagic,
+                          ),
+                          const SizedBox(height: 18),
                         ],
                       ),
                     ),
@@ -515,6 +534,28 @@ class _AnimalsLearningScreenState extends ConsumerState<AnimalsLearningScreen> {
               bottom: 90,
               child: FloatingMascot(size: 60),
             ),
+
+            // ── AI Magic Overlay (shown when _showAiMagic is true) ─────────
+            if (_showAiMagic)
+              Positioned.fill(
+                child: Builder(
+                  builder: (context) {
+                    final state =
+                        ref.read(animalsNotifierProvider).valueOrNull;
+                    final animal = state?.currentAnimal;
+                    if (animal == null) return const SizedBox.shrink();
+                    return AnimalAiMagicOverlay(
+                      key: ValueKey(
+                          'ai_magic_${animal.id}_${DateTime.now().millisecondsSinceEpoch}'),
+                      animalName: animal.englishName.toLowerCase(),
+                      animalEnglishName: animal.englishName,
+                      animalColor: Color(animal.colorValue),
+                      soundAssetId: animal.soundAssetId,
+                      onClose: _closeAiMagic,
+                    );
+                  },
+                ),
+              ),
           ],
         );
       },

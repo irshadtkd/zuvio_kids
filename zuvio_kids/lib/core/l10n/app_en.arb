@@ -768,6 +768,18 @@
   "@colorPurple": { "description": "Color name" },
   "colorPink": "Pink",
   "@colorPink": { "description": "Color name" },
+  "colorWhite": "White",
+  "@colorWhite": { "description": "Color name for UKG" },
+  "colorBlack": "Black",
+  "@colorBlack": { "description": "Color name for UKG" },
+  "colorBrown": "Brown",
+  "@colorBrown": { "description": "Color name for UKG" },
+  "colorGray": "Gray",
+  "@colorGray": { "description": "Color name for UKG" },
+  "colorSkyBlue": "Sky Blue",
+  "@colorSkyBlue": { "description": "Color name for UKG" },
+  "colorGolden": "Golden",
+  "@colorGolden": { "description": "Color name for UKG" },
 
   "objectApple": "apple",
   "@objectApple": { "description": "Object name" },
@@ -783,6 +795,18 @@
   "@objectGrapes": { "description": "Object name" },
   "objectFlower": "flower",
   "@objectFlower": { "description": "Object name" },
+  "objectCloud": "cloud",
+  "@objectCloud": { "description": "Object name for UKG" },
+  "objectStar": "star",
+  "@objectStar": { "description": "Object name for UKG" },
+  "objectTree": "tree",
+  "@objectTree": { "description": "Object name for UKG" },
+  "objectMoon": "moon",
+  "@objectMoon": { "description": "Object name for UKG" },
+  "objectKite": "kite",
+  "@objectKite": { "description": "Object name for UKG" },
+  "objectSun": "sun",
+  "@objectSun": { "description": "Object name for UKG" },
 
   "shapesHubTitle": "Shapes Fun",
   "@shapesHubTitle": {
@@ -1301,5 +1325,21 @@
   "animalsQuizPlaySound": "Play Sound Again",
   "@animalsQuizPlaySound": {
     "description": "Button to replay the animal sound in quiz"
+  },
+  "btnAiMagic": "✨ AI Magic",
+  "@btnAiMagic": {
+    "description": "Button label for the AI Magic feature in Animals session"
+  },
+  "aiMagicLoading": "Generating magic...",
+  "@aiMagicLoading": {
+    "description": "Message shown while AI magic is loading"
+  },
+  "aiMagicError": "Magic is resting. Try again!",
+  "@aiMagicError": {
+    "description": "Message shown when AI magic fails"
+  },
+  "colorsCongratsSubtitleUkg": "You learned all 13 colors!",
+  "@colorsCongratsSubtitleUkg": {
+    "description": "Subtitle on colors congratulations screen for UKG"
   }
 }

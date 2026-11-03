@@ -768,6 +768,18 @@
   "@colorPurple": { "description": "Color name" },
   "colorPink": "പിങ്ക്",
   "@colorPink": { "description": "Color name" },
+  "colorWhite": "വെള്ള",
+  "@colorWhite": { "description": "Color name for UKG" },
+  "colorBlack": "കറുപ്പ്",
+  "@colorBlack": { "description": "Color name for UKG" },
+  "colorBrown": "തവിട്ട്",
+  "@colorBrown": { "description": "Color name for UKG" },
+  "colorGray": "ചാരനിറം",
+  "@colorGray": { "description": "Color name for UKG" },
+  "colorSkyBlue": "ആകാശ നീല",
+  "@colorSkyBlue": { "description": "Color name for UKG" },
+  "colorGolden": "സ്വർണ്ണ",
+  "@colorGolden": { "description": "Color name for UKG" },
 
   "objectApple": "ആപ്പിൾ",
   "@objectApple": { "description": "Object name" },
@@ -783,6 +795,18 @@
   "@objectGrapes": { "description": "Object name" },
   "objectFlower": "പൂവ്",
   "@objectFlower": { "description": "Object name" },
+  "objectCloud": "മേഘം",
+  "@objectCloud": { "description": "Object name for UKG" },
+  "objectStar": "നക്ഷത്രം",
+  "@objectStar": { "description": "Object name for UKG" },
+  "objectTree": "മരം",
+  "@objectTree": { "description": "Object name for UKG" },
+  "objectMoon": "ചന്ദ്രൻ",
+  "@objectMoon": { "description": "Object name for UKG" },
+  "objectKite": "പട്ടം",
+  "@objectKite": { "description": "Object name for UKG" },
+  "objectSun": "സൂര്യൻ",
+  "@objectSun": { "description": "Object name for UKG" },
 
   "shapesHubTitle": "രൂപങ്ങൾ",
   "@shapesHubTitle": {
@@ -1301,5 +1325,21 @@
   "animalsQuizPlaySound": "ശബ്ദം വീണ്ടും പ്ലേ ചെയ്യൂ",
   "@animalsQuizPlaySound": {
     "description": "Button to replay the animal sound in quiz"
+  },
+  "btnAiMagic": "✨ AI Magic",
+  "@btnAiMagic": {
+    "description": "Button label for the AI Magic feature in Animals session"
+  },
+  "aiMagicLoading": "Magic ഉണ്ടാക്കുന്നു...",
+  "@aiMagicLoading": {
+    "description": "Message shown while AI magic is loading"
+  },
+  "aiMagicError": "Magic ഇപ്പോൾ ഇല്ല. വീണ്ടും ശ്രമിക്കൂ!",
+  "@aiMagicError": {
+    "description": "Message shown when AI magic fails"
+  },
+  "colorsCongratsSubtitleUkg": "നിങ്ങൾ എല്ലാ 13 നിറങ്ങളും പഠിച്ചു!",
+  "@colorsCongratsSubtitleUkg": {
+    "description": "Subtitle on colors congratulations screen for UKG"
   }
 }

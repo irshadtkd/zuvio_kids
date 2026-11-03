@@ -21,11 +21,13 @@ class ColorsNotifier extends AsyncNotifier<ColorsState> {
     final studentName = onboardingState?.name.isNotEmpty == true
         ? onboardingState!.name
         : AppStrings.defaultChildName;
+    final studentClass = onboardingState?.studentClass ?? '';
 
     final getSessionUseCase = ref.read(getColorSessionUseCaseProvider);
     final getProgressUseCase = ref.read(getColorProgressUseCaseProvider);
 
-    final sessionResult = await getSessionUseCase(studentName);
+    final sessionResult =
+        await getSessionUseCase(studentName, studentClass: studentClass);
     final progressResult = await getProgressUseCase(studentName);
 
     final session = sessionResult.fold(

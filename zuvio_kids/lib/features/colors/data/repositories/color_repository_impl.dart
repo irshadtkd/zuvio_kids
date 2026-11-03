@@ -1,4 +1,5 @@
 import 'package:fpdart/fpdart.dart';
+import 'package:zuvio_kids/core/constants/app_strings.dart';
 import 'package:zuvio_kids/core/errors/app_exception.dart';
 import 'package:zuvio_kids/core/errors/failure.dart';
 import 'package:zuvio_kids/core/utils/app_logger.dart';
@@ -18,13 +19,19 @@ class ColorRepositoryImpl implements ColorRepository {
 
   @override
   Future<Either<Failure, ColorSessionEntity>> getSession(
-    String studentName,
-  ) async {
+    String studentName, {
+    String studentClass = '',
+  }) async {
     try {
       final progress = await _localDataSource.getProgress(studentName);
       final isCompleted = progress?.isCompleted ?? false;
 
-      final session = ColorData.defaultSession.copyWith(
+      // UKG students get the extended 13-color session.
+      final baseSession = studentClass == AppStrings.idClassUkg
+          ? ColorData.ukgSession
+          : ColorData.defaultSession;
+
+      final session = baseSession.copyWith(
         isCompleted: isCompleted,
         starsEarned: isCompleted ? 10 : 0,
         currentColorIndex: 0,

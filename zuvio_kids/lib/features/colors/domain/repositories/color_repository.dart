@@ -7,7 +7,11 @@ import '../entities/color_session_entity.dart';
 /// Layer: Domain (pure Dart)
 abstract interface class ColorRepository {
   /// Fetches the Colors learning session mapped to current student progress.
-  Future<Either<Failure, ColorSessionEntity>> getSession(String studentName);
+  /// [studentClass] determines the color list (UKG gets the extended 13-color set).
+  Future<Either<Failure, ColorSessionEntity>> getSession(
+    String studentName, {
+    String studentClass = '',
+  });
 
   /// Fetches the colors progress (completed status, total stars) for [studentName].
   Future<Either<Failure, ColorProgressEntity>> getProgress(String studentName);
